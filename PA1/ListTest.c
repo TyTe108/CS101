@@ -1,9 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
-// #include"List.h"
+#include"List.h"
 int main(int argc, char* argv[]){
 
-printf("Daniel sells Tofu\n ");
+List A = newList();
+List B = NULL;
+
+printf("It went ok...\n");
 
 return (0);
 }
+

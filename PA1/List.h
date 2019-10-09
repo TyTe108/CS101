@@ -6,9 +6,23 @@
 #ifndef LIST_H
 #define LIST_H
 
+#include <stdio.h>
+
+
 // Exported type --------------------------------------------------------------
 typedef struct ListObj* List;
 typedef struct NodeObj* Node;
+
+
+typedef struct ListObect{
+	Node head;
+	Node tail;
+	Node cursor;
+	int cursorIndex;
+	int length;
+
+}; 
+
 
 
 // Constructors-Destructors ---------------------------------------------------
