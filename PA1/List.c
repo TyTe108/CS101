@@ -292,12 +292,12 @@ void deleteBack(List L){
     exit(1);
   }
   
-  Node t = L->tail;
+  //Node t = L->tail;
   Node newTail = L->tail -> prev;
 
   //what if cursor is back?
   if (L->tail == L->cursor){
-    L->cursor == NULL;
+    L->cursor = NULL;
   }
 
   freeNode(&(L->tail));
@@ -308,7 +308,7 @@ void deleteBack(List L){
 
 
 void delete(List L){
-  if (L == NULL | L->head == NULL) {
+  if ((L == NULL) | (L->head == NULL)) {
     printf("List Error: calling Remove(Node removeThis, Node headPtr)) on NULL List reference\n");
     exit(1);
   }
