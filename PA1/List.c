@@ -327,6 +327,7 @@ void delete(List L){
     freeNode(&deleteThis);
     beforeCursor->next = afterCursor;
     afterCursor->prev = beforeCursor;
+    L->length--;
   }
 }
 
