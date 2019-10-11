@@ -272,10 +272,7 @@ void deleteFront(List L){
     printf("Calling deleteFront(List L) on an empty List Nani the fuck? \n");
     exit(1);
   }
-
-  
-
-  Node h = L->head;
+  //Node h = L->head;
   Node newHead = L->head-> next;
 
   //what if cursor is front? Do this...
