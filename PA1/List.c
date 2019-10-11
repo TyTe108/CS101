@@ -216,12 +216,12 @@ void insertBefore(List L, int data){
     printf("Calling insertBefore(List L, int data) function on an empty L.\n");
     return;
   }
-  Node insertThis = newNode(data);
   //What happens if cursor is undefined?...
   //if not undefined though
   if (L->cursor == NULL){
     return;
   }else{
+    Node insertThis = newNode(data);
     Node prevHolder = (L->cursor) ->prev;
     insertThis-> prev = prevHolder;
     insertThis-> next = (L->cursor);
@@ -242,12 +242,12 @@ void insertAfter(List L, int data){
     printf("Calling insertBefore(List L, int data) function on an empty L.\n");
     return;
   }
-   Node insertThis = newNode(data);
   //What happens if cursor is undefined?...
   //if not undefined though
    if (L->cursor == NULL){
     return;
   }else{
+     Node insertThis = newNode(data);  
      Node nextHolder = (L->cursor)->next;
      insertThis->prev = L-> cursor;
      insertThis ->next = nextHolder;
