@@ -113,7 +113,7 @@ int equals(List A, List B){
     }
 
     while (a != NULL || b != NULL){
-        if (a != b){
+        if (a->data != b->data){
             return 0;
         }
         a = a->next;
