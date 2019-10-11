@@ -38,7 +38,7 @@ List newList(void){
     L->tail = NULL;
     L->length = 0;
     L->cursor = NULL;
-    L->cursorIndex = -1;
+    //L->cursorIndex = -1;
     return(L);
 }
 
@@ -55,7 +55,21 @@ int length(List L){
 } // Returns the number of elements in L.
 
 int index(List L){
-    return (L->cursorIndex);
+  // return (L->cursorIndex);
+  int cursorIndex = 0;
+  Node walker = L->head;
+
+  if(L->cursor == NULL){
+    return -1;
+  }else{
+    while(walker != NULL){
+      cursorIndex = cursorIndex + 1;
+      walker = walker->next;
+    }
+    return cursorIndex;
+  }
+
+
 } // Returns index of cursor element if defined, -1 otherwise.
 
 int front(List L){
@@ -113,6 +127,12 @@ int equals(List A, List B){
 
 // Manipulation procedures ----------------------------------------------------
 void clear(List L){
+  if (L == NULL || L->head == NULL || L->tail == NULL){
+    return;
+  }
+  while (L->head != NULL){
+    deleteFront(L);
+  }
 
 }
 
@@ -122,7 +142,7 @@ void moveFront(List L){
         exit(1);
     }
     L->cursor = L->head;
-    L->cursorIndex = 0;
+    // L->cursorIndex = 0;
 }
 
 void moveBack(List L){
@@ -131,29 +151,34 @@ void moveBack(List L){
         exit(1);
     }
     L->cursor = L->tail;
-    L->cursorIndex = (L->length - 1);
+    // L->cursorIndex = (L->length - 1);
 }
 
 void movePrev(List L){
-    if (L->cursorIndex != -1 && L->cursorIndex != 0){ // If cursor is defined and not at front, move cursor one step toward the front
-        L->cursorIndex = (L->cursorIndex) - 1;
+    
+
+  int cursorIndex = index(L);
+
+    if (cursorIndex != -1 && cursorIndex != 0){ // If cursor is defined and not at front, move cursor one step toward the front
+      //L->cursorIndex = (L->cursorIndex) - 1;
         L->cursor = (L->cursor)->prev;
     }
-    else if(L->cursorIndex != -1 &&  L->cursorIndex == 0 ){ //if cursor is defined and at front, cursor becomes undefined
+    else if(cursorIndex != -1 &&  cursorIndex == 0 ){ //if cursor is defined and at front, cursor becomes undefined
         //do nothing
-        L->cursorIndex = -1;
+        //L->cursorIndex = -1;
         L->cursor = NULL;
     }
 }
 
 
 void moveNext(List L){
-    if (L->cursorIndex != -1 && L->cursorIndex != (L->length -1)){
-        L->cursorIndex = (L->cursorIndex) + 1;
+    int cursorIndex = index(L);
+    if (cursorIndex != 1 && cursorIndex != (L->length -1)){
+      //cursorIndex = (cursorIndex) + 1;
         L->cursor = (L->cursor)->next;
     }
-    else if(L->cursorIndex != -1 &&  L->cursorIndex == (L->length -1) ){
-        L->cursorIndex = -1;
+    else if(cursorIndex != 1 &&  cursorIndex == (L->length -1) ){
+      //L->cursorIndex = -1;
         L->cursor = NULL;
     }
 } // If cursor is defined and not at back, move cursor one
@@ -162,9 +187,155 @@ void moveNext(List L){
 //   // do nothing
 
 void prepend(List L, int data){
+  if(L->length == 0){
+    Node prependThis = newNode(data); //Make a new node to the list
+    L->head = prependThis;
+    L->tail = prependThis;
+    L->length++;
+  }
+  else  if(L->length > 0){
+     moveFront(L); 
+     insertBefore(L, data);
+  }
+} //
+
+void append(List L, int data){
+  if(L->length == 0){
+    Node appendThis = newNode(data); //Make a new node to the list
+    L->head = appendThis;
+    L->tail = appendThis;
+    L->length++;
+  }else  if(L->length > 0){
+     moveBack(L); 
+     insertAfter(L, data);
+  }
+}
+
+void insertBefore(List L, int data){
+  if(length <= 0){
+    printf("Calling insertBefore(List L, int data) function on an empty L.\n");
+    return;
+  }
+  Node insertThis = newNode(data);
+  //What happens if cursor is undefined?...
+  //if not undefined though
+  if (L->cursor == NULL){
+    return;
+  }else{
+    Node prevHolder = (L->cursor) ->prev;
+    insertThis-> prev = prevHolder;
+    insertThis-> next = (L->cursor);
+    if (prevHolder != NULL){
+      prevHolder-> next = insertThis;
+    }
+    L->cursor->prev = insertThis;
+    if (L->cursor == L->head){
+      L->head = insertThis;
+      }
+    L->length++;
+  }
 
 }
 
-void append(List L, int data){
+void insertAfter(List L, int data){
+  if(length <= 0){
+    printf("Calling insertBefore(List L, int data) function on an empty L.\n");
+    return;
+  }
+   Node insertThis = newNode(data);
+  //What happens if cursor is undefined?...
+  //if not undefined though
+   if (L->cursor == NULL){
+    return;
+  }else{
+     Node nextHolder = (L->cursor)->next;
+     insertThis->prev = L-> cursor;
+     insertThis ->next = nextHolder;
+     (L->cursor)->next = insertThis;
+     if(L->cursor == L->tail){
+       L->tail = insertThis; //What if you are adding after a tail?
+     }
+     if (nextHolder != NULL){
+       nextHolder-> prev = insertThis;
+       // printf("This has been called \n);
+     }
+     L->length++; 
+  }
 
+  
+  //what happens when
+  
+}
+
+void deleteFront(List L){
+  if (length(L)==0){
+    printf("Calling deleteFront(List L) on an empty List Nani the fuck? \n");
+    exit(1);
+  }
+
+  
+
+  Node h = L->head;
+  Node newHead = L->head-> next;
+
+  //what if cursor is front? Do this...
+  if (L->head == L->cursor){
+    L->cursor == NULL;
+  }
+
+  freeNode(&(L->head));
+  L->head = newHead;
+  L->length--;
+
+
+} // Delete the front element. Pre: length()>0
+void deleteBack(List L){
+  if (length(L)==0){
+    printf("Calling deleteBack(List L) on an empty List Nani the fuck? \n");
+    exit(1);
+  }
+  
+  Node t = L->tail;
+  Node newTail = L->tail -> prev;
+
+  //what if cursor is back?
+  if (L->tail == L->cursor){
+    L->cursor == NULL;
+  }
+
+  freeNode(&(L->tail));
+  L->tail = newTail;
+  L->length--;
+
+} // Delete the back element. Pre: length()>0
+
+
+void delete(List L){
+  if (L == NULL | L->head == NULL) {
+    printf("List Error: calling Remove(Node removeThis, Node headPtr)) on NULL List reference\n");
+    exit(1);
+  }
+  //when the node you are trying to delete is the last in the list, simply delete it, and return the item inside
+  Node deleteThis = L->cursor;
+  if(deleteThis == L->head){
+    deleteFront(L);
+  }
+  else if(deleteThis == L->tail){
+    deleteBack(L);
+  }
+  else{
+    Node beforeCursor = deleteThis->prev;
+    Node afterCursor = deleteThis ->next;
+    
+    freeNode(&deleteThis);
+    beforeCursor->next = afterCursor;
+    afterCursor->prev = beforeCursor;
+  }
+}
+
+void printList(FILE* out, List L){
+   for (Node n = L->head; n != NULL; n = n-> next){
+    fprintf(out,"%d " , n->data);
+  }
+   //fprintf(out, "%d ",  front(L));
 }
