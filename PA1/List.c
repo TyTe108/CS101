@@ -280,7 +280,7 @@ void deleteFront(List L){
 
   //what if cursor is front? Do this...
   if (L->head == L->cursor){
-    L->cursor == NULL;
+    L->cursor = NULL;
   }
 
   freeNode(&(L->head));
