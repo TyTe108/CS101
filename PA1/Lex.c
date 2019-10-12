@@ -81,9 +81,10 @@ int main(int argc, char * argv[]){
 	printf("\n");
 	i++;
 	
-      //fprintf(out, "line %d contains %d token%s: \n", count, n, n==1?"":"s");
-      //fprintf(out, "%s\n", tokenlist);
-      //fprintf(out, "count: %d \n", count);     
+      fprintf(out, "line %d contains %d token%s: \n", count, n, n==1?"":"s");
+      fprintf(out, "%s\n", tokenlist);
+      fprintf(out, "count: %d \n", count);
+      printf("Anything before sorting works.\n");  
    }
 
 
