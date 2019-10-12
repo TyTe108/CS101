@@ -99,13 +99,12 @@ int main(int argc, char * argv[]){
        append(indicesList, i); //append the first index 
        
      }else{
-       //if not the first one, start comparing
-       int result = strcmp(arrayOfString[i-1], arrayOfString[i]);
-       if (result < 0){
-	 //strcmp(s1,s2)<0is true if and only if s1 comes before s2
-	 
-	 
-       }
+	     //loop through list to compare
+	     moveFront(indicesList); //move cursor to the front
+	     for (int j = 0; j < i; j++){
+	     	//j will loop i times because the length of list is i in the current iteration
+		     
+	     } 
      }
    }
    
