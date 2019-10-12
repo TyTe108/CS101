@@ -11,11 +11,6 @@
 
 #define MAX_LEN 160
 
-
-
-
-
-
 int main(int argc, char * argv[]){
    int n, count=0;
    FILE *in, *out;
@@ -80,9 +75,9 @@ int main(int argc, char * argv[]){
 	printf("\n");
 	i++;
 	
-      fprintf(out, "line %d contains %d token%s: \n", count, n, n==1?"":"s");
-      fprintf(out, "%s\n", tokenlist);
-      fprintf(out, "count: %d \n", count);     
+      // fprintf(out, "line %d contains %d token%s: \n", count, n, n==1?"":"s");
+	// fprintf(out, "%s\n", tokenlist);
+      //fprintf(out, "count: %d \n", count);     
    }
 
 
@@ -103,7 +98,6 @@ int main(int argc, char * argv[]){
        int result = strcmp(arrayOfString[i-1], arrayOfString[i]);
        if (result < 0){
 	 //strcmp(s1,s2)<0is true if and only if s1 comes before s2
-	 
 	 
        }
      }

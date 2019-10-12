@@ -62,9 +62,14 @@ int index(List L){
   if(L->cursor == NULL){
     return -1;
   }else{
-    while(walker != NULL){
+    while(walker != L->cursor){
+      if (walker == NULL){
+	printf("Error calling index(List L): The cursor is not pointing to anything inside the List!\n");
+      }
+      
       cursorIndex = cursorIndex + 1;
       walker = walker->next;
+
     }
     return cursorIndex;
   }
@@ -75,7 +80,7 @@ int index(List L){
 int front(List L){
     if(length(L) <= 0){
         printf("List Error: calling Front(List L) on an empty List\n");
-        exit(1);
+	exit(1);
     }
     return (L->head->data);
 }
@@ -90,7 +95,8 @@ int back(List L){
 
 
 int get(List L){
-    if (index < 0 ){
+  int i = index(L);
+    if (i < 0 ){
         printf("List Error: calling get(List L) on a negative index\n");
         exit(1);
     }
@@ -107,12 +113,18 @@ int equals(List A, List B){
     Node a = A->head;
     Node b = B->head;
 
+
     if( A==NULL || B==NULL ){
         printf("List Error: calling equals() on NULL List reference\n PS: How did it pass the front tests then?..\n");
-        exit(1);
+        return(0);
     }
 
-    while (a != NULL || b != NULL){
+
+    if (A->length != B->length){ //length has to be the same
+      return 0;
+    }
+
+    while (a != NULL && b != NULL){
         if (a->data != b->data){
             return 0;
         }
@@ -173,11 +185,11 @@ void movePrev(List L){
 
 void moveNext(List L){
     int cursorIndex = index(L);
-    if (cursorIndex != 1 && cursorIndex != (L->length -1)){
+    if (cursorIndex !=-1 && cursorIndex != (L->length -1)){
       //cursorIndex = (cursorIndex) + 1;
         L->cursor = (L->cursor)->next;
     }
-    else if(cursorIndex != 1 &&  cursorIndex == (L->length -1) ){
+    else if(cursorIndex != -1 &&  cursorIndex == (L->length -1) ){
       //L->cursorIndex = -1;
         L->cursor = NULL;
     }
@@ -193,11 +205,13 @@ void prepend(List L, int data){
     L->tail = prependThis;
     L->length++;
   }
-  else  if(L->length > 0){
-     moveFront(L); 
-     insertBefore(L, data);
+  else  if(L->length > 0){ //
+    Node saveCursor = L->cursor;
+    moveFront(L); 
+    insertBefore(L, data);
+    L->cursor = saveCursor;   
   }
-} //
+} 
 
 void append(List L, int data){
   if(L->length == 0){
@@ -206,8 +220,10 @@ void append(List L, int data){
     L->tail = appendThis;
     L->length++;
   }else  if(L->length > 0){
-     moveBack(L); 
-     insertAfter(L, data);
+    Node saveCursor = L->cursor; 
+    moveBack(L); 
+    insertAfter(L, data);
+    L->cursor = saveCursor;
   }
 }
 
@@ -219,6 +235,7 @@ void insertBefore(List L, int data){
   //What happens if cursor is undefined?...
   //if not undefined though
   if (L->cursor == NULL){
+    printf("Calling insertBefore(List L, int data) function on NULL cursor.\n");
     return;
   }else{
     Node insertThis = newNode(data);
@@ -270,8 +287,17 @@ void insertAfter(List L, int data){
 void deleteFront(List L){
   if (length(L)==0){
     printf("Calling deleteFront(List L) on an empty List Nani the fuck? \n");
-    exit(1);
+    return;
   }
+
+  if (L->head == L->tail){
+    freeNode(&(L->tail));
+    L->head = NULL;
+    L->tail = NULL;
+    L->length--;
+    return;
+  }
+
   //Node h = L->head;
   Node newHead = L->head-> next;
 
@@ -289,7 +315,14 @@ void deleteFront(List L){
 void deleteBack(List L){
   if (length(L)==0){
     printf("Calling deleteBack(List L) on an empty List Nani the fuck? \n");
-    exit(1);
+    return;
+  }
+  if (L->head == L->tail){
+     freeNode(&(L->tail));
+     L->head = NULL;
+     L->tail = NULL;
+     L->length--;
+     return;
   }
   
   //Node t = L->tail;
@@ -300,6 +333,7 @@ void deleteBack(List L){
     L->cursor = NULL;
   }
 
+  //what if there's only 1 element left?
   freeNode(&(L->tail));
   L->tail = newTail;
   L->length--;
