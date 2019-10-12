@@ -93,27 +93,27 @@ int main(int argc, char * argv[]){
    List indicesList = newList(); //indices list constructed
    
    for (i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
-	   while(index(L)<length(L){
-	   	if (length(L) == 0){
-			//if L is an empty list, just append the first index into it, no need to compare
+	   while(index(indicesList)<length(indicesList){
+	   	if (length(indicesList) == 0){
+			//if indicesList is an empty list, just append the first index into it, no need to compare
 			append(L,i);
 		}
-		   moveFront(L); //move to head to start comparint each one
-		   int result = strcmp(arrayOfString[get(L)], arrayOfString[i]);
+		   moveFront(indicesList); //move to head to start comparint each one
+		   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
 		   if (result >= 0){
-			   insertBefore(L,i);
+			   insertBefore(indicesList,i);
 		   }else{
-			   if (index(L) == length(L)-1){ //if tail, just insertAfter the tail
-			   	append(L,i);
+			   if (index(indicesList) == length(indicesList)-1){ //if tail, just insertAfter the tail
+			   	append(indicesList,i);
 			   }
 			   else{
-			   	moveNext(L); //go to the next one
+			   	moveNext(indicesList); //go to the next one
 			   }
 		   }
 	   }
    }
 		 
-   printList(stdout, inDicesList);
+   printList(stdout, indicesList);
    freeList(&indicesList);
 
    
