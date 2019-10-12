@@ -95,7 +95,7 @@ int main(int argc, char * argv[]){
    List indicesList = newList(); //indices list constructed
    for (i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
 	   int ind = index(indicesList);
-	   while(index<length(indicesList)){  
+	   while(ind<length(indicesList)){  
 	   	if (length(indicesList) == 0){
 			//if indicesList is an empty list, just append the first index into it, no need to compare
 			append(indicesList,i);
@@ -108,7 +108,7 @@ int main(int argc, char * argv[]){
 			}
 			else{
 				ind = index(indicesList);
-				if (index == length(indicesList)-1){ //if tail, just insertAfter the tail
+				if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
 					append(indicesList,i);
 				}
 				else{
