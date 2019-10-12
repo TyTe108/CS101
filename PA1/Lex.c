@@ -102,17 +102,23 @@ int main(int argc, char * argv[]){
 			printf("Empty list so just appended \n");
 		}else{
 			moveFront(indicesList); //move to head to start comparint each one
+			printf("Check 1\n");
 			int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
+			printf("Check 2\n");
 			if (result >= 0){
 				insertBefore(indicesList,i);
+				printf("Check 3\n");
 			}
 			else{
 				ind = index(indicesList);
+				printf("Check 4\n");
 				if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
 					append(indicesList,i);
+					printf("Check 5\n");
 				}
 				else{
 					moveNext(indicesList); //go to the next one
+					printf("Check 6\n");
 				}
 			}
 		}
