@@ -101,7 +101,7 @@ int main(int argc, char * argv[]){
      }else{
 	     //loop through list to compare
 	     moveFront(indicesList); //move cursor to the front
-	     for (int j = 0; j < i; j++){
+	     /*for (int j = 0; j < i; j++){
 	     	//j will loop i times because the length of list is i in the current iteration
 		     char inputedString[MAX_LEN];
 		     int indexInLoop = get(L);
@@ -111,7 +111,7 @@ int main(int argc, char * argv[]){
 		     int result = strcmp(inputedString, arrayOfString[i]);
 ]		     
 		     
-	     } 
+	     }*/ 
      }
    }
    
