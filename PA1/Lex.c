@@ -95,7 +95,7 @@ int main(int argc, char * argv[]){
    List indicesList = newList(); //indices list constructed
    for (i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
 	   while(index(indicesList)<length(indicesList)){
-		printf("Went into the loop \n);   
+		printf("Went into the loop \n");   
 	   	if (length(indicesList) == 0){
 			//if indicesList is an empty list, just append the first index into it, no need to compare
 			append(indicesList,i);
