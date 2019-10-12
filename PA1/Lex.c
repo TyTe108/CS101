@@ -93,28 +93,27 @@ int main(int argc, char * argv[]){
    List indicesList = newList(); //indices list constructed
    
    for (i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
-     //each string to sort it by alphabetical order
-     if (i == 0){
-       //if first add, just add because the list empty anyways, nothing to compare to
-       append(indicesList, i); //append the first index 
-       
-     }else{
-	     //loop through list to compare
-	     moveFront(indicesList); //move cursor to the front
-	     /*for (int j = 0; j < i; j++){
-	     	//j will loop i times because the length of list is i in the current iteration
-		     char inputedString[MAX_LEN];
-		     int indexInLoop = get(L);
-		     strcpy(inputedString, arrayOfString[indexInLoop]);
-		     
-		     //compare inputedString with arrayOfString[i]
-		     int result = strcmp(inputedString, arrayOfString[i]);
-]		     
-		     
-	     }*/ 
-     }
+	   while(index(L)<length(L){
+	   	if (length(L) == 0){
+			//if L is an empty list, just append the first index into it, no need to compare
+			append(L,i);
+		}
+		   moveFront(L); //move to head to start comparint each one
+		   int result = strcmp(arrayOfString[get(L)], arrayOfString[i]);
+		   if (result >= 0){
+			   insertBefore(L,i);
+		   }else{
+			   if (index(L) == length(L)-1){ //if tail, just insertAfter the tail
+			   	append(L,i);
+			   }
+			   else{
+			   	moveNext(L); //go to the next one
+			   }
+		   }
+	   }
    }
-   
+		 
+   printList(stdout, inDicesList);
    freeList(&indicesList);
 
    
