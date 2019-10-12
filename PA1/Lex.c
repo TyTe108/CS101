@@ -103,6 +103,13 @@ int main(int argc, char * argv[]){
 	     moveFront(indicesList); //move cursor to the front
 	     for (int j = 0; j < i; j++){
 	     	//j will loop i times because the length of list is i in the current iteration
+		     char inputedString[MAX_LEN];
+		     int indexInLoop = get(L);
+		     strcpy(inputedString, arrayOfString[indexInLoop]);
+		     
+		     //compare inputedString with arrayOfString[i]
+		     int result = strcmp(inputedString, arrayOfString[i]);
+]		     
 		     
 	     } 
      }
