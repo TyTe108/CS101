@@ -96,7 +96,7 @@ int main(int argc, char * argv[]){
 	   while(index(indicesList)<length(indicesList)){
 	   	if (length(indicesList) == 0){
 			//if indicesList is an empty list, just append the first index into it, no need to compare
-			append(L,i);
+			append(indicesList,i);
 		}
 		   moveFront(indicesList); //move to head to start comparint each one
 		   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
