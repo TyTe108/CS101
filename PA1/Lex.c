@@ -94,24 +94,29 @@ int main(int argc, char * argv[]){
 
    List indicesList = newList(); //indices list constructed
    for (i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
-	   while(index(indicesList)<length(indicesList)){
-		printf("Went into the loop \n");   
+	   int index = index(indicesList);
+	   
+	   while(index<length(indicesList)){  
 	   	if (length(indicesList) == 0){
 			//if indicesList is an empty list, just append the first index into it, no need to compare
 			append(indicesList,i);
+		}else{
+			moveFront(indicesList); //move to head to start comparint each one
+			int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
+			if (result >= 0){
+				insertBefore(indicesList,i);
+			}
+			else{
+				index = index(indicesList);
+				if (index == length(indicesList)-1){ //if tail, just insertAfter the tail
+					append(indicesList,i);
+				}
+				else{
+					moveNext(indicesList); //go to the next one
+				}
+			}
 		}
-		   moveFront(indicesList); //move to head to start comparint each one
-		   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
-		   if (result >= 0){
-			   insertBefore(indicesList,i);
-		   }else{
-			   if (index(indicesList) == length(indicesList)-1){ //if tail, just insertAfter the tail
-			   	append(indicesList,i);
-			   }
-			   else{
-			   	moveNext(indicesList); //go to the next one
-			   }
-		   }
+
 	   }
    }
 		 
