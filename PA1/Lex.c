@@ -84,7 +84,7 @@ int main(int argc, char * argv[]){
       fprintf(out, "line %d contains %d token%s: \n", count, n, n==1?"":"s");
       fprintf(out, "%s\n", tokenlist);
       fprintf(out, "count: %d \n", count);
-      printf("Anything before sorting works.\n");  
+
    }
 
 
@@ -93,9 +93,9 @@ int main(int argc, char * argv[]){
    //the array.  Using the above input file as an example we would have.
 
    List indicesList = newList(); //indices list constructed
-   
    for (i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
 	   while(index(indicesList)<length(indicesList)){
+		printf("Went into the loop \n);   
 	   	if (length(indicesList) == 0){
 			//if indicesList is an empty list, just append the first index into it, no need to compare
 			append(indicesList,i);
