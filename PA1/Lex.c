@@ -76,7 +76,7 @@ int main(int argc, char * argv[]){
       }
       	
 	strcpy(arrayOfString[i],tokenlist);
-	print("The arrayOfString are: \n");
+	printf("The arrayOfString are: \n");
 	printf(arrayOfString[i]);
 	printf("\n");
 	i++;
