@@ -19,4 +19,6 @@ strcpy(arrayOfString [4], "four");
 strcpy(arrayOfString [5], "five");
 
 printf(arrayOfString[1]);
+ 
+return(0);
 }
