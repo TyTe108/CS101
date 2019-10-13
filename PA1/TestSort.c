@@ -40,7 +40,7 @@ int main(){
 				   printf("#5\n");
 				   moveBack(indicesList);
 				   printf("#6\n");
-				   printf("STUCK AT: ");
+				   printf("STUCK AT: infrc [%d] with string of ", i);
 				   printf(arrayOfString[i]);
 				   printf("\n");
 			   }
