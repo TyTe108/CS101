@@ -145,15 +145,12 @@ int main(int argc, char * argv[]){
 		   }
 	   }
    }
-		 
-   printList(stdout, indicesList);
-   freeList(&indicesList);
-
-   
-   /* close files */
-
-   fclose(in);
-   fclose(out);
+	printList(stdout, indicesList);
+	printList(out, indicesList);
+	freeList(&indicesList);
+	/* close files */
+	fclose(in);
+	fclose(out);
 
    return(0);
 }
