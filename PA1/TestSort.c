@@ -41,7 +41,7 @@ int main(){
 				   moveBack(indicesList);
 				   printf("#6\n");
 				   printf("STUCK AT: ");
-				   prrintf(arrayOfString[i]);
+				   printf(arrayOfString[i]);
 				   printf("\n");
 			   }
 			   else{
