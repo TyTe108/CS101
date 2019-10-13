@@ -78,7 +78,7 @@ int main(int argc, char * argv[]){
 	strcpy(arrayOfString[i],tokenlist);
 	printf("The arrayOfString are: \n");
 	printf(arrayOfString[i]);
-	printf("\n");
+	//printf("\n");
 	i++;
 	
       fprintf(out, "line %d contains %d token%s: \n", count, n, n==1?"":"s");
