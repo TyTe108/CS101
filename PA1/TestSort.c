@@ -32,7 +32,7 @@ int main(){
 		   moveFront(indicesList); //move to head to start comparint each one
 		   printf("#2\n");
 		   printf("Index is %d\n", index(indicesList));
-		   while(index(indicesList)<=(length(indicesList) - 1)){
+		   while(index(indicesList)<(length(indicesList) - 1)){
 			   printf("Went into while loop\n");
 			   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
 			   printf("#3\n");
@@ -42,7 +42,7 @@ int main(){
 				   printf("#5\n");
 				   moveBack(indicesList);
 				   printf("#6\n");
-				   printf("STUCK AT: infrc [%d] with string of ", i);
+				   printf("STUCK AT: index [%d] with string of ", i);
 				   printf(arrayOfString[i]);
 				   printf("\n");
 			   }
