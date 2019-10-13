@@ -8,15 +8,15 @@ int main(){
 int count = 5;
 char arrayOfString[count][MAX_LEN];
 
-arrayOfString [1] = "One";
+strcpy(arrayOfString [1], "one");
 
-arrayOfString [2] = "Two"
+strcpy(arrayOfString [2], "two");
 
-arrayOfString [3] = "Four"
+strcpy(arrayOfString [3], "three");
 
-arrayOfString [4] = "Five"
+strcpy(arrayOfString [4], "four");
 
-arrayOfString [5] = "Six"
+strcpy(arrayOfString [5], "five");
 
 printf(arrayOfString[1]);
 }
