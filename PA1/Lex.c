@@ -153,7 +153,7 @@ int main(int argc, char * argv[]){
 	for(int i = 0; i<length(indicesList); i++){
 		int indOfString = get(indicesList);
 		fprintf(out, "%s\n",arrayOfString[i]);
-		moveNext(L);
+		moveNext(indicesList);
 	}
 	
 	freeList(&indicesList);
