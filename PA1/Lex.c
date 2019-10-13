@@ -145,8 +145,17 @@ int main(int argc, char * argv[]){
 		   }
 	   }
    }
+	
 	printList(stdout, indicesList);
-	printList(out, indicesList);
+	
+	//Output to out
+	moveFront(indicesList);
+	for(int i = 0; i<length(indicesList); i++){
+		int indOfString = get(indicesList);
+		fprintf(out, "%s\n",arrayOfString[i]);
+		moveNext(L);
+	}
+	
 	freeList(&indicesList);
 	/* close files */
 	fclose(in);
