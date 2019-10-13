@@ -31,6 +31,7 @@ int main(){
 	   }else{
 		   moveFront(indicesList); //move to head to start comparint each one
 		   printf("#2\n");
+		   printf("Index is %d\n", index(indicesList));
 		   while(index(indicesList)<(length(indicesList) - 1)){
 			   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
 			   printf("#3\n");
