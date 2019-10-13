@@ -3,8 +3,8 @@
 #include<string.h>
 #include "List.h"
 
-int main(){
-
+#define MAX_LEN 160
+int main(){  
 int count = 5;
 char arrayOfString =[count][MAX_LEN];
 
