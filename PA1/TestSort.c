@@ -6,7 +6,7 @@
 #define MAX_LEN 160
 int main(){  
 int count = 5;
-char arrayOfString =[count][MAX_LEN];
+char arrayOfString[count][MAX_LEN];
 
 arrayOfString [1] = "One";
 
@@ -19,6 +19,4 @@ arrayOfString [4] = "Five"
 arrayOfString [5] = "Six"
 
 printf(arrayOfString[1]);
-
-
 }
