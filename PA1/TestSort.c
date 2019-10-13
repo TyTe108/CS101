@@ -19,6 +19,7 @@ int main(){
   strcpy(arrayOfString [5], "five");
 
   printf(arrayOfString[1]);
+  printf("\n");
  
   return(0);
 }
