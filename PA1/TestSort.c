@@ -31,7 +31,8 @@ int main(){
 	   }else{
 		   moveFront(indicesList); //move to head to start comparint each one
 		   printf("#2\n");
-		   do{
+		   int repeat = 1;
+		   while(repeat == 1){
 			   printf("Went into while loop\n");
 			   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
 			   printf("#3\n");
@@ -39,7 +40,8 @@ int main(){
 				   printf("#4\n");
 				   insertBefore(indicesList,i);
 				   printf("#5\n");
-				   moveBack(indicesList);
+				   //moveBack(indicesList);
+				   repeat =0;
 				   printf("#6\n");
 				   printf("Check Point #1: index [%d] with string of ", i);
 				   printf(arrayOfString[i]);
@@ -52,7 +54,8 @@ int main(){
 					   printf("#8\n");
 					   append(indicesList,i);
 					   printf("#9\n");
-					   moveBack(indicesList);
+					   //moveBack(indicesList);
+					   repeat = 0;
 					   printf("#10\n");
 					   printf("Check Point #2: index [%d] with string of ", i);
 					   printf(arrayOfString[i]);
@@ -63,13 +66,13 @@ int main(){
 					   printf("Check Point #3: index [%d] with string of ", i);
 					   printf(arrayOfString[i]);
 					   printf("\n");
-					   
+					   repeat = 1;
 					   printf("#11\n");
 					   moveNext(indicesList); //go to the next one
 					   printf("#12\n");
 				   }
 			   }
-		   }while(index(indicesList)<(length(indicesList)-1));
+		   }
 	   }
    }
 		 
