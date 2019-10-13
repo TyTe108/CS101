@@ -98,23 +98,25 @@ int main(int argc, char * argv[]){
 		//if indicesList is an empty list, just append the first index into it, no need to compare
 		   append(indicesList,i);
 		   printf("Empty list so just appended \n");
-	   }
-	   moveFront(indicesList); //move to head to start comparint each one
-	   while(index(indicesList)<length(indicesList)){
-		   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
-		   if (result >= 0){
-			   insertBefore(indicesList,i);
-		   }
-		   else{
-			   int ind = index(indicesList);
-			   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
-				   append(indicesList,i);
-			   }
+	   }else{
+		   moveFront(indicesList); //move to head to start comparint each one
+		   while(index(indicesList)<length(indicesList)){
+		   	int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
+		   	if (result >= 0){
+				insertBefore(indicesList,i);
+			}
 			   else{
-				   moveNext(indicesList); //go to the next one
+				   int ind = index(indicesList);
+				   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
+					   append(indicesList,i);
+					   moveback(indicesList);	   
+				   }
+				   else{
+					   moveNext(indicesList); //go to the next one
+				   }
 			   }
 		   }
-	   }   
+	   }
    }
 		 
    printList(stdout, indicesList);
