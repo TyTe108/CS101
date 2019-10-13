@@ -100,14 +100,13 @@ int main(int argc, char * argv[]){
 		   printf("Empty list so just appended \n");
 	   }
 	   moveFront(indicesList); //move to head to start comparint each one
-	   int ind = index(indicesList);
-	   while(ind<length(indicesList)){
+	   while(index(indicesList)<length(indicesList)){
 		   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
 		   if (result >= 0){
 			   insertBefore(indicesList,i);
 		   }
 		   else{
-			   ind = index(indicesList);
+			   int ind = index(indicesList);
 			   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
 				   append(indicesList,i);
 			   }
