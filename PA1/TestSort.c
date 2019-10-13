@@ -40,6 +40,9 @@ int main(){
 				   printf("#5\n");
 				   moveBack(indicesList);
 				   printf("#6\n");
+				   printf("STUCK AT: ");
+				   prrintf(arrayOfString[i]);
+				   printf("\n");
 			   }
 			   else{
 				   int ind = index(indicesList);
