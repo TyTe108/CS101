@@ -62,7 +62,7 @@ int main(){
 					   printf("#12\n");
 				   }
 			   }
-		   }while(index(indicesList)<(length(indicesList) - 1))
+		   }while(index(indicesList)<(length(indicesList) - 1));
 	   }
    }
 		 
