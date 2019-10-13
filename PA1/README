@@ -1,0 +1,26 @@
+  
+/*==========
+ *Tyler Te
+ *CruzID: tylim
+ *Assignment: PA1
+ *========== */
+ 
+README:
+
+List.h: The header file of List ADT. listObj is defined in header as well
+
+List.c: Where all the functions from List.h are defined. If you notice, I use "head" and "tail" instead of "front" and "back." 
+  I would like to apologize for the usage but I am more used to it being called that way.
+  
+ListClient.c provided on webpage: I used this to initially test on my List. And the result came out the same as the expected result.
+
+Lex.c: Lex is a little more messy than I wanted to be. But it works nevertheless. I had to open a file twice. First to count, and then to
+  tokenize it into a list. "int arrayOfString[]" contains each tokenized word/phrase/number. I then proceed to create a list "List indicesList" 
+  whose elements are the indices of the above string array.
+
+Makefile: Provided
+
+README: this file
+
+Message to professor or TA: It's trivial but I wish it was more clear that the array of string tokenized through File I/O is then sorted
+  in alphabetical order. I was a little on the slow side and took me longer than expected to figure out how it was sorted. 
