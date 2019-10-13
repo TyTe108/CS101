@@ -10,7 +10,7 @@ char arrayOfString[count][MAX_LEN];
 
 arrayOfString [1] = "One";
 
-arrayOfString= [2] = "Two"
+arrayOfString [2] = "Two"
 
 arrayOfString [3] = "Four"
 
