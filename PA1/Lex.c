@@ -97,6 +97,7 @@ int main(int argc, char * argv[]){
 	   if (length(indicesList) == 0){
 		//if indicesList is an empty list, just append the first index into it, no need to compare
 		   append(indicesList,i);
+		   print(" appended to an empty list""
 	   }else{
 		   moveFront(indicesList); //move to head to start comparint each one
 		   while(index(indicesList)<length(indicesList)){
