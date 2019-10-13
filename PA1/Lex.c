@@ -48,7 +48,7 @@ int main(int argc, char * argv[]){
      if (ch  == '\n'){
        count++;
      }
-   printf("count is %d\n", count);
+   //printf("count is %d\n", count);
 
    //Create an array of strings  size count 
    char arrayOfString[count][MAX_LEN];
@@ -119,7 +119,7 @@ int main(int argc, char * argv[]){
 			   }
 			   else{
 				   int ind = index(indicesList);
-				   printf("#7\n");
+				   //printf("#7\n");
 				   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
 					   //printf("#8\n");
 					   append(indicesList,i);
