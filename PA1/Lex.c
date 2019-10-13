@@ -109,7 +109,7 @@ int main(int argc, char * argv[]){
 				   int ind = index(indicesList);
 				   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
 					   append(indicesList,i);
-					   moveback(indicesList);	   
+					   moveBack(indicesList);	   
 				   }
 				   else{
 					   moveNext(indicesList); //go to the next one
