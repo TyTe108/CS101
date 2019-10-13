@@ -94,36 +94,28 @@ int main(int argc, char * argv[]){
 
    List indicesList = newList(); //indices list constructed
    for (i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
-	   int ind = index(indicesList);
-	   while(ind<length(indicesList)){  
-	   	if (length(indicesList) == 0){
-			//if indicesList is an empty list, just append the first index into it, no need to compare
-			append(indicesList,i);
-			printf("Empty list so just appended \n");
-		}else{
-			moveFront(indicesList); //move to head to start comparint each one
-			printf("Check 1\n");
-			int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
-			printf("Check 2\n");
-			if (result >= 0){
-				insertBefore(indicesList,i);
-				printf("Check 3\n");
-			}
-			else{
-				ind = index(indicesList);
-				printf("Check 4\n");
-				if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
-					append(indicesList,i);
-					printf("Check 5\n");
-				}
-				else{
-					moveNext(indicesList); //go to the next one
-					printf("Check 6\n");
-				}
-			}
-		}
-
+	   if (length(indicesList) == 0){
+		//if indicesList is an empty list, just append the first index into it, no need to compare
+		   append(indicesList,i);
+		   printf("Empty list so just appended \n");
 	   }
+	   moveFront(indicesList); //move to head to start comparint each one
+	   int ind = index(indicesList);
+	   while(ind<length(indicesList)){
+		   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
+		   if (result >= 0){
+			   insertBefore(indicesList,i);
+		   }
+		   else{
+			   ind = index(indicesList);
+			   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
+				   append(indicesList,i);
+			   }
+			   else{
+				   moveNext(indicesList); //go to the next one
+			   }
+		   }
+	   }   
    }
 		 
    printList(stdout, indicesList);
