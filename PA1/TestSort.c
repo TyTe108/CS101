@@ -27,22 +27,41 @@ int main(){
 	   if (length(indicesList) == 0){
 		//if indicesList is an empty list, just append the first index into it, no need to compare
 		   append(indicesList,i);
+		   printf("#1\n");
+		   printList(stdout, indicesList);
 	   }else{
 		   moveFront(indicesList); //move to head to start comparint each one
+		   printf("#2\n");
 		   while(index(indicesList)<length(indicesList)){
 			   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
+			   printf("#3\n");
 			   if (result >= 0){
+				   printf("#4\n");
 				   insertBefore(indicesList,i);
+				   printf("#5\n");
 				   moveBack(indicesList);
+				   printf("#6\n");
+				   printList(stdout, indicesList);
+				   printf("#7\n");
 			   }
 			   else{
 				   int ind = index(indicesList);
+				   printf("#8\n");
 				   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
+					   printf("#9\n");
 					   append(indicesList,i);
-					   moveBack(indicesList);	   
+					   printf("#10\n");
+					   moveBack(indicesList);
+					   printf("#11\n");
+					   printList(stdout, indicesList);
+					   printf("#12\n");
 				   }
 				   else{
+					   printf("#13\n");
 					   moveNext(indicesList); //go to the next one
+					   printf("#14\n");
+					   printList(stdout, indicesList);
+					   printf("#15\n");
 				   }
 			   }
 		   }
