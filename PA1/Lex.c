@@ -70,7 +70,7 @@ int main(int argc, char * argv[]){
       while( token!=NULL ){
          strcat(tokenlist, "   ");
          strcat(tokenlist, token);
-         strcat(tokenlist, "\n");
+         //strcat(tokenlist, "\n");
          n++;
          token = strtok(NULL, " \n");
       }
