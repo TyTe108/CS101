@@ -28,7 +28,6 @@ int main(){
 		//if indicesList is an empty list, just append the first index into it, no need to compare
 		   append(indicesList,i);
 		   printf("#1\n");
-		   printList(stdout, indicesList);
 	   }else{
 		   moveFront(indicesList); //move to head to start comparint each one
 		   printf("#2\n");
@@ -41,27 +40,21 @@ int main(){
 				   printf("#5\n");
 				   moveBack(indicesList);
 				   printf("#6\n");
-				   printList(stdout, indicesList);
-				   printf("#7\n");
 			   }
 			   else{
 				   int ind = index(indicesList);
-				   printf("#8\n");
+				   printf("#7\n");
 				   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
-					   printf("#9\n");
+					   printf("#8\n");
 					   append(indicesList,i);
-					   printf("#10\n");
+					   printf("#9\n");
 					   moveBack(indicesList);
-					   printf("#11\n");
-					   printList(stdout, indicesList);
-					   printf("#12\n");
+					   printf("#10\n");
 				   }
 				   else{
-					   printf("#13\n");
+					   printf("#11\n");
 					   moveNext(indicesList); //go to the next one
-					   printf("#14\n");
-					   printList(stdout, indicesList);
-					   printf("#15\n");
+					   printf("#12\n");
 				   }
 			   }
 		   }
