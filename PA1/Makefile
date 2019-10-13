@@ -19,6 +19,12 @@ ListClient.o : ListClient.c List.h
 
 List.o : List.c List.h
 	gcc -c -std=c99 -Wall List.c
+	
+TestSort : TestSort.o List.o
+	gcc -o TestSort TestSort.o List.o
+
+TestSort.o : TestSort.c List.h
+	gcc -c -std=c99 -Wall TestSort.c	
 
 clean :
 	rm -f Lex ListClient Lex.o ListClient.o List.o
