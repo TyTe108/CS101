@@ -45,7 +45,7 @@ int main(){
 				   printf("STUCK AT: index [%d] with string of ", i);
 				   printf(arrayOfString[i]);
 				   printf("\n");
-			   }while(index(indicesList)<(length(indicesList) - 1))
+			   }
 			   else{
 				   int ind = index(indicesList);
 				   printf("#7\n");
@@ -62,7 +62,7 @@ int main(){
 					   printf("#12\n");
 				   }
 			   }
-		   }
+		   }while(index(indicesList)<(length(indicesList) - 1))
 	   }
    }
 		 
