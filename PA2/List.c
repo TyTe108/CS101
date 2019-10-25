@@ -337,12 +337,12 @@ void delete(List L){
   }
 }
 
-// void printList(FILE* out, List L){
-//    for (Node n = L->head; n != NULL; n = n-> next){
-//     fprintf(out,"%d " , n->data);
-//   }
-//    //fprintf(out, "%d ",  front(L));
-// }
+void printList(FILE* out, List L){
+   for (Node n = L->head; n != NULL; n = n-> next){
+    fprintf(out,"%d " , n->data);
+  }
+   //fprintf(out, "%d ",  front(L));
+}
 
 
 
