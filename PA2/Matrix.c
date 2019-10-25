@@ -12,3 +12,10 @@ Entry newEntry(int i, double d) {
     temp->_d = d;
     return temp;
 }
+
+void freeEntry(Entry* eN) {
+    if( eN!=NULL && *eN!=NULL ){
+        free(*eN);
+        *eN = NULL;
+    }
+}
