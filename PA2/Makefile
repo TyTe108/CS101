@@ -7,7 +7,7 @@
 #------------------------------------------------------------------------------
 
 Sparse : Sparse.o Matrix.o
-	gcc -o Sparse Sparse.o List.o
+	gcc -o Sparse Sparse.o Matrix.o
 
 Sparse.o : Sparse.c Matrix.h
 	gcc -c -std=c99 -Wall Sparse.c
