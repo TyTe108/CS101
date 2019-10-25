@@ -6,16 +6,16 @@
 #	make MatrixTest	       make Sparse
 #------------------------------------------------------------------------------
 
-Sparse : Sparse.o Sparse.o
+Sparse : Sparse.o Matrix.o
 	gcc -o Sparse Sparse.o List.o
 
-Sparse.o : Sparse.c Sparse.h
+Sparse.o : Sparse.c Matrix.h
 	gcc -c -std=c99 -Wall Sparse.c
 
-MatrixTest : MatrixTest.o MatrixTestt.o
-	gcc -o MatrixTest MatrixTest.o List.o
+MatrixTest : MatrixTest.o Matrix.o
+	gcc -o MatrixTest MatrixTest.o Matrix.o
 
-MatrixTest.o : MatrixTest.c MatrixTest.h
+MatrixTest.o : MatrixTest.c Matrix.h
 	gcc -c -std=c99 -Wall MatrixTest.c
 
 ListTest: ListTest.o List.o
