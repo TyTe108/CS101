@@ -7,7 +7,7 @@ typedef struct EntryObj{
 }EntryObj;
 
 Entry newEntry(int i, double d) {
-    Entry temp = malloc(sizeof(EntryObj));
+    Entry temp = malloc(sizeof(EntryObj)); //Dynamic Memory #4
     temp->_i = i;
     temp->_d = d;
     return temp;
@@ -49,6 +49,64 @@ void freeMatrix(Matrix* pM){
   M->_a = NULL;
   free(*pM); //Dynamic Memory #1
   *pM = NULL;
+}
+
+int size(Matrix M){
+  return (M->_n);
+}
+
+int NNZ(Matrix M){
+  return (M->_nnz);
+}
+
+int equals(Matrix A, Matrix B){
+  if ((A->_n) != (B->_n) || (A->_nnz) != (B->_nnz)){
+    return 0;
+  }else{
+    //COME BACK LATER: TAKE CARE OF COMPARISON
+    
+    return 1;
+  }
+}
+
+void makeZero(Matrix M){
+  
+}
+
+// changeEntry()
+// Changes the ith row, jth column of M to the value x.
+// Pre: 1<=i<=size(M), 1<=j<=size(M)
+void changeEntry(Matrix M, int i, int j, double x){
+  //Error handling
+  if(i < 1){
+    printf("Error: calling changeEntry(Matrix M, int i, int j, double x) function on i < 1. \n");
+    return;
+  }
+  if(j < 1){
+    printf("Error: calling changeEntry(Matrix M, int i, int j, double x) function on j < 1. \n");
+    return;
+  }
+  int s = size(M);
+  if(i > s){
+    printf("Error: calling changeEntry(Matrix M, int i, int j, double x) function on i > size of M. \n");
+    return;
+  }
+  if(j > s){
+    printf("Error: calling changeEntry(Matrix M, int i, int j, double x) function on j > size of M. \n");
+    return;
+  }
+  //============
+  List targetList = (M->_a)[i];
+  //Iterate through the list
+  moveFront(targetList);
+  
+  //If List is empty...
+  if(length(targetList) == 0){
+    Entry insertThis = newEntry(j, x); //Might need to keep track of this?...
+    append(targetList,insertThis); 
+  }
+  //if not empty
+  
 }
 
 
