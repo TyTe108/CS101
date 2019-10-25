@@ -1,41 +1,35 @@
 #------------------------------------------------------------------------------
-#  Makefile for CMPS 101 Programming Assignment 2
+# Makefile for CSE 101 Programming Assignment 2
 #
-#  make                     makes MatrixClient
-#  make clean               removes all binaries
-#  make memcheck            runs Matrix Client under valgrind
+#       make                   makes Lex
+#       make ListClient        makes ListTest
+#	make MatrixTest	       make Sparse
 #------------------------------------------------------------------------------
 
-CLIENT         = MatrixClient
-ADT1           = Matrix
-ADT2           = List
-SOURCE         = $(CLIENT).c
-OBJECT         = $(CLIENT).o
-ADT1_SOURCE    = $(ADT1).c
-ADT1_OBJECT    = $(ADT1).o
-ADT1_HEADER    = $(ADT1).h
-ADT2_SOURCE    = $(ADT2).c
-ADT2_OBJECT    = $(ADT2).o
-ADT2_HEADER    = $(ADT2).h
-COMPILE        = gcc -c -std=c99 -Wall
-LINK           = gcc -o
-REMOVE         = rm -f
-MEMCHECK       = valgrind --leak-check=full
+Sparse : Sparse.o Sparse.o
+	gcc -o Sparse Sparse.o List.o
 
-$(CLIENT) : $(OBJECT) $(ADT1_OBJECT) $(ADT2_OBJECT)
-	$(LINK) $(CLIENT) $(OBJECT) $(ADT1_OBJECT) $(ADT2_OBJECT)
+Sparse.o : Sparse.c Sparse.h
+	gcc -c -std=c99 -Wall Sparse.c
 
-$(OBJECT) : $(SOURCE) $(ADT1_HEADER) $(ADT2_HEADER)
-	$(COMPILE) $(SOURCE)
+MatrixTest : MatrixTest.o MatrixTestt.o
+	gcc -o MatrixTest MatrixTest.o List.o
 
-$(ADT1_OBJECT) : $(ADT1_SOURCE) $(ADT1_HEADER)
-	$(COMPILE) $(ADT1_SOURCE)
+MatrixTest.o : MatrixTest.c MatrixTest.h
+	gcc -c -std=c99 -Wall MatrixTest.c
 
-$(ADT2_OBJECT) : $(ADT2_SOURCE) $(ADT2_HEADER)
-	$(COMPILE) $(ADT2_SOURCE)
+ListTest: ListTest.o List.o
+	gcc -o ListTest ListTest.o List.o
 
+ListTest.o : ListTest.c List.h
+	gcc -c -std=c99 -Wall ListTest.c
+	
+Matrix.o : Matrix.c Matrix.h List.h
+	gcc -c -std=c99 -Wall Matrix.c	
+	
+List.o : List.c List.h
+	gcc -c -std=c99 -Wall List.c
+	
 clean :
-	$(REMOVE) $(CLIENT) $(OBJECT) $(ADT1_OBJECT) $(ADT2_OBJECT)
-
-memcheck : $(CLIENT)
-	$(MEMCHECK) $(CLIENT)
+	rm -f Sparse MatrixTest ListTest Sparse.o MatrixTest.o ListTest.o List.o
+ 
