@@ -1,8 +1,8 @@
 #------------------------------------------------------------------------------
 # Makefile for CSE 101 Programming Assignment 2
 #
-#       make                   makes Lex
-#       make ListClient        makes ListTest
+#       make                   
+#       makes ListTest
 #	make MatrixTest	       make Sparse
 #------------------------------------------------------------------------------
 
