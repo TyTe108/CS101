@@ -38,7 +38,7 @@ List newList(void){
     L->tail = NULL;
     L->length = 0;
     L->cursor = NULL;
-    //L->cursorIndex = -1;
+    L->cursorIndex = -1;
     return(L);
 }
 
@@ -56,23 +56,25 @@ int length(List L){
 
 int index(List L){
   // return (L->cursorIndex);
-  int cursorIndex = 0;
-  Node walker = L->head;
+//   int cursorIndex = 0;
+//   Node walker = L->head;
 
-  if(L->cursor == NULL){
-    return -1;
-  }else{
-    while(walker != L->cursor){
-      if (walker == NULL){
-	printf("Error calling index(List L): The cursor is not pointing to anything inside the List!\n");
-      }
+//   if(L->cursor == NULL){
+//     return -1;
+//   }else{
+//     while(walker != L->cursor){
+//       if (walker == NULL){
+// 	printf("Error calling index(List L): The cursor is not pointing to anything inside the List!\n");
+//       }
       
-      cursorIndex = cursorIndex + 1;
-      walker = walker->next;
+//       cursorIndex = cursorIndex + 1;
+//       walker = walker->next;
 
-    }
-    return cursorIndex;
-  }
+//     }
+//     return cursorIndex;
+	return (L->cursorIndex);
+	
+}
 
 
 } // Returns index of cursor element if defined, -1 otherwise.
@@ -126,7 +128,7 @@ void moveFront(List L){
         exit(1);
     }
     L->cursor = L->head;
-    // L->cursorIndex = 0;
+    L->cursorIndex = 0;
 }
 
 void moveBack(List L){
@@ -135,7 +137,7 @@ void moveBack(List L){
         exit(1);
     }
     L->cursor = L->tail;
-    // L->cursorIndex = (L->length - 1);
+    L->cursorIndex = (L->length - 1);
 }
 
 void movePrev(List L){
@@ -144,12 +146,12 @@ void movePrev(List L){
   int cursorIndex = index(L);
 
     if (cursorIndex != -1 && cursorIndex != 0){ // If cursor is defined and not at front, move cursor one step toward the front
-      //L->cursorIndex = (L->cursorIndex) - 1;
+      	L->cursorIndex = (L->cursorIndex) - 1;
         L->cursor = (L->cursor)->prev;
     }
     else if(cursorIndex != -1 &&  cursorIndex == 0 ){ //if cursor is defined and at front, cursor becomes undefined
         //do nothing
-        //L->cursorIndex = -1;
+        L->cursorIndex = -1;
         L->cursor = NULL;
     }
 }
@@ -158,11 +160,11 @@ void movePrev(List L){
 void moveNext(List L){
     int cursorIndex = index(L);
     if (cursorIndex !=-1 && cursorIndex != (L->length -1)){
-      //cursorIndex = (cursorIndex) + 1;
+        cursorIndex = (cursorIndex) + 1;
         L->cursor = (L->cursor)->next;
     }
     else if(cursorIndex != -1 &&  cursorIndex == (L->length -1) ){
-      //L->cursorIndex = -1;
+        L->cursorIndex = -1;
         L->cursor = NULL;
     }
 } // If cursor is defined and not at back, move cursor one
@@ -179,9 +181,13 @@ void prepend(List L, void* data){
   }
   else  if(L->length > 0){ //
     Node saveCursor = L->cursor;
+    int saveIndex = index(L);		  
     moveFront(L); 
     insertBefore(L, data);
-    L->cursor = saveCursor;   
+    L->cursor = saveCursor;
+    if(saveIndex != -1){
+			(L->cursorIndex) = saveIndex + 1; 
+    }		  
   }
 } 
 
@@ -193,9 +199,11 @@ void append(List L, void* data){
     L->length++;
   }else  if(L->length > 0){
     Node saveCursor = L->cursor; 
+		int saveIndex = index(L);		
     moveBack(L); 
     insertAfter(L, data);
     L->cursor = saveCursor;
+		L->cursorIndex = saveCursor;
   }
 }
 
@@ -222,7 +230,7 @@ void insertBefore(List L, void* data){
       L->head = insertThis;
       }
     L->length++;
-  }
+	}
 
 }
 
