@@ -1,7 +1,7 @@
 /*==========
  *Tyler Te
  *CruzID: tylim
- *Assignment: PA1
+ *Assignment: PA2
  *========== */
 
 #include <stdlib.h>
