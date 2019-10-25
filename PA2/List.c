@@ -9,12 +9,12 @@
 
 
 typedef struct NodeObj{
-    int data;
+    void* data;
     struct NodeObj* next;
     struct NodeObj* prev;
 } NodeObj;
 
-Node newNode(int data) {
+Node newNode(void* data) {
     Node temp = malloc(sizeof(NodeObj));
     temp->data = data;
     temp->next = NULL;
@@ -77,7 +77,7 @@ int index(List L){
 
 } // Returns index of cursor element if defined, -1 otherwise.
 
-int front(List L){
+void* front(List L){
     if(length(L) <= 0){
         printf("List Error: calling Front(List L) on an empty List\n");
 	exit(1);
@@ -85,7 +85,7 @@ int front(List L){
     return (L->head->data);
 }
 
-int back(List L){
+void* back(List L){
     if(length(L) <= 0){
         printf("List Error: calling Back(List L) on an empty List\n");
         exit(1);
@@ -94,7 +94,7 @@ int back(List L){
 }
 
 
-int get(List L){
+void* get(List L){
   int i = index(L);
     if (i < 0 ){
         printf("List Error: calling get(List L) on a negative index\n");
@@ -108,34 +108,6 @@ int get(List L){
     return (L->cursor->data);
 
 }
-
-int equals(List A, List B){
-    Node a = A->head;
-    Node b = B->head;
-
-
-    if( A==NULL || B==NULL ){
-        printf("List Error: calling equals() on NULL List reference\n PS: How did it pass the front tests then?..\n");
-        return(0);
-    }
-
-
-    if (A->length != B->length){ //length has to be the same
-      return 0;
-    }
-
-    while (a != NULL && b != NULL){
-        if (a->data != b->data){
-            return 0;
-        }
-        a = a->next;
-        b = b->next;
-    }
-
-    return(1);
-
-}
-
 
 // Manipulation procedures ----------------------------------------------------
 void clear(List L){
@@ -198,7 +170,7 @@ void moveNext(List L){
 //  // back, cursor becomes undefined; if cursor is undefined
 //   // do nothing
 
-void prepend(List L, int data){
+void prepend(List L, void* data){
   if(L->length == 0){
     Node prependThis = newNode(data); //Make a new node to the list
     L->head = prependThis;
@@ -213,7 +185,7 @@ void prepend(List L, int data){
   }
 } 
 
-void append(List L, int data){
+void append(List L, void* data){
   if(L->length == 0){
     Node appendThis = newNode(data); //Make a new node to the list
     L->head = appendThis;
@@ -227,7 +199,7 @@ void append(List L, int data){
   }
 }
 
-void insertBefore(List L, int data){
+void insertBefore(List L, void* data){
   if(length <= 0){
     printf("Calling insertBefore(List L, int data) function on an empty L.\n");
     return;
@@ -254,7 +226,7 @@ void insertBefore(List L, int data){
 
 }
 
-void insertAfter(List L, int data){
+void insertAfter(List L, void* data){
   if(length <= 0){
     printf("Calling insertBefore(List L, int data) function on an empty L.\n");
     return;
@@ -365,22 +337,13 @@ void delete(List L){
   }
 }
 
-void printList(FILE* out, List L){
-   for (Node n = L->head; n != NULL; n = n-> next){
-    fprintf(out,"%d " , n->data);
-  }
-   //fprintf(out, "%d ",  front(L));
-}
+// void printList(FILE* out, List L){
+//    for (Node n = L->head; n != NULL; n = n-> next){
+//     fprintf(out,"%d " , n->data);
+//   }
+//    //fprintf(out, "%d ",  front(L));
+// }
 
-List copyList(List L){
-    Node walker = L->head;
-    List copiedList = newList();  
-    while (walker != NULL){
-        int copyThis = walker->data;
-        walker = walker->next;
-        append(copiedList, copyThis);
-    }
-    return(copiedList);
-}
+
 
 //...
