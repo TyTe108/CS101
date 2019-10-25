@@ -21,7 +21,7 @@ typedef struct ListObj{
     Node head;
     Node tail;
     Node cursor;
-  //int cursorIndex;
+    int cursorIndex;
     int length;
 };
 
