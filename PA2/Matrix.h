@@ -8,7 +8,7 @@ typedef struct EntryObj* Entry;
 typedef struct MatrixObj* Matrix;
 
 struct MatrixObj{
-    List* a;
+    List* _a;
     int _n; //nxn
     int _nnz; //number of non-zero elements
     
