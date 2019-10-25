@@ -104,6 +104,18 @@ void changeEntry(Matrix M, int i, int j, double x){
   if(length(targetList) == 0){
     Entry insertThis = newEntry(j, x); //Might need to keep track of this?...
     append(targetList,insertThis); 
+  }else{
+    //Loop through list to find the entry
+    int repeat = 1;
+    while(repeat == 1){ //Loop through List
+      Entry currentEntry = get(targetList);
+      int entryCol = currentEntry->_i;
+      
+      
+      
+      
+    }
+    
   }
   //if not empty
   
