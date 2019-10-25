@@ -11,6 +11,11 @@
 
 #define MAX_LEN 160
 
+
+
+
+
+
 int main(int argc, char * argv[]){
    int n, count=0;
    FILE *in, *out;
@@ -43,7 +48,7 @@ int main(int argc, char * argv[]){
      if (ch  == '\n'){
        count++;
      }
-   printf("count is %d\n", count);
+   //printf("count is %d\n", count);
 
    //Create an array of strings  size count 
    char arrayOfString[count][MAX_LEN];
@@ -65,19 +70,21 @@ int main(int argc, char * argv[]){
       while( token!=NULL ){
          strcat(tokenlist, "   ");
          strcat(tokenlist, token);
-         strcat(tokenlist, "\n");
+         //strcat(tokenlist, "\n");
          n++;
          token = strtok(NULL, " \n");
       }
       	
 	strcpy(arrayOfString[i],tokenlist);
-	printf(arrayOfString[i]);
-	printf("\n");
+	//printf("The arrayOfString are: \n");
+	//printf(arrayOfString[i]);
+	//printf("\n");
 	i++;
 	
-      // fprintf(out, "line %d contains %d token%s: \n", count, n, n==1?"":"s");
-	// fprintf(out, "%s\n", tokenlist);
-      //fprintf(out, "count: %d \n", count);     
+//       fprintf(out, "line %d contains %d token%s: \n", count, n, n==1?"":"s");
+//       fprintf(out, "%s\n", tokenlist);
+//       fprintf(out, "count: %d \n", count);
+
    }
 
 
@@ -86,30 +93,73 @@ int main(int argc, char * argv[]){
    //the array.  Using the above input file as an example we would have.
 
    List indicesList = newList(); //indices list constructed
-   
-   for (i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
-     //each string to sort it by alphabetical order
-     if (i == 0){
-       //if first add, just add because the list empty anyways, nothing to compare to
-       append(indicesList, i); //append the first index 
-       
-     }else{
-       //if not the first one, start comparing
-       int result = strcmp(arrayOfString[i-1], arrayOfString[i]);
-       if (result < 0){
-	 //strcmp(s1,s2)<0is true if and only if s1 comes before s2
-	 
-       }
-     }
+   for (int i = 0; i < count; i++){ //make i 0 again to reuse, now iterate through
+	   if (length(indicesList) == 0){
+		//if indicesList is an empty list, just append the first index into it, no need to compare
+		   append(indicesList,i);
+// 		   printf("#1\n");
+	   }else{
+		   moveFront(indicesList); //move to head to start comparint each one
+// 		   printf("#2\n");
+		   int repeat = 1;
+		   while(repeat == 1){
+// 			   printf("Went into while loop\n");
+			   int result = strcmp(arrayOfString[get(indicesList)], arrayOfString[i]);
+// 			   printf("#3\n");
+			   if (result >= 0){
+// 				   printf("#4\n");
+				   insertBefore(indicesList,i);
+// 				   printf("#5\n");
+				   //moveBack(indicesList);
+				   repeat =0;
+// 				   printf("#6\n");
+// 				   printf("Check Point #1: index [%d] with string of ", i);
+// 				   printf(arrayOfString[i]);
+// 				   printf("\n");
+			   }
+			   else{
+				   int ind = index(indicesList);
+				   //printf("#7\n");
+				   if (ind == length(indicesList)-1){ //if tail, just insertAfter the tail
+					   //printf("#8\n");
+					   append(indicesList,i);
+					   //printf("#9\n");
+					   //moveBack(indicesList);
+					   repeat = 0;
+					   //printf("#10\n");
+					   //printf("Check Point #2: index [%d] with string of ", i);
+					   //printf(arrayOfString[i]);
+					   //printf("\n");
+					   
+				   }
+				   else{
+					   //printf("Check Point #3: index [%d] with string of ", i);
+					   //printf(arrayOfString[i]);
+					   //printf("\n");
+					   repeat = 1;
+					   //printf("#11\n");
+					   moveNext(indicesList); //go to the next one
+					   //printf("#12\n");
+				   }
+			   }
+		   }
+	   }
    }
-   
-   freeList(&indicesList);
-
-   
-   /* close files */
-
-   fclose(in);
-   fclose(out);
+	
+	printList(stdout, indicesList);
+	
+	//Output to out
+	moveFront(indicesList);
+	for(int i = 0; i<length(indicesList); i++){
+		int indOfString = get(indicesList);
+		fprintf(out, "%s\n",arrayOfString[indOfString]);
+		moveNext(indicesList);
+	}
+	
+	freeList(&indicesList);
+	/* close files */
+	fclose(in);
+	fclose(out);
 
    return(0);
 }
