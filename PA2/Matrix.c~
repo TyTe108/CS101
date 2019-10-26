@@ -190,30 +190,14 @@ Matrix sum(Matrix A, Matrix B){
     printf("WARNING: Calling Matrix scalarMult(double x, Matrix A) on empty Matrix A\n");  
     return NULL;
   }
-  
-  int Annz = A->_nnz;
-  int Bnnz = B->_nnz;
+  for (int i = 1; i<=An; i++){
+    List Al = A->_a[i];
+    List Bl = B->a[i];
+    
+    while(index(Al)>=0   )
 
-  if(Annz >= Bnnz){
-    int i = 1; //For A
-    int j = 1; //For B
-    while (Annz > 0){
-      List Al = A->_a[i];
-      List Bl = B->_a[j];
-
-      int ACol = get[Al];
-      int BCol = get[Bl];
-
-      //if i == j && ACol == BCol
-
-      
-    }
-
-      
-  }else{
-	
-    }
   }
+
 }
 
 
