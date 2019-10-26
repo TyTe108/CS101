@@ -206,7 +206,7 @@ Matrix sum(Matrix A, Matrix B){
 
       //if i == j && ACol == BCol
 
-      //...
+      //......
     }
 
       
