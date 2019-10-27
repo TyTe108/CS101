@@ -187,35 +187,95 @@ Matrix sum(Matrix A, Matrix B){
   int An = size(A);
   int Bn = size(B);
   if (An != Bn){
-    printf("WARNING: Calling Matrix scalarMult(double x, Matrix A) on empty Matrix A\n");  
+    printf("WARNING: Calling Matrix aum(Matrix A, Matrix B) when one of the matrices is empty\n");  
     return NULL;
-  }
+  }  
   int i = 1;
-	int j = 1;
-	List* AL = A->_a;
-	List* BL = B->_a;
+  int j = 1;
+  List* AL = A->_a;
+  List* BL = B->_a;
 	
-	int Annz = A->_nnz;
-	int Bnnz = B->_nnz;
+  int Annz = A->_nnz;
+  int Bnnz = B->_nnz;
+  Matrix M = newMatrix(An);
 	
-	while (Annz > 0 || Bnnz > 0){
-		Entry entryA = NULL;
-		Entry entryB = NULL;
+  while (Annz > 0 || Bnnz > 0){
+  		Entry entryA = NULL;
+  		Entry entryB = NULL;
 		
-		if (length(AL[i]) > 0){
-			Entry entryA = get(AL[i]);	
-		}
-		if (length(BL[j]) > 0){
-			Entry entryB = get(B[j]);
-		}
+  		if (AL[i] =  length(AL[i]) > 0 && Annz > 0){ //Don't bother to get when Annz is already 0, meaning no more non-zero element
+  		  //to obtain from
+  		  if(index(AL[i])<0){
+  		    moveFront(AL[i]); // Move cursor to the front if it's never initialized
+  		  }
+  		  Entry entryA = get(AL[i]);
+  		}
+  		if (length(BL[j]) > 0 && Bnnz > 0){ //same explanation as AL above
+  		  if(index(BL[i])<0){
+  		    moveFront(BL[j]); // Move cursor to the front if it's never initialized
+  		  }
+  		  Entry entryB = get(B[j]);
+  		}
+  		//Both are NULL
+  		if (entryA == NULL && entryB == NULL){
+  		  i++; //Can be more efficient by preventing increment when nnz is already 0
+  		  j++;
+
+  		}else if(entryA == NULL && B != NULL){ //A is NULL B is not
+  		  i++;
+  		  int BCol = entryB->_i;
+  		  double BVal = entryB ->_d;
+  		  changeEntry(M, j, BCol, BVal);
+  		  Bnnz--;
+		  
+  		  if(index(Bl) < length(Bl)){
+  		    moveNext(Bl); //Next entry in the list
+  		  }else{
+  		    j++; //End of list, next one in the array
+  		  }
+	   
+  		}else if (entryA != NULL && B == NULL){//B is NULL, A is not
+  		  j++;
+  		  int ACol = entryA->_i;
+  		  double AVal = entryB->_d;
+  		  changeEntry(M, i, ACol, AVal);
+  		  Annz--;
+
+  		  if(index(Al) < length(Al)){
+  		    moveNext(Al); //Next entry in the list
+  		  }else{
+  		    i++; //End of list, next one in the array
+  		  }
+                                                 
+  		}else if(entryA != NULL && B != NULL){ //Both are not NULL, meaning there are entries, I think most of the time this happens
+  		  //Check if they are in the same coloumn and row
+
+		  if (i == j){
+		    int ACol = entryA->_i;
+		    int BCol = entryB->_i;
+		  
+		    if (ACol == BCol){
+		      double AVal = entryA->_d;
+		      double BVal = entryB->_d;
+		      double sum = AVal + BVal;
+		    
+		      changeEntry(M, i, sum);
+		    }else if(ACol > BCol){
+		      
+		    }
+		  }
+
+
+		  
+		  
+  		}
+  }
+
+		 
 		
-		//Both are NULL
-		//A is NULL, B is not
-		//B is NULL, A is not
-		//Both are not null
 		
-	}
 }
+
 
 
 // printMatrix()
