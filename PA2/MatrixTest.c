@@ -35,10 +35,10 @@ int main(){
    printMatrix(stdout, C);
    printf("\n");
 
-   /* D = sum(A, B); */
-   /* printf("%d\n", NNZ(D)); */
-   /* printMatrix(stdout, D); */
-   /* printf("\n"); */
+   D = sum(A, B);
+   printf("%d\n", NNZ(D));
+   printMatrix(stdout, D);
+   printf("\n");
 
    /* E = diff(A, A); */
    /* printf("%d\n", NNZ(E)); */
