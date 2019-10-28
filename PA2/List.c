@@ -104,20 +104,20 @@ void clear(List L){
 }
 
 void moveFront(List L){
-    if (L->length <= 0){
-        printf("Error: calling moveFront(List L) function on empty list. \n");
-        exit(1);
-    }
+  if (L->length <= 0){
+    printf("Error: calling moveFront(List L) function on empty list. \n");
+    exit(1);
+  }
     L->cursor = L->head;
     L->cursorIndex = 0;
     // printf("Move front is called \n");
 }
 
 void moveBack(List L){
-    if (L->length <= 0){
-        printf("Error: calling moveBack(List L) function on empty list. \n");
-        exit(1);
-    }
+  if (L->length <= 0){
+    printf("Error: calling moveBack(List L) function on empty list. \n");
+    exit(1);
+  }
     L->cursor = L->tail;
     L->cursorIndex = (L->length - 1);
     // printf("Went in here...\n");

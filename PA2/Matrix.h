@@ -38,7 +38,7 @@ int equals(Matrix A, Matrix B);
 // Manipulation procedures-----------------------------
 // makeZero()
 // Re-sets M to the zero Matrix.
- /* void makeZero(Matrix M);  */
+ void makeZero(Matrix M);
 
 // changeEntry()
 // Changes the ith row, jth column of M to the value x.
@@ -67,7 +67,7 @@ void changeEntry(Matrix M, int i, int j, double x);
 // diff()
 // Returns a reference to a new Matrix object representing A-B.
 // pre: size(A)==size(B)
-/* Matrix diff(Matrix A, Matrix B); */
+Matrix diff(Matrix A, Matrix B);
 
 // product()
 // Returns a reference to a new Matrix object representing AB

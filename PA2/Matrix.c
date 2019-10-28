@@ -45,6 +45,8 @@ void freeMatrix(Matrix* pM){
     return;
   }
 
+  makeZero(*pM);
+
   int n = M->_n;
   for (int i = 1; i<=n; i++){
     List freeThis = M->_a[i];
@@ -77,7 +79,18 @@ int equals(Matrix A, Matrix B){
 }
 
 void makeZero(Matrix M){
-  
+  int n = M->_n;
+  for (int i = 1; i <= n; i++){ //can be more efficient but will deal with it later
+    List L = M->_a[i];
+    
+    //nnz related fix, need to use delete from List
+    if (length(L)> 0){
+      for(moveFront(L); index(L)>= 0; moveNext(L)){
+	Entry e = get(L);
+	freeEntry(&e);
+      }
+    }
+  }
 }
 
 // changeEntry()
@@ -103,7 +116,17 @@ void changeEntry(Matrix M, int i, int j, double x){
     return;
   }
   //============
+
+  if(x==0){
+    //printf("INFINITY... \n");
+    return;
+  }
+
   List targetList = (M->_a)[i];
+  /* int indexB4Insertion  = index(targetList); */
+  /* printf("Index Before Insertion: %d\n", indexB4Insertion); */
+  
+
 
   //If List is empty...
   if(length(targetList) == 0){
@@ -137,6 +160,7 @@ void changeEntry(Matrix M, int i, int j, double x){
 	Entry insertThis = newEntry(j, x); //Dynamic created, keep track for leaks
 	int ind = index(targetList);
 	if(ind == length(targetList)-1){
+	  //....
 	  append(targetList, insertThis);
 	  if(x != 0){
 	    (M->_nnz)++; //Keeping track of non-zero elements
@@ -149,6 +173,10 @@ void changeEntry(Matrix M, int i, int j, double x){
       }
     }
   }
+
+  //int indexAfterInsertion  = index(targetList);
+  //printf("Index After Insertion: %d\n", indexAfterInsertion);
+  
 }
 
 // scalarMult()
@@ -194,33 +222,56 @@ Matrix sum(Matrix A, Matrix B){
   int j = 1;
   List* AL = A->_a;
   List* BL = B->_a;
-	
+  
   int Annz = A->_nnz;
   int Bnnz = B->_nnz;
   Matrix M = newMatrix(An);
-	
-  while (Annz > 0 || Bnnz > 0){
+
+
+  //Make sure to set every index in the front before anything, index might be all
+  //over the places
+
+  for(int k = 1; k <= An; k++){
+    if(length(AL[k]) > 0){
+  	moveFront(AL[k]);
+    }
+    if(length(BL[k])> 0){
+  	moveFront(BL[k]);
+      }
+  }      
+  
+  
+
+  while (Annz > 0 || Bnnz > 0){ //Will stop the moment non zero elements in both Matrix are summed
+    // printf("ANNZ is: %d \n", Annz);
+    // printf("BNNZ is: %d \n", Bnnz);
   		Entry entryA = NULL;
   		Entry entryB = NULL;
 		
   		if (length(AL[i]) > 0 && Annz > 0){ //Don't bother to get when Annz is already 0, meaning no more non-zero element
-  		  //to obtain from
-  		  if(index(AL[i])<0){
-  		    moveFront(AL[i]); // Move cursor to the front if it's never initialized
-  		  }
+		  //to obtain from
+		  //printf("A is not empty \n");
+		  // printf("Index of A in the beginning is: %d\n", index(AL[i]));
+  		  /* if(index(AL[i])<0){ */
+  		  /*   moveFront(AL[i]); // Move cursor to the front if it's never initialized */
+  		  /* } */
   		  entryA = get(AL[i]);
   		}
   		if (length(BL[j]) > 0 && Bnnz > 0){ //same explanation as AL above
-  		  if(index(BL[j])<0){
-  		    moveFront(BL[j]); // Move cursor to the front if it's never initialized
-  		  }
+		  // printf("B is not empty \n");
+		  //printf("Index of B in the beginning is: %d\n", index(BL[j]));
+		  /* if(index(BL[j])<0){ */
+  		  /*   moveFront(BL[j]); // Move cursor to the front if it's never initialized */
+  		  /* } */
 		  entryB = get(BL[j]);
+		  //printf("BVal in begin: %.1f \n", entryB->_d);
   		}
   		//Both are NULL
   		if (entryA == NULL && entryB == NULL){
   		  i++; //Can be more efficient by preventing increment when nnz is already 0
   		  j++;
-
+		  // printf("Both entryA && entryB == NULL \n");
+		  //printf("%d \n", i);
   		}else if(entryA == NULL && entryB != NULL){ //A is NULL B is not
   		  i++;
   		  int BCol = entryB->_i;
@@ -233,6 +284,7 @@ Matrix sum(Matrix A, Matrix B){
   		  }else{
   		    j++; //End of list, next one in the array
   		  }
+		  //printf("entryA == NULL && entryB ==NULL  \n");
 	   
   		}else if (entryA != NULL && entryB == NULL){//B is NULL, A is not
   		  j++;
@@ -245,21 +297,28 @@ Matrix sum(Matrix A, Matrix B){
   		  }else{
   		    i++; //End of list, next one in the array
   		  }
+		  // printf("entryA != NULL && entryB == NULL  \n");
                                                  
   		}
 		else if(entryA != NULL && B != NULL){ //Both are not NULL, meaning there are entries, I think most of the time this happens
-  		  //Check if they are in the same coloumn and row
+		  //Check if they are in the same coloumn and row
+		 
 
 		  if (i == j){ //i & j are rows
 		    int ACol = entryA->_i;
 		    int BCol = entryB->_i;
+		    //printf(" ACol:%d  BCol:  %.d\n", ACol, BCol);
 		  
 		    if (ACol == BCol){
+		      //printf(" ACol:%d ==  BCol:  %.d\n", ACol, BCol);
 		      double AVal = entryA->_d;
 		      double BVal = entryB->_d;
 		      double sum = AVal + BVal;
 		    
+		      // printf("%.1f + %.1f\n", AVal, BVal);
+
 		      changeEntry(M, i,BCol,  sum);
+		      
 		      Annz--;
 		      Bnnz--;
 		      
@@ -273,7 +332,10 @@ Matrix sum(Matrix A, Matrix B){
 		      }else{
 			j++; //End of list, next one in the array
 		      }
+		      //printf("ROWS AND COLS ARE == all around Row: %d, Col: %d \n ", i, ACol);
 		    }else if(ACol > BCol){
+		      //printf("ACol:%d >   BCol:  %.d\n", ACol, BCol);
+		      
 		      int BCol = entryB->_i;
 		      double BVal = entryB->_d;
 		      changeEntry(M, j, BCol,  BVal); 
@@ -284,7 +346,9 @@ Matrix sum(Matrix A, Matrix B){
 		      }else{
 			j++; //End of list, next one in the array
 		      }
+		      //printf("Same row but different col where ACol > BCol  \n");
 		    }else if (ACol < BCol){
+		      //printf("ACol:%d <  BCol:  %.d\n", ACol, BCol);
 		      int ACol = entryA->_i;
 		      double AVal = entryA->_d;
 		      changeEntry(M, i, ACol, AVal);
@@ -296,8 +360,9 @@ Matrix sum(Matrix A, Matrix B){
 		      }else{
 			i++; //End of list, next one in the array
 		      }
-
+		      // printf("Same row but different col where ACol <  BCol  \n");
 		    }
+
 
 		  }else if(i<j){ //Means A is behind, so B is probably empty or reached the end
 		    int ACol = entryA->_i;
@@ -319,10 +384,11 @@ Matrix sum(Matrix A, Matrix B){
 		    if(index(BL[j]) < length(BL[j])-1){
 		      moveNext(BL[j]); //Next entry in the list
 		    }else{
-		      i++; //End of list, next one in the array
+		      j++; //End of list, next one in the array
 		    }
+		    
 		  }
-			   
+		     
   		}
   }
   return M;
@@ -330,6 +396,16 @@ Matrix sum(Matrix A, Matrix B){
 }
 
 
+Matrix diff(Matrix A, Matrix B){
+  Matrix BNeg = NULL;
+  Matrix M;
+  
+  BNeg = scalarMult(-1, B);
+  M = sum(A, BNeg);
+  freeMatrix(&BNeg);
+
+  return M;
+}
 
 // printMatrix()
 // Prints a string representation of Matrix M to filestream out. Zero rows
@@ -338,27 +414,30 @@ Matrix sum(Matrix A, Matrix B){
 // list of pairs "(col, val)" giving the column numbers and non-zero values
 // in that row. The double val will be rounded to 1 decimal point.
 void printMatrix(FILE* out, Matrix M){
+  if(M->_nnz == 0){
+    //fprintf(out, "ZERO MATRICES \n");
+    return;
+  }
+
   int n = (M->_n);
   for (int i = 1; i<=n; i++){  
     List L = M->_a[i];
-
     if(length(L) != 0){ //do not approach an empty list
       fprintf(out, "%d: ", i);
       for(moveFront(L); index(L)>=0; moveNext(L)){
-	
 	Entry thisEntry = get(L);
 	int entryColVal = thisEntry->_i;
 	double entryElemVal = thisEntry->_d;
   
-	if(entryElemVal != 0){ //only print non-zero elements
+	//	if(entryElemVal != 0){ //only print non-zero elements
 	  fprintf(out, "(");
 	  fprintf(out, "%d, ", entryColVal);
 	  fprintf(out, "%.1f", entryElemVal);
 	  fprintf(out, ") ");
-	}
+	  //	}
       }
       fprintf(out, "\n");
     }
+    //printf("%d \n", i);
   }
 }
-
