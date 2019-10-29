@@ -186,6 +186,24 @@ void changeEntry(Matrix M, int i, int j, double x){
   
 }
 
+// Matrix Arithmetic operations ------------------------
+// copy()
+// Returns a reference to a new Matrix object having the same entries as A.
+Matrix copy(Matrix A){
+	int n = size(A);
+	Matrix M = newMatrix(n);
+	for (int i = 1; i<=n; i++){
+		List L = A->_a[i];
+		for(moveFront(L); index(L)>=0; moveNext(L)){
+			Entry e = get(L);
+			int entryCol = e->_i;
+			double entryVal = e->_d;
+			changeEntry(M, i, entryCol, i, entryVal);
+		}
+	}
+	return M;
+}
+
 Matrix transpose(Matrix A){
   Matrix M = newMatrix(size(A));
   int n = size(A);
