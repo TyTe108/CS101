@@ -453,45 +453,38 @@ Matrix product(Matrix A, Matrix B){
 
   int i = 1;
   int j = 1;
-  //int k = 1;
+  int k = 1;
 
   Matrix M = newMatrix(An);
-
-  Matrix Bt = transpose(B); //Free it later, malloc
-
-  //printf("Matrix Bt in Prod: \n");
-  //printMatrix(stdout, Bt);
- 
-  
-  List AL = A->_a[i];
-  List BtL = Bt->_a[j];
-  int Annz = NNZ(A);
-  //int Bnnz = NNZ(Bt);
-
-  // printf("Inside Product Print: \n");
-  //printMatrix(stdout, A);
-
-  while(i<=size(A) && (Annz > 0)){
-    AL = A->_a[i];
-    j = 1;
-    while(j<=size(Bt)){
-      BtL = Bt->_a[j];
-      
-      double dotProd = vectorDot(AL, BtL);
-      //printf("%.1f ", dotProd);
-      changeEntry(M, i, j, dotProd);
-      j++;
-      //printf("%d \n",i*j);
+  //Strassen’s Matrix Multiplication
+  for (i = 1; i<=An; i++){
+    for (j = 1; j<=An; j++){
+      for (k = 1; k<=An; k++){
+	printf("i: %d j:%d k:%d \n");
+	Entry AEntry = getEntry(A,i,k);
+	Entry BEntry = getEntry(B,k,j);
+	double x = 0;
+	double y = 0;
+	if (AEntry != NULL){
+	  x = AEntry->_d;
+	  
+	}
+	if (BEntry != NULL){
+	  y = BEntry->_d;
+	}
+	double z = x * y;
+	Entry e = getEntry(M, i, j);
+	if (e != NULL){
+	  double eSum = e->_d;
+	  changeEntry(M, i, j, eSum+z);
+	}else{
+	  changeEntry(M, i, j, z); 
+	}
+      }
     }
-    i++;
-    Annz = Annz - length(AL);
-    //printf("%d \n", i);
   }
-  freeMatrix(&Bt);
-  //printMatrix(stdout, M);
-
-  //printf("M inside: \n");
   return M;
+  
 }
 
 
@@ -559,49 +552,4 @@ Entry  getEntry(Matrix M, int row, int col){
   return NULL;
 }
 
-double vectorDot(List P, List Q){
-  double k = 0;
-  if(length(P) <= 0 || length(Q) <= 0){
-    return k;
-  }
-  //printf("CALLED... \n ");
 
-  if(length(P) != 0){
-    moveFront(P);
-  }
-  if (length(Q) != 0){
-    moveFront(Q);
-  }
-
-  //Move the smaller index
-  while(index(P) >= 0 &&  index(Q) >= 0){
-    Entry PEntry = get(P);
-    Entry QEntry = get(Q);
-    double i = PEntry->_d;
-    double j = QEntry->_d;
-    int PCol = PEntry->_i;
-    int QCol = QEntry->_i;
-    
-    // printf("P: \n");
-    // printf("P Col: %d P Val: %.1f \n", PCol, i);
-    // printf("Q: \n");
-    //printf("Q Col: %d Q Val: %.1f \n\n\n", QCol, j);
-
-    if(PCol == QCol){
-      k = k + ( i * j);
-      moveNext(P);
-      moveNext(Q);
-      
-      // printf("%.1f, %.1f   ", i, j);
-    }else if(PCol > QCol){
-
-      // printf("%.1f, %.1f   ", i, j);
-      moveNext(Q);
-    }else{
-      
-      // printf("%.1f, %.1f   ", i, j);
-      moveNext(P);
-    }
-  }
-  return k;
-}

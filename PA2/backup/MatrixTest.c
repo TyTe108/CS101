@@ -57,10 +57,10 @@ int main(){
    printMatrix(stdout, F);
    printf("\n");
 
-   G = product(B, B);
-   printf("%d\n", NNZ(G));
-   printMatrix(stdout, G);
-   printf("\n");
+   /* G = product(B, B); */
+   /* printf("%d\n", NNZ(G)); */
+   /* printMatrix(stdout, G); */
+   /* printf("\n"); */
 
    /* H = copy(A); */
    /* printf("%d\n", NNZ(H)); */
@@ -70,7 +70,6 @@ int main(){
    /* printf("%s\n", equals(A, H)?"true":"false" ); */
    /* printf("%s\n", equals(A, B)?"true":"false" ); */
    /* printf("%s\n", equals(A, A)?"true":"false" ); */
-
 
    makeZero(A);
    printf("%d\n", NNZ(A));
@@ -82,7 +81,7 @@ int main(){
     freeMatrix(&D);
     freeMatrix(&E);
     freeMatrix(&F);
-    freeMatrix(&G);
+    /* freeMatrix(&G); */
    /* freeMatrix(&H); */
 
 

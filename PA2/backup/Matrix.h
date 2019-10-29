@@ -87,7 +87,5 @@ void printMatrix(FILE* out, Matrix M);
 //Preconditions: row and col < size(M)
 Entry  getEntry(Matrix M, int row, int col);  
 
-double vectorDot(List P, List Q);
-
 
 #endif //MATRIX_H
