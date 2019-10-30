@@ -112,9 +112,8 @@ int main(){
   freeMatrix(&As1);
   freeMatrix(&As2);
 
+
   
-
-
   if (!equals(C, D)){
     printf("FAILED\n");
   }

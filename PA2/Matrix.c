@@ -73,14 +73,36 @@ int NNZ(Matrix M){
 }
 
 int equals(Matrix A, Matrix B){
-  if ((A->_n) != (B->_n) || (A->_nnz) != (B->_nnz)){
-    return 0;
-  }else{
-    //COME BACK LATER: TAKE CARE OF COMPARISON
-    
+  if(A == B){
     return 1;
   }
+  if ((A->_n) != (B->_n) || (A->_nnz) != (B->_nnz)){
+    return 0;
+  }
+  int n = size(A);
+  for (int i = 1; i <= n; i++){
+    List AL = A->_a[i];
+    List BL = A->_a[i];
+    if(length(AL)!= length(BL)){
+      return 0;
+    }
+    else{
+      if(length(AL) > 0 && length(BL) > 0){
+	for(moveFront(AL),moveFront(BL); index(AL) >= 0 && index(BL)>=0; moveNext(AL), moveNext(BL)){
+	  Entry AEntry = get(AL);
+	  Entry BEntry = get(BL);
+	  int equal = EntryEqual(AEntry, BEntry);
+	  if (equal == 0){
+	    return 0;
+	  }
+	}
+      }
+    }
+  }
+  return 1;
 }
+
+
 
 void makeZero(Matrix M){
   int n = M->_n;
@@ -100,9 +122,7 @@ void makeZero(Matrix M){
   
 }
 
-// changeEntry()
-// Changes the ith row, jth column of M to the value x.
-// Pre: 1<=i<=size(M), 1<=j<=size(M)
+
 void changeEntry(Matrix M, int i, int j, double x){
   //Error handling
   if(i < 1){
@@ -124,10 +144,6 @@ void changeEntry(Matrix M, int i, int j, double x){
   }
   //============
 
-  if(x==0){
-    //printf("INFINITY... \n");
-    return;
-  }
 
   List targetList = (M->_a)[i];
   /* int indexB4Insertion  = index(targetList); */
@@ -138,12 +154,13 @@ void changeEntry(Matrix M, int i, int j, double x){
   //If List is empty...
   if(length(targetList) == 0){
     //printf("Entering new row...\n");
-    Entry insertThis = newEntry(j, x);  //Might need to keep track of this?...
-    append(targetList,insertThis); 
     if(x != 0){
+      Entry insertThis = newEntry(j, x);  //Might need to keep track of this?...
+      append(targetList,insertThis); 
       (M->_nnz)++; //Keeping track of non-zero elements
     }
-  }else{
+  }
+  else{
     moveFront(targetList);
     //Loop through list to find the entry
     int repeat = 1;
@@ -151,29 +168,34 @@ void changeEntry(Matrix M, int i, int j, double x){
       Entry currentEntry = get(targetList); // Might want to keep track of this
       int entryCol = currentEntry->_i;
       if (j == entryCol){
-	currentEntry->_d = x; //Simply replace the (double element) if col already exists
-	//	if(x != 0){
-	//  (M->_nnz)++; //Keeping track of non-zero elements
-	//}
+	if(x == 0){
+	  delete(targetList);
+	  (M->_nnz)--;
+	}else{
+	  currentEntry->_d = x; //Simply replace the (double element) if col already exists
+	}
 	repeat = 0; //Stop the loop
-      }else if(j<entryCol){
-	Entry insertThis = newEntry(j, x);
-	insertBefore(targetList, insertThis);
+      }
+      else if(j<entryCol){
 	if(x != 0){
+	  Entry insertThis = newEntry(j, x);
+	  insertBefore(targetList, insertThis);
 	  (M->_nnz)++; //Keeping track of non-zero elements
 	}
 	repeat = 0;
-      }else{
-	Entry insertThis = newEntry(j, x); //Dynamic created, keep track for leaks
+      }
+      else{
 	int ind = index(targetList);
 	if(ind == length(targetList)-1){
-	  //....
-	  append(targetList, insertThis);
 	  if(x != 0){
+	    Entry insertThis = newEntry(j, x); //Dynamic created, keep track for leaks
+	  //....
+	    append(targetList, insertThis);
 	    (M->_nnz)++; //Keeping track of non-zero elements
 	  }
 	  repeat = 0;
-	}else{
+	}
+	else{
 	  repeat = 1;
 	  moveNext(targetList);
 	}
@@ -193,13 +215,15 @@ Matrix copy(Matrix A){
 	int n = size(A);
 	Matrix M = newMatrix(n);
 	for (int i = 1; i<=n; i++){
-		List L = A->_a[i];
-		for(moveFront(L); index(L)>=0; moveNext(L)){
-			Entry e = get(L);
-			int entryCol = e->_i;
-			double entryVal = e->_d;
-			changeEntry(M, i, entryCol, i, entryVal);
-		}
+	  List L = A->_a[i];
+	  if(length(L)!= 0){
+	    for(moveFront(L); index(L)>=0; moveNext(L)){
+	    Entry e = get(L);
+	    int entryCol = e->_i;
+	    double entryVal = e->_d;
+	    changeEntry(M, i, entryCol, entryVal);
+	    }
+	  }
 	}
 	return M;
 }
@@ -262,7 +286,13 @@ Matrix sum(Matrix A, Matrix B){
   if (An != Bn){
     printf("WARNING: Calling Matrix aum(Matrix A, Matrix B) when one of the matrices is empty\n");  
     return NULL;
-  }  
+  }
+  
+  if(A == B){
+    Matrix M = scalarMult(2, A);
+    return M;
+  }
+
   int i = 1;
   int j = 1;
   List* AL = A->_a;
@@ -450,6 +480,16 @@ Matrix diff(Matrix A, Matrix B){
     return NULL;
   } 
 
+  if(A == B){
+    Matrix M = newMatrix(An);
+    return M;
+  }
+
+  if(A->_nnz == 0){
+    Matrix M = scalarMult(-1, B);
+    return M;
+  }
+
   Matrix BNeg = NULL;
   Matrix M;
   
@@ -622,4 +662,17 @@ double vectorDot(List P, List Q){
     }
   }
   return k;
+}
+
+int EntryEqual(Entry A, Entry B){
+  int ACol = A->_i;
+  int BCol = B->_i;
+ 
+  double AVal = A->_d;
+  double BVal = B->_d;
+
+  if(ACol == BCol && AVal == BVal){
+    return 1;
+  }
+  return 0;
 }

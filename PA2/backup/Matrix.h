@@ -48,7 +48,7 @@ void changeEntry(Matrix M, int i, int j, double x);
 // Matrix Arithmetic operations ------------------------
 // copy()
 // Returns a reference to a new Matrix object having the same entries as A.
-/* Matrix copy(Matrix A); */
+ Matrix copy(Matrix A);
 
 // transpose()
 // Returns a reference to a new Matrix object representing the transpose
@@ -87,5 +87,8 @@ void printMatrix(FILE* out, Matrix M);
 //Preconditions: row and col < size(M)
 Entry  getEntry(Matrix M, int row, int col);  
 
+double vectorDot(List P, List Q);
+
+int EntryEqual(Entry A, Entry B);
 
 #endif //MATRIX_H
