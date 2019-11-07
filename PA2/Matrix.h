@@ -1,3 +1,9 @@
+/*==========
+ *Tyler Te
+ *CruzID: tylim
+ *Assignment: PA2
+ *========== */
+
 #ifndef MATRIX_H
 #define MATRIX_H
 

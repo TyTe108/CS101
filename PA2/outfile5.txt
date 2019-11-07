@@ -1,0 +1,2009 @@
+line 1 contains 3 tokens: 
+   1000
+   200
+   200
+
+line 2 contains 0 tokens: 
+
+line 3 contains 3 tokens: 
+   813
+   486
+   -9180.0
+
+line 4 contains 3 tokens: 
+   874
+   882
+   4939.2
+
+line 5 contains 3 tokens: 
+   924
+   897
+   -112.8
+
+line 6 contains 3 tokens: 
+   454
+   311
+   3699.7
+
+line 7 contains 3 tokens: 
+   71
+   829
+   2155.1
+
+line 8 contains 3 tokens: 
+   25
+   105
+   -5922.7
+
+line 9 contains 3 tokens: 
+   695
+   226
+   -1182.2
+
+line 10 contains 3 tokens: 
+   323
+   750
+   6290.7
+
+line 11 contains 3 tokens: 
+   702
+   131
+   5921.1
+
+line 12 contains 3 tokens: 
+   709
+   622
+   -9791.4
+
+line 13 contains 3 tokens: 
+   320
+   680
+   8502.4
+
+line 14 contains 3 tokens: 
+   256
+   358
+   1187.1
+
+line 15 contains 3 tokens: 
+   407
+   298
+   -607.3
+
+line 16 contains 3 tokens: 
+   986
+   578
+   7546.6
+
+line 17 contains 3 tokens: 
+   823
+   221
+   -3703.5
+
+line 18 contains 3 tokens: 
+   217
+   990
+   1955.2
+
+line 19 contains 3 tokens: 
+   13
+   911
+   -1681.3
+
+line 20 contains 3 tokens: 
+   770
+   220
+   8518.3
+
+line 21 contains 3 tokens: 
+   865
+   951
+   788.8
+
+line 22 contains 3 tokens: 
+   329
+   92
+   4539.6
+
+line 23 contains 3 tokens: 
+   382
+   485
+   5784.0
+
+line 24 contains 3 tokens: 
+   706
+   988
+   -5713.1
+
+line 25 contains 3 tokens: 
+   595
+   778
+   -8230.6
+
+line 26 contains 3 tokens: 
+   760
+   676
+   5189.4
+
+line 27 contains 3 tokens: 
+   1
+   206
+   -2590.4
+
+line 28 contains 3 tokens: 
+   2
+   341
+   -5897.8
+
+line 29 contains 3 tokens: 
+   245
+   47
+   -2275.5
+
+line 30 contains 3 tokens: 
+   672
+   773
+   7078.2
+
+line 31 contains 3 tokens: 
+   160
+   689
+   1494.1
+
+line 32 contains 3 tokens: 
+   816
+   779
+   -6278.3
+
+line 33 contains 3 tokens: 
+   629
+   696
+   5874.9
+
+line 34 contains 3 tokens: 
+   870
+   614
+   9785.1
+
+line 35 contains 3 tokens: 
+   183
+   265
+   3265.0
+
+line 36 contains 3 tokens: 
+   515
+   370
+   9730.1
+
+line 37 contains 3 tokens: 
+   113
+   483
+   -500.6
+
+line 38 contains 3 tokens: 
+   158
+   219
+   -6576.7
+
+line 39 contains 3 tokens: 
+   606
+   70
+   2233.1
+
+line 40 contains 3 tokens: 
+   554
+   279
+   1879.5
+
+line 41 contains 3 tokens: 
+   757
+   744
+   91.5
+
+line 42 contains 3 tokens: 
+   778
+   553
+   -8.7
+
+line 43 contains 3 tokens: 
+   888
+   823
+   4914.7
+
+line 44 contains 3 tokens: 
+   984
+   10
+   9558.3
+
+line 45 contains 3 tokens: 
+   621
+   261
+   864.9
+
+line 46 contains 3 tokens: 
+   467
+   273
+   -1597.9
+
+line 47 contains 3 tokens: 
+   374
+   792
+   296.7
+
+line 48 contains 3 tokens: 
+   805
+   21
+   6080.5
+
+line 49 contains 3 tokens: 
+   213
+   408
+   9292.9
+
+line 50 contains 3 tokens: 
+   757
+   341
+   -2780.5
+
+line 51 contains 3 tokens: 
+   572
+   761
+   4345.3
+
+line 52 contains 3 tokens: 
+   954
+   725
+   -1169.5
+
+line 53 contains 3 tokens: 
+   687
+   469
+   -9169.0
+
+line 54 contains 3 tokens: 
+   379
+   87
+   9753.0
+
+line 55 contains 3 tokens: 
+   29
+   174
+   7619.3
+
+line 56 contains 3 tokens: 
+   439
+   992
+   8323.1
+
+line 57 contains 3 tokens: 
+   329
+   638
+   2560.0
+
+line 58 contains 3 tokens: 
+   394
+   354
+   7801.9
+
+line 59 contains 3 tokens: 
+   226
+   780
+   6380.8
+
+line 60 contains 3 tokens: 
+   516
+   351
+   2829.9
+
+line 61 contains 3 tokens: 
+   833
+   658
+   6820.2
+
+line 62 contains 3 tokens: 
+   747
+   320
+   6906.0
+
+line 63 contains 3 tokens: 
+   577
+   997
+   -2451.2
+
+line 64 contains 3 tokens: 
+   308
+   94
+   -2899.7
+
+line 65 contains 3 tokens: 
+   673
+   727
+   -1840.1
+
+line 66 contains 3 tokens: 
+   358
+   538
+   692.2
+
+line 67 contains 3 tokens: 
+   686
+   197
+   -4115.8
+
+line 68 contains 3 tokens: 
+   545
+   963
+   -1781.2
+
+line 69 contains 3 tokens: 
+   468
+   514
+   -5910.7
+
+line 70 contains 3 tokens: 
+   12
+   548
+   -848.2
+
+line 71 contains 3 tokens: 
+   814
+   425
+   9479.2
+
+line 72 contains 3 tokens: 
+   281
+   121
+   772.3
+
+line 73 contains 3 tokens: 
+   958
+   214
+   -7850.7
+
+line 74 contains 3 tokens: 
+   462
+   285
+   -3737.6
+
+line 75 contains 3 tokens: 
+   833
+   37
+   -9357.9
+
+line 76 contains 3 tokens: 
+   939
+   50
+   398.3
+
+line 77 contains 3 tokens: 
+   1
+   945
+   3364.0
+
+line 78 contains 3 tokens: 
+   549
+   689
+   -3687.1
+
+line 79 contains 3 tokens: 
+   42
+   313
+   -4919.2
+
+line 80 contains 3 tokens: 
+   9
+   82
+   1909.1
+
+line 81 contains 3 tokens: 
+   724
+   313
+   6981.9
+
+line 82 contains 3 tokens: 
+   519
+   387
+   -6033.9
+
+line 83 contains 3 tokens: 
+   936
+   704
+   -9880.6
+
+line 84 contains 3 tokens: 
+   711
+   37
+   -1825.1
+
+line 85 contains 3 tokens: 
+   945
+   33
+   9533.5
+
+line 86 contains 3 tokens: 
+   451
+   795
+   -9341.4
+
+line 87 contains 3 tokens: 
+   897
+   482
+   4107.6
+
+line 88 contains 3 tokens: 
+   765
+   651
+   -9058.0
+
+line 89 contains 3 tokens: 
+   508
+   630
+   6632.5
+
+line 90 contains 3 tokens: 
+   336
+   40
+   -384.3
+
+line 91 contains 3 tokens: 
+   993
+   450
+   811.7
+
+line 92 contains 3 tokens: 
+   68
+   167
+   -2246.3
+
+line 93 contains 3 tokens: 
+   86
+   957
+   -9259.9
+
+line 94 contains 3 tokens: 
+   910
+   857
+   -2937.4
+
+line 95 contains 3 tokens: 
+   328
+   458
+   -2220.3
+
+line 96 contains 3 tokens: 
+   5
+   212
+   2288.2
+
+line 97 contains 3 tokens: 
+   314
+   777
+   -7725.4
+
+line 98 contains 3 tokens: 
+   311
+   625
+   6051.7
+
+line 99 contains 3 tokens: 
+   633
+   254
+   -9685.3
+
+line 100 contains 3 tokens: 
+   800
+   203
+   -8412.7
+
+line 101 contains 3 tokens: 
+   988
+   595
+   4330.0
+
+line 102 contains 3 tokens: 
+   976
+   936
+   7611.2
+
+line 103 contains 3 tokens: 
+   514
+   529
+   5535.0
+
+line 104 contains 3 tokens: 
+   232
+   229
+   3864.0
+
+line 105 contains 3 tokens: 
+   899
+   321
+   4693.6
+
+line 106 contains 3 tokens: 
+   251
+   398
+   -7924.0
+
+line 107 contains 3 tokens: 
+   499
+   1
+   3220.2
+
+line 108 contains 3 tokens: 
+   526
+   947
+   -7194.3
+
+line 109 contains 3 tokens: 
+   434
+   858
+   3072.4
+
+line 110 contains 3 tokens: 
+   44
+   980
+   -1506.5
+
+line 111 contains 3 tokens: 
+   88
+   158
+   -6778.0
+
+line 112 contains 3 tokens: 
+   24
+   196
+   -3332.1
+
+line 113 contains 3 tokens: 
+   670
+   344
+   -9331.8
+
+line 114 contains 3 tokens: 
+   503
+   716
+   5609.7
+
+line 115 contains 3 tokens: 
+   191
+   395
+   -3372.6
+
+line 116 contains 3 tokens: 
+   885
+   793
+   1810.2
+
+line 117 contains 3 tokens: 
+   162
+   397
+   3915.8
+
+line 118 contains 3 tokens: 
+   785
+   758
+   -9781.5
+
+line 119 contains 3 tokens: 
+   719
+   125
+   -7113.5
+
+line 120 contains 3 tokens: 
+   647
+   389
+   3702.1
+
+line 121 contains 3 tokens: 
+   283
+   79
+   3402.6
+
+line 122 contains 3 tokens: 
+   227
+   181
+   -9462.7
+
+line 123 contains 3 tokens: 
+   65
+   768
+   -860.1
+
+line 124 contains 3 tokens: 
+   296
+   21
+   -9722.9
+
+line 125 contains 3 tokens: 
+   100
+   65
+   4205.7
+
+line 126 contains 3 tokens: 
+   49
+   934
+   6776.3
+
+line 127 contains 3 tokens: 
+   362
+   619
+   -7582.1
+
+line 128 contains 3 tokens: 
+   299
+   336
+   7906.4
+
+line 129 contains 3 tokens: 
+   971
+   704
+   -6246.5
+
+line 130 contains 3 tokens: 
+   336
+   920
+   -2722.6
+
+line 131 contains 3 tokens: 
+   661
+   968
+   4110.7
+
+line 132 contains 3 tokens: 
+   561
+   818
+   -1809.8
+
+line 133 contains 3 tokens: 
+   287
+   922
+   997.7
+
+line 134 contains 3 tokens: 
+   107
+   504
+   3224.0
+
+line 135 contains 3 tokens: 
+   80
+   528
+   -1343.5
+
+line 136 contains 3 tokens: 
+   596
+   400
+   8462.3
+
+line 137 contains 3 tokens: 
+   658
+   631
+   -8891.7
+
+line 138 contains 3 tokens: 
+   494
+   816
+   1526.5
+
+line 139 contains 3 tokens: 
+   357
+   806
+   -6804.4
+
+line 140 contains 3 tokens: 
+   982
+   729
+   8415.3
+
+line 141 contains 3 tokens: 
+   112
+   338
+   9293.8
+
+line 142 contains 3 tokens: 
+   373
+   58
+   8413.0
+
+line 143 contains 3 tokens: 
+   587
+   606
+   -8691.7
+
+line 144 contains 3 tokens: 
+   578
+   931
+   1213.4
+
+line 145 contains 3 tokens: 
+   280
+   749
+   -5329.4
+
+line 146 contains 3 tokens: 
+   505
+   309
+   -8607.2
+
+line 147 contains 3 tokens: 
+   21
+   753
+   4975.9
+
+line 148 contains 3 tokens: 
+   217
+   412
+   -8198.3
+
+line 149 contains 3 tokens: 
+   31
+   40
+   1718.1
+
+line 150 contains 3 tokens: 
+   827
+   9
+   -6417.7
+
+line 151 contains 3 tokens: 
+   191
+   469
+   6685.7
+
+line 152 contains 3 tokens: 
+   738
+   10
+   -5391.4
+
+line 153 contains 3 tokens: 
+   16
+   878
+   2013.6
+
+line 154 contains 3 tokens: 
+   823
+   185
+   -350.9
+
+line 155 contains 3 tokens: 
+   580
+   567
+   4964.1
+
+line 156 contains 3 tokens: 
+   345
+   913
+   3447.9
+
+line 157 contains 3 tokens: 
+   837
+   672
+   7729.2
+
+line 158 contains 3 tokens: 
+   779
+   568
+   2573.6
+
+line 159 contains 3 tokens: 
+   33
+   840
+   -636.4
+
+line 160 contains 3 tokens: 
+   773
+   227
+   9985.0
+
+line 161 contains 3 tokens: 
+   406
+   996
+   -9868.2
+
+line 162 contains 3 tokens: 
+   629
+   270
+   7672.7
+
+line 163 contains 3 tokens: 
+   281
+   251
+   -2004.0
+
+line 164 contains 3 tokens: 
+   92
+   334
+   -2752.7
+
+line 165 contains 3 tokens: 
+   917
+   312
+   60.8
+
+line 166 contains 3 tokens: 
+   652
+   884
+   -4118.6
+
+line 167 contains 3 tokens: 
+   807
+   43
+   6038.5
+
+line 168 contains 3 tokens: 
+   766
+   131
+   2322.2
+
+line 169 contains 3 tokens: 
+   939
+   735
+   -3647.1
+
+line 170 contains 3 tokens: 
+   276
+   96
+   -7023.1
+
+line 171 contains 3 tokens: 
+   553
+   720
+   -6841.3
+
+line 172 contains 3 tokens: 
+   752
+   704
+   -4961.6
+
+line 173 contains 3 tokens: 
+   583
+   271
+   -598.4
+
+line 174 contains 3 tokens: 
+   472
+   159
+   -362.2
+
+line 175 contains 3 tokens: 
+   95
+   511
+   8808.8
+
+line 176 contains 3 tokens: 
+   173
+   969
+   3065.1
+
+line 177 contains 3 tokens: 
+   502
+   708
+   -3787.1
+
+line 178 contains 3 tokens: 
+   517
+   502
+   -4945.4
+
+line 179 contains 3 tokens: 
+   983
+   297
+   -2136.0
+
+line 180 contains 3 tokens: 
+   720
+   820
+   1442.4
+
+line 181 contains 3 tokens: 
+   937
+   725
+   9503.3
+
+line 182 contains 3 tokens: 
+   586
+   598
+   -4051.9
+
+line 183 contains 3 tokens: 
+   860
+   954
+   6962.6
+
+line 184 contains 3 tokens: 
+   427
+   294
+   8863.7
+
+line 185 contains 3 tokens: 
+   728
+   782
+   5216.0
+
+line 186 contains 3 tokens: 
+   885
+   192
+   -5043.1
+
+line 187 contains 3 tokens: 
+   876
+   445
+   -9553.7
+
+line 188 contains 3 tokens: 
+   290
+   533
+   -309.1
+
+line 189 contains 3 tokens: 
+   704
+   759
+   -6884.5
+
+line 190 contains 3 tokens: 
+   414
+   543
+   -563.7
+
+line 191 contains 3 tokens: 
+   536
+   226
+   -3810.2
+
+line 192 contains 3 tokens: 
+   443
+   329
+   1196.4
+
+line 193 contains 3 tokens: 
+   310
+   887
+   -6318.5
+
+line 194 contains 3 tokens: 
+   653
+   45
+   -9903.3
+
+line 195 contains 3 tokens: 
+   447
+   582
+   7208.2
+
+line 196 contains 3 tokens: 
+   458
+   427
+   4203.0
+
+line 197 contains 3 tokens: 
+   914
+   841
+   -4707.2
+
+line 198 contains 3 tokens: 
+   686
+   937
+   6099.5
+
+line 199 contains 3 tokens: 
+   91
+   288
+   3648.9
+
+line 200 contains 3 tokens: 
+   46
+   415
+   8021.3
+
+line 201 contains 3 tokens: 
+   932
+   929
+   -1570.4
+
+line 202 contains 3 tokens: 
+   983
+   123
+   -1207.5
+
+line 203 contains 0 tokens: 
+
+line 204 contains 3 tokens: 
+   144
+   62
+   568.8
+
+line 205 contains 3 tokens: 
+   619
+   599
+   -2181.6
+
+line 206 contains 3 tokens: 
+   442
+   266
+   -184.4
+
+line 207 contains 3 tokens: 
+   886
+   590
+   -8192.0
+
+line 208 contains 3 tokens: 
+   228
+   777
+   525.8
+
+line 209 contains 3 tokens: 
+   121
+   485
+   833.5
+
+line 210 contains 3 tokens: 
+   538
+   20
+   -6888.0
+
+line 211 contains 3 tokens: 
+   175
+   498
+   -3245.4
+
+line 212 contains 3 tokens: 
+   715
+   465
+   3743.6
+
+line 213 contains 3 tokens: 
+   86
+   682
+   9982.4
+
+line 214 contains 3 tokens: 
+   830
+   411
+   -5949.4
+
+line 215 contains 3 tokens: 
+   353
+   793
+   -3307.5
+
+line 216 contains 3 tokens: 
+   556
+   153
+   709.7
+
+line 217 contains 3 tokens: 
+   727
+   315
+   1153.1
+
+line 218 contains 3 tokens: 
+   652
+   205
+   5863.8
+
+line 219 contains 3 tokens: 
+   552
+   508
+   -8452.2
+
+line 220 contains 3 tokens: 
+   285
+   968
+   -9695.3
+
+line 221 contains 3 tokens: 
+   987
+   664
+   7399.9
+
+line 222 contains 3 tokens: 
+   517
+   683
+   -8020.8
+
+line 223 contains 3 tokens: 
+   530
+   169
+   4495.6
+
+line 224 contains 3 tokens: 
+   778
+   61
+   6149.3
+
+line 225 contains 3 tokens: 
+   301
+   531
+   -8641.8
+
+line 226 contains 3 tokens: 
+   305
+   633
+   3445.9
+
+line 227 contains 3 tokens: 
+   696
+   149
+   4462.5
+
+line 228 contains 3 tokens: 
+   461
+   585
+   4712.6
+
+line 229 contains 3 tokens: 
+   409
+   588
+   9231.7
+
+line 230 contains 3 tokens: 
+   374
+   552
+   -8697.3
+
+line 231 contains 3 tokens: 
+   412
+   556
+   -7370.7
+
+line 232 contains 3 tokens: 
+   942
+   203
+   5249.9
+
+line 233 contains 3 tokens: 
+   348
+   687
+   -1892.8
+
+line 234 contains 3 tokens: 
+   131
+   301
+   2038.7
+
+line 235 contains 3 tokens: 
+   671
+   622
+   -3820.5
+
+line 236 contains 3 tokens: 
+   821
+   220
+   -6287.9
+
+line 237 contains 3 tokens: 
+   956
+   173
+   -4970.2
+
+line 238 contains 3 tokens: 
+   705
+   320
+   -6729.2
+
+line 239 contains 3 tokens: 
+   291
+   137
+   2648.3
+
+line 240 contains 3 tokens: 
+   333
+   567
+   -8048.8
+
+line 241 contains 3 tokens: 
+   534
+   445
+   4894.3
+
+line 242 contains 3 tokens: 
+   722
+   953
+   -4280.3
+
+line 243 contains 3 tokens: 
+   318
+   199
+   6424.6
+
+line 244 contains 3 tokens: 
+   783
+   494
+   2916.6
+
+line 245 contains 3 tokens: 
+   397
+   637
+   -7227.3
+
+line 246 contains 3 tokens: 
+   481
+   835
+   7377.7
+
+line 247 contains 3 tokens: 
+   934
+   238
+   9587.7
+
+line 248 contains 3 tokens: 
+   505
+   767
+   9811.2
+
+line 249 contains 3 tokens: 
+   409
+   213
+   182.9
+
+line 250 contains 3 tokens: 
+   468
+   409
+   -3919.6
+
+line 251 contains 3 tokens: 
+   23
+   934
+   -524.6
+
+line 252 contains 3 tokens: 
+   929
+   983
+   6663.7
+
+line 253 contains 3 tokens: 
+   290
+   345
+   518.4
+
+line 254 contains 3 tokens: 
+   686
+   363
+   213.7
+
+line 255 contains 3 tokens: 
+   31
+   914
+   -2771.4
+
+line 256 contains 3 tokens: 
+   378
+   597
+   -4616.2
+
+line 257 contains 3 tokens: 
+   545
+   624
+   8530.6
+
+line 258 contains 3 tokens: 
+   793
+   674
+   -142.2
+
+line 259 contains 3 tokens: 
+   269
+   153
+   5046.7
+
+line 260 contains 3 tokens: 
+   504
+   791
+   3164.0
+
+line 261 contains 3 tokens: 
+   623
+   436
+   2470.1
+
+line 262 contains 3 tokens: 
+   354
+   689
+   -4249.2
+
+line 263 contains 3 tokens: 
+   683
+   883
+   1664.9
+
+line 264 contains 3 tokens: 
+   101
+   604
+   -5894.3
+
+line 265 contains 3 tokens: 
+   817
+   457
+   -6173.7
+
+line 266 contains 3 tokens: 
+   173
+   255
+   -2255.3
+
+line 267 contains 3 tokens: 
+   762
+   716
+   8510.2
+
+line 268 contains 3 tokens: 
+   305
+   426
+   -8311.3
+
+line 269 contains 3 tokens: 
+   693
+   941
+   -6726.7
+
+line 270 contains 3 tokens: 
+   139
+   371
+   -3832.3
+
+line 271 contains 3 tokens: 
+   418
+   463
+   -7032.8
+
+line 272 contains 3 tokens: 
+   523
+   511
+   -8006.1
+
+line 273 contains 3 tokens: 
+   210
+   258
+   -9482.9
+
+line 274 contains 3 tokens: 
+   811
+   315
+   -1390.0
+
+line 275 contains 3 tokens: 
+   223
+   786
+   3904.3
+
+line 276 contains 3 tokens: 
+   467
+   188
+   -1604.5
+
+line 277 contains 3 tokens: 
+   864
+   116
+   2866.2
+
+line 278 contains 3 tokens: 
+   749
+   795
+   2830.0
+
+line 279 contains 3 tokens: 
+   527
+   763
+   1887.6
+
+line 280 contains 3 tokens: 
+   248
+   422
+   5915.6
+
+line 281 contains 3 tokens: 
+   555
+   866
+   3480.3
+
+line 282 contains 3 tokens: 
+   110
+   728
+   2355.2
+
+line 283 contains 3 tokens: 
+   896
+   625
+   5918.5
+
+line 284 contains 3 tokens: 
+   251
+   82
+   2238.7
+
+line 285 contains 3 tokens: 
+   241
+   333
+   1943.7
+
+line 286 contains 3 tokens: 
+   407
+   95
+   8736.8
+
+line 287 contains 3 tokens: 
+   15
+   476
+   9961.5
+
+line 288 contains 3 tokens: 
+   378
+   698
+   2020.2
+
+line 289 contains 3 tokens: 
+   436
+   404
+   -5765.7
+
+line 290 contains 3 tokens: 
+   163
+   239
+   -5062.0
+
+line 291 contains 3 tokens: 
+   782
+   783
+   -7863.2
+
+line 292 contains 3 tokens: 
+   693
+   495
+   -8152.5
+
+line 293 contains 3 tokens: 
+   422
+   12
+   8306.2
+
+line 294 contains 3 tokens: 
+   715
+   378
+   -8730.5
+
+line 295 contains 3 tokens: 
+   578
+   903
+   -1557.8
+
+line 296 contains 3 tokens: 
+   200
+   151
+   -1820.9
+
+line 297 contains 3 tokens: 
+   208
+   587
+   -4182.9
+
+line 298 contains 3 tokens: 
+   238
+   659
+   -4071.8
+
+line 299 contains 3 tokens: 
+   736
+   414
+   -4956.1
+
+line 300 contains 3 tokens: 
+   28
+   739
+   3490.4
+
+line 301 contains 3 tokens: 
+   334
+   518
+   7760.2
+
+line 302 contains 3 tokens: 
+   826
+   301
+   4567.4
+
+line 303 contains 3 tokens: 
+   677
+   935
+   2476.3
+
+line 304 contains 3 tokens: 
+   765
+   467
+   9164.0
+
+line 305 contains 3 tokens: 
+   356
+   950
+   3575.3
+
+line 306 contains 3 tokens: 
+   478
+   651
+   -3860.9
+
+line 307 contains 3 tokens: 
+   602
+   851
+   -4273.3
+
+line 308 contains 3 tokens: 
+   762
+   436
+   9139.3
+
+line 309 contains 3 tokens: 
+   996
+   231
+   -5267.3
+
+line 310 contains 3 tokens: 
+   13
+   297
+   -6697.6
+
+line 311 contains 3 tokens: 
+   716
+   251
+   -6490.8
+
+line 312 contains 3 tokens: 
+   35
+   902
+   1691.5
+
+line 313 contains 3 tokens: 
+   750
+   256
+   -8699.6
+
+line 314 contains 3 tokens: 
+   914
+   446
+   -7240.6
+
+line 315 contains 3 tokens: 
+   266
+   810
+   -1020.5
+
+line 316 contains 3 tokens: 
+   893
+   486
+   -1979.7
+
+line 317 contains 3 tokens: 
+   395
+   125
+   8621.7
+
+line 318 contains 3 tokens: 
+   874
+   520
+   -4240.5
+
+line 319 contains 3 tokens: 
+   818
+   130
+   1571.6
+
+line 320 contains 3 tokens: 
+   792
+   558
+   -1376.8
+
+line 321 contains 3 tokens: 
+   98
+   981
+   6001.8
+
+line 322 contains 3 tokens: 
+   343
+   458
+   -6589.1
+
+line 323 contains 3 tokens: 
+   818
+   740
+   -218.7
+
+line 324 contains 3 tokens: 
+   91
+   600
+   2487.3
+
+line 325 contains 3 tokens: 
+   239
+   54
+   1372.3
+
+line 326 contains 3 tokens: 
+   968
+   772
+   -9181.4
+
+line 327 contains 3 tokens: 
+   364
+   312
+   -6809.2
+
+line 328 contains 3 tokens: 
+   128
+   721
+   -2403.6
+
+line 329 contains 3 tokens: 
+   252
+   494
+   -2121.3
+
+line 330 contains 3 tokens: 
+   935
+   426
+   2847.0
+
+line 331 contains 3 tokens: 
+   216
+   941
+   -7063.3
+
+line 332 contains 3 tokens: 
+   835
+   55
+   -8195.6
+
+line 333 contains 3 tokens: 
+   925
+   30
+   7577.2
+
+line 334 contains 3 tokens: 
+   638
+   796
+   -401.1
+
+line 335 contains 3 tokens: 
+   236
+   879
+   -2942.9
+
+line 336 contains 3 tokens: 
+   294
+   536
+   7296.8
+
+line 337 contains 3 tokens: 
+   11
+   487
+   4872.9
+
+line 338 contains 3 tokens: 
+   479
+   544
+   9613.5
+
+line 339 contains 3 tokens: 
+   85
+   124
+   8436.6
+
+line 340 contains 3 tokens: 
+   214
+   216
+   2076.4
+
+line 341 contains 3 tokens: 
+   242
+   216
+   6720.8
+
+line 342 contains 3 tokens: 
+   801
+   295
+   4306.3
+
+line 343 contains 3 tokens: 
+   693
+   280
+   -9298.2
+
+line 344 contains 3 tokens: 
+   515
+   597
+   -4162.4
+
+line 345 contains 3 tokens: 
+   567
+   369
+   -1951.4
+
+line 346 contains 3 tokens: 
+   984
+   106
+   1458.0
+
+line 347 contains 3 tokens: 
+   393
+   267
+   -7122.0
+
+line 348 contains 3 tokens: 
+   358
+   194
+   230.5
+
+line 349 contains 3 tokens: 
+   3
+   572
+   -9541.5
+
+line 350 contains 3 tokens: 
+   333
+   345
+   -4436.7
+
+line 351 contains 3 tokens: 
+   220
+   97
+   1694.1
+
+line 352 contains 3 tokens: 
+   912
+   578
+   -9474.5
+
+line 353 contains 3 tokens: 
+   547
+   688
+   115.4
+
+line 354 contains 3 tokens: 
+   378
+   508
+   5539.6
+
+line 355 contains 3 tokens: 
+   409
+   142
+   1231.9
+
+line 356 contains 3 tokens: 
+   442
+   861
+   1258.7
+
+line 357 contains 3 tokens: 
+   227
+   56
+   2482.5
+
+line 358 contains 3 tokens: 
+   982
+   614
+   -1457.9
+
+line 359 contains 3 tokens: 
+   324
+   279
+   -6867.1
+
+line 360 contains 3 tokens: 
+   807
+   102
+   6955.6
+
+line 361 contains 3 tokens: 
+   527
+   272
+   -7508.4
+
+line 362 contains 3 tokens: 
+   377
+   225
+   5133.0
+
+line 363 contains 3 tokens: 
+   782
+   84
+   6174.4
+
+line 364 contains 3 tokens: 
+   871
+   889
+   -2578.0
+
+line 365 contains 3 tokens: 
+   926
+   405
+   5225.5
+
+line 366 contains 3 tokens: 
+   85
+   554
+   -5112.0
+
+line 367 contains 3 tokens: 
+   820
+   712
+   7143.4
+
+line 368 contains 3 tokens: 
+   441
+   168
+   -7728.7
+
+line 369 contains 3 tokens: 
+   930
+   553
+   444.7
+
+line 370 contains 3 tokens: 
+   491
+   341
+   -3853.8
+
+line 371 contains 3 tokens: 
+   995
+   470
+   6806.0
+
+line 372 contains 3 tokens: 
+   661
+   686
+   -713.9
+
+line 373 contains 3 tokens: 
+   695
+   636
+   -9401.6
+
+line 374 contains 3 tokens: 
+   568
+   996
+   3790.8
+
+line 375 contains 3 tokens: 
+   971
+   323
+   -1531.8
+
+line 376 contains 3 tokens: 
+   54
+   969
+   8054.1
+
+line 377 contains 3 tokens: 
+   967
+   164
+   1913.8
+
+line 378 contains 3 tokens: 
+   756
+   51
+   -7013.0
+
+line 379 contains 3 tokens: 
+   521
+   342
+   -9014.6
+
+line 380 contains 3 tokens: 
+   50
+   152
+   -2852.1
+
+line 381 contains 3 tokens: 
+   335
+   334
+   2976.4
+
+line 382 contains 3 tokens: 
+   580
+   967
+   1798.3
+
+line 383 contains 3 tokens: 
+   34
+   855
+   3410.6
+
+line 384 contains 3 tokens: 
+   433
+   558
+   -3713.1
+
+line 385 contains 3 tokens: 
+   196
+   543
+   -8519.9
+
+line 386 contains 3 tokens: 
+   343
+   716
+   1871.9
+
+line 387 contains 3 tokens: 
+   190
+   330
+   -2514.9
+
+line 388 contains 3 tokens: 
+   684
+   311
+   -3201.0
+
+line 389 contains 3 tokens: 
+   305
+   359
+   3541.1
+
+line 390 contains 3 tokens: 
+   289
+   183
+   -1479.9
+
+line 391 contains 3 tokens: 
+   295
+   142
+   -4547.6
+
+line 392 contains 3 tokens: 
+   375
+   710
+   3531.3
+
+line 393 contains 3 tokens: 
+   372
+   239
+   8049.7
+
+line 394 contains 3 tokens: 
+   845
+   92
+   2787.6
+
+line 395 contains 3 tokens: 
+   153
+   428
+   3128.2
+
+line 396 contains 3 tokens: 
+   724
+   985
+   1148.3
+
+line 397 contains 3 tokens: 
+   369
+   308
+   67.6
+
+line 398 contains 3 tokens: 
+   555
+   954
+   -3249.3
+
+line 399 contains 3 tokens: 
+   789
+   31
+   -6911.8
+
+line 400 contains 3 tokens: 
+   513
+   848
+   7599.0
+
+line 401 contains 3 tokens: 
+   539
+   620
+   -9929.0
+
+line 402 contains 3 tokens: 
+   619
+   544
+   5991.8
+
+line 403 contains 3 tokens: 
+   3
+   836
+   -7660.0
+

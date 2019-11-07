@@ -1,0 +1,144 @@
+line 1 contains 3 tokens: 
+   10
+   15
+   12
+
+line 2 contains 0 tokens: 
+
+line 3 contains 3 tokens: 
+   4
+   7
+   -2402.8
+
+line 4 contains 3 tokens: 
+   6
+   5
+   -3604.1
+
+line 5 contains 3 tokens: 
+   3
+   1
+   -3013.9
+
+line 6 contains 3 tokens: 
+   5
+   7
+   -9982.4
+
+line 7 contains 3 tokens: 
+   7
+   9
+   -644.5
+
+line 8 contains 3 tokens: 
+   8
+   7
+   1820.5
+
+line 9 contains 3 tokens: 
+   1
+   4
+   5830.3
+
+line 10 contains 3 tokens: 
+   6
+   4
+   5568.6
+
+line 11 contains 3 tokens: 
+   8
+   9
+   9063.2
+
+line 12 contains 3 tokens: 
+   6
+   7
+   8095.4
+
+line 13 contains 3 tokens: 
+   5
+   1
+   -1114.8
+
+line 14 contains 3 tokens: 
+   2
+   4
+   -6315.9
+
+line 15 contains 3 tokens: 
+   1
+   1
+   8596.3
+
+line 16 contains 3 tokens: 
+   4
+   5
+   -9229.6
+
+line 17 contains 3 tokens: 
+   8
+   8
+   -4961.3
+
+line 18 contains 0 tokens: 
+
+line 19 contains 3 tokens: 
+   5
+   2
+   816.8
+
+line 20 contains 3 tokens: 
+   10
+   4
+   9159.8
+
+line 21 contains 3 tokens: 
+   2
+   10
+   -872.5
+
+line 22 contains 3 tokens: 
+   1
+   2
+   835.0
+
+line 23 contains 3 tokens: 
+   3
+   8
+   9269.1
+
+line 24 contains 3 tokens: 
+   3
+   5
+   -5437.9
+
+line 25 contains 3 tokens: 
+   7
+   1
+   -8517.1
+
+line 26 contains 3 tokens: 
+   7
+   3
+   2903.1
+
+line 27 contains 3 tokens: 
+   6
+   3
+   848.7
+
+line 28 contains 3 tokens: 
+   4
+   8
+   6786.0
+
+line 29 contains 3 tokens: 
+   8
+   9
+   3664.7
+
+line 30 contains 3 tokens: 
+   9
+   10
+   -2108.5
+

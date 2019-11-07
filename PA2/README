@@ -1,0 +1,27 @@
+  
+/*==========
+ *Tyler Te
+ *CruzID: tylim
+ *Assignment: PA2
+ *========== */
+ 
+README:
+
+List.h: The header file of List ADT. listObj is defined in header as well
+
+List.c: Where all the functions from List.h are defined. If you notice, I use "head" and "tail" instead of "front" and "back." 
+  I would like to apologize for the usage but I am more used to it being called that way.
+  
+ListTest.c provided on webpage: I used this to initially test on my List. And the result came out the same as the expected result.
+
+Matrix.h: Header file for Matrix ADT. 
+
+Matrix.c: Source file for Matrix ADT
+
+MatrixTest.c
+
+Makefile: Provided and edited
+
+README: this file
+
+Message to professor or TA: This PA wasn't too hard but it was extremely tedious. I did everything except Sparse. I burned out by 3 am. Please forgive me. I passed everything else according to the grading script though (Matrix and List tests). I'll make sure to start even earlier next time. 
