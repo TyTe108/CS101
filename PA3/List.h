@@ -80,3 +80,8 @@ void printList(FILE* out, List L); // Prints to the file pointed to by out, a
 // string representation of L consisting
 //  // of a space separated sequence of integers,
 //  // with front on left.
+
+List copyList(List L); // Returns a new List representing the same integer
+//   // sequence as L. The cursor in the new list is undefined,
+//   // regardless of the state of the cursor in L. The state
+//   // of L is unchanged.
