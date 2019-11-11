@@ -68,9 +68,9 @@ int main(int argc, char* argv[]){
 
    moveFront(A);
    for(i=0; i<5; i++) moveNext(A); // at index 5
-   insertBefore(A, &u);            // now at index 6
+   insertBefore(A, u);            // now at index 6
    for(i=0; i<9; i++) moveNext(A); // at index 15
-   insertAfter(A, &v);             // doesn't change index
+   insertAfter(A, v);             // doesn't change index
    for(i=0; i<5; i++) movePrev(A); // at index 10
    delete(A);                      // index is now undefined
 
