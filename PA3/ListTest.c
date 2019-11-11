@@ -50,7 +50,7 @@ int main(int argc, char* argv[]){
    }
    // print the copy in forward direction
    for(moveFront(C); index(C)>=0; moveNext(C)){
-      printf("%ld ", *(long*)get(C));
+      printf("%ld ", get(C));
    }
    printf("\n");
 
