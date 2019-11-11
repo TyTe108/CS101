@@ -32,15 +32,15 @@ int main(int argc, char* argv[]){
    }
    printf("\n");
 
-//    // print both lists of integers in backward direction
-//    for(moveBack(A); index(A)>=0; movePrev(A)){
-//       printf("%ld ", *(long*)get(A));
-//    }
-//    printf("\n");
-//    for(moveBack(B); index(B)>=0; movePrev(B)){
-//       printf("%ld ", *(long*)get(B));
-//    }
-//    printf("\n");
+   // print both lists of integers in backward direction
+   for(moveBack(A); index(A)>=0; movePrev(A)){
+      printf("%ld ", get(A));
+   }
+   printf("\n");
+   for(moveBack(B); index(B)>=0; movePrev(B)){
+      printf("%ld ", get(B));
+   }
+   printf("\n");
 
 //    // make a shallow copy of A
 //    moveFront(A);
