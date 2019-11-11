@@ -22,10 +22,10 @@ int main(int argc, char* argv[]){
       prepend(B, X[i]);
    }
 
-//    // print both lists of integers in forward direction
-//    for(moveFront(A); index(A)>=0; moveNext(A)){
-//       printf("%ld ", *(long*)get(A));
-//    }
+   // print both lists of integers in forward direction
+   for(moveFront(A); index(A)>=0; moveNext(A)){
+      printf("%ld ", get(A));
+   }
 //    printf("\n");
 //    for(moveFront(B); index(B)>=0; moveNext(B)){
 //       printf("%ld ", *(long*)get(B));
