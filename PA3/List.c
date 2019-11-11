@@ -368,3 +368,17 @@ List copyList(List L){
     }
     return(copiedList);
 }
+
+// Overwrites the cursor element with x. Pre: length()>0, index()>=0
+void set(List L, long x){
+	if (length(L)<=0){
+		printf("List Error: calling set(List L, long x) on empty List\n");
+		return;
+	}
+	if(index(L) < 0){
+		printf("List Error: calling set(List L, long x) on 0 or negative index\n");
+		return;
+	}
+	Node C = L->cursor;
+	C->data = x;
+}
