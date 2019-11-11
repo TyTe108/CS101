@@ -42,17 +42,17 @@ int main(int argc, char* argv[]){
    }
    printf("\n");
 
-//    // make a shallow copy of A
-//    moveFront(A);
-//    while( index(A)>=0 ){
-//       append(C, get(A));
-//       moveNext(A);
-//    }
-//    // print the copy in forward direction
-//    for(moveFront(C); index(C)>=0; moveNext(C)){
-//       printf("%ld ", *(long*)get(C));
-//    }
-//    printf("\n");
+   // make a shallow copy of A
+   moveFront(A);
+   while( index(A)>=0 ){
+      append(C, get(A));
+      moveNext(A);
+   }
+   // print the copy in forward direction
+   for(moveFront(C); index(C)>=0; moveNext(C)){
+      printf("%ld ", *(long*)get(C));
+   }
+   printf("\n");
 
 //    // check shallow equality of A and C by comparing pointers
 //    equal = (length(A)==length(C));
