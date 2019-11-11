@@ -12,7 +12,7 @@ typedef struct BigIntegerObj* BigInteger;
 struct BigIntegerObj{
     int _sign;
     int _digit;
-    List* _a;
+    List _L;
 };
 
 
