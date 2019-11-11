@@ -1,3 +1,9 @@
+#ifndef BIGINTEGER_H
+#define BIGINTEGER_H
+
+
+#include <stdio.h>
+#include "List.h"
 
 // Exported type -------------------------------------------------------------
 // BigInteger reference type
@@ -71,3 +77,6 @@ BigInteger prod(BigInteger A, BigInteger B);
 // printBigInteger()
 // Prints a base 10 string representation of N to filestream out.
 void printBigInteger(FILE* out, BigInteger N);
+
+
+#endif //BIGINTEGER_H
