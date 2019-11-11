@@ -16,21 +16,21 @@ int main(int argc, char* argv[]){
   long X[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
   int i, u=-1, v=-2, equal=0;
 
-   // initialize Lists A and B
-   for(i=1; i<=20; i++){
-      append(A, X[i]);
-      prepend(B, X[i]);
-   }
+//    // initialize Lists A and B
+//    for(i=1; i<=20; i++){
+//       append(A, X[i]);
+//       prepend(B, X[i]);
+//    }
 
-   // print both lists of integers in forward direction
-   for(moveFront(A); index(A)>=0; moveNext(A)){
-      printf("%ld ", *(long*)get(A));
-   }
-   printf("\n");
-   for(moveFront(B); index(B)>=0; moveNext(B)){
-      printf("%ld ", *(long*)get(B));
-   }
-   printf("\n");
+//    // print both lists of integers in forward direction
+//    for(moveFront(A); index(A)>=0; moveNext(A)){
+//       printf("%ld ", *(long*)get(A));
+//    }
+//    printf("\n");
+//    for(moveFront(B); index(B)>=0; moveNext(B)){
+//       printf("%ld ", *(long*)get(B));
+//    }
+//    printf("\n");
 
 //    // print both lists of integers in backward direction
 //    for(moveBack(A); index(A)>=0; movePrev(A)){
