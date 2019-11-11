@@ -84,10 +84,10 @@ int main(int argc, char* argv[]){
    }
    printf("\n");
 
-//    // check length of A, before and after clear()
-//    printf("%d\n", length(A));
-//    clear(A);
-//    printf("%d\n", length(A));
+   // check length of A, before and after clear()
+   printf("%d\n", length(A));
+   clear(A);
+   printf("%d\n", length(A));
 
    //printf("Crashed before freeList \n");
    freeList(&A);
