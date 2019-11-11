@@ -85,3 +85,8 @@ List copyList(List L); // Returns a new List representing the same integer
 //   // sequence as L. The cursor in the new list is undefined,
 //   // regardless of the state of the cursor in L. The state
 //   // of L is unchanged.
+
+// set()
+// Overwrites the cursor element with x. Pre: length()>0, index()>=0
+void set(List L, long x);
+
