@@ -18,3 +18,6 @@ List.o : List.c List.h
   
 BigInteger.o : BigInteger.c BigInteger.h
 	gcc -c -std=c99 -Wall BigInteger.c 
+
+clean :
+	rm -f  ListTest ListTest.o List.o
