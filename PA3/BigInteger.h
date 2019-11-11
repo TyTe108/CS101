@@ -11,7 +11,8 @@ typedef struct BigIntegerObj* BigInteger;
 
 struct BigIntegerObj{
     int _sign;
-    List* _NUM;
+    int _digit;
+    List* _a;
 };
 
 
