@@ -13,7 +13,7 @@ int main(int argc, char* argv[]){
   List A = newList();
   List B = newList();
   List C = newList();
-  int X[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+  long X[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
   int i, u=-1, v=-2, equal=0;
 
    // initialize Lists A and B
@@ -24,21 +24,21 @@ int main(int argc, char* argv[]){
 
    // print both lists of integers in forward direction
    for(moveFront(A); index(A)>=0; moveNext(A)){
-      printf("%d ", *(int*)get(A));
+      printf("%ld ", *(long*)get(A));
    }
    printf("\n");
    for(moveFront(B); index(B)>=0; moveNext(B)){
-      printf("%d ", *(int*)get(B));
+      printf("%ld ", *(long*)get(B));
    }
    printf("\n");
 
    // print both lists of integers in backward direction
    for(moveBack(A); index(A)>=0; movePrev(A)){
-      printf("%d ", *(int*)get(A));
+      printf("%ld ", *(long*)get(A));
    }
    printf("\n");
    for(moveBack(B); index(B)>=0; movePrev(B)){
-      printf("%d ", *(int*)get(B));
+      printf("%ld ", *(long*)get(B));
    }
    printf("\n");
 
@@ -50,7 +50,7 @@ int main(int argc, char* argv[]){
    }
    // print the copy in forward direction
    for(moveFront(C); index(C)>=0; moveNext(C)){
-      printf("%d ", *(int*)get(C));
+      printf("%ld ", *(long*)get(C));
    }
    printf("\n");
 
@@ -75,11 +75,11 @@ int main(int argc, char* argv[]){
 
    // print A in forward and backward direction
    for(moveFront(A); index(A)>=0; moveNext(A)){
-      printf("%d ", *(int*)get(A));
+      printf("%ld ", *(long*)get(A));
    }
    printf("\n");
    for(moveBack(A); index(A)>=0; movePrev(A)){
-      printf("%d ", *(int*)get(A));
+      printf("%ld ", *(long*)get(A));
    }
    printf("\n");
 
