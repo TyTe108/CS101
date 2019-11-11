@@ -26,11 +26,11 @@ int main(int argc, char* argv[]){
    for(moveFront(A); index(A)>=0; moveNext(A)){
       printf("%ld ", get(A));
    }
-//    printf("\n");
-//    for(moveFront(B); index(B)>=0; moveNext(B)){
-//       printf("%ld ", *(long*)get(B));
-//    }
-//    printf("\n");
+   printf("\n");
+   for(moveFront(B); index(B)>=0; moveNext(B)){
+      printf("%ld ", get(B));
+   }
+   printf("\n");
 
 //    // print both lists of integers in backward direction
 //    for(moveBack(A); index(A)>=0; movePrev(A)){
