@@ -1,5 +1,6 @@
 #include <math.h>
 #include "BigInteger.h"
+#include<string.h>
 
 #define POWER 9
 #define BASE pow(10, POWER)
@@ -45,4 +46,35 @@ int compare(BigInteger A, BigInteger B){
   //.......
   
   return res;
+}
+
+// stringToBigInteger()
+// Returns a reference to a new BigInteger object representing the decimal integer
+// represented in base 10 by the string s.
+// Pre: s is a non-empty string containing only base ten digits {0,1,2,3,4,5,6,7,8,9}
+// and an optional sign {+, -} prefix.
+BigInteger stringToBigInteger(char* s){
+    //precondition
+    //find how many digits in the BigInt
+    int digitLen = strlen(s);
+    
+    if (digitLen <= 0){
+        printf("Calling stringToBigInteger() on an empty string \n");
+        return NULL;
+    }
+    BigInteger B = newBigInteger();
+    B->_digit = ceil(digitLen/POWER);
+    
+    char* sC;
+    strcpy(sC, s);
+    strrev(sC);
+    
+    while (*sC != '/0'){
+    
+    
+    }
+    
+//     for (i = (digitLen - 1); i >= 0; i--){ //Start from the back
+        
+//     }
 }
