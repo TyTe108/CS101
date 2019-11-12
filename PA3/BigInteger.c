@@ -68,13 +68,24 @@ BigInteger stringToBigInteger(char* s){
     char* sC;
     strcpy(sC, s);
     strrev(sC);
+    int stop;
     
-    while (*sC != '/0'){
-    
-    
-    }
-    
-//     for (i = (digitLen - 1); i >= 0; i--){ //Start from the back
+    //There's a reverse issue that's needs to be fixed
+    while (stop == 0){
+        char* toFloat;
+        strncpy(toFloat, sC, POWER);
         
-//     }
+        //Convert toFloat string to Float...
+        strrev(toFloat); //this fixes the reverse issue
+        float converted = strof(toFloat, NULL);
+        append(B->_L, converted);
+        
+        if(strlen(toFloat) < POWER){
+            stop = 1;
+        }else{
+            sC = sC + (POWER + 1);
+        }
+    }
+
+    return B;
 }
