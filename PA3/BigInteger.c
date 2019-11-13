@@ -109,7 +109,7 @@ void strrev(char* s){
         char *p1, *p2;
 
       if (! s || ! *s)
-            return str;
+            return s;
       for (p1 = s, p2 = s + strlen(s) - 1; p2 > p1; ++p1, --p2)
       {
             *p1 ^= *p2;
