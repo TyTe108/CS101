@@ -79,5 +79,7 @@ BigInteger prod(BigInteger A, BigInteger B);
 // Prints a base 10 string representation of N to filestream out.
 void printBigInteger(FILE* out, BigInteger N);
 
+void strrev(char* s); //Reverse the string s
+
 
 #endif //BIGINTEGER_H
