@@ -16,14 +16,14 @@ int main(int argc, char* argv[]){
     }
 
             BigInteger C = stringToBigInteger("+13378008135");
-            BigInteger D = stringToBigInteger("-13378008135");
-            if(sign(C) != 1 || sign(D) != -1){
-                printf("Sign Test Failed 2 \n");
-            }
+//             BigInteger D = stringToBigInteger("-13378008135");
+//             if(sign(C) != 1 || sign(D) != -1){
+//                 printf("Sign Test Failed 2 \n");
+//             }
 
             freeBigInteger(&A);
             freeBigInteger(&C);
-            freeBigInteger(&D);
+//             freeBigInteger(&D);
 
 return(0);
 }
