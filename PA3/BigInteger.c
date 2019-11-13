@@ -88,15 +88,17 @@ BigInteger stringToBigInteger(char* s){
   
     printf(" Works 2 \n"); 
     strrev(sC);
+    printf(" Works 3: Printing reversed sC: \n");
+    printf(sC);
+    printf("\n");
     int stop;
   
-    printf(" Works 3 \n"); 
   
     //There's a reverse issue that's needs to be fixed
     while (stop == 0){
         char toFloat[strlen(POWER)];
         strncpy(toFloat, sC, POWER);
-        
+      
         //Convert toFloat string to Float...
         strrev(toFloat); //this fixes the reverse issue
               
@@ -106,7 +108,9 @@ BigInteger stringToBigInteger(char* s){
         if(strlen(toFloat) < POWER){
             stop = 1;
         }else{
-            sC = sC + (POWER + 1);
+            strrev(sC);
+            strncpy(sC, sC, (strlen(sC) - POWER));
+            strrev(sC);
         }
     }
 
