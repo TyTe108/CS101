@@ -2,6 +2,7 @@
 #include "BigInteger.h"
 #include<string.h>
 #include <stdlib.h>
+#include<stdio.h> 
 
 #define POWER 9
 #define BASE pow(10, POWER)
