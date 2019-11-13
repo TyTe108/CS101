@@ -12,7 +12,7 @@ int main(int argc, char* argv[]){
 
     BigInteger A = newBigInteger();
     if (sign(A) != 0){
-        printf("Sign Test Failed \n")
+        printf("Sign Test Failed \n");
     }
 
             BigInteger C = stringToBigInteger("+13378008135");
