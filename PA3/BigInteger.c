@@ -98,20 +98,26 @@ BigInteger stringToBigInteger(char* s){
     while (stop == 0){
         char toFloat[strlen(POWER)];
         strncpy(toFloat, sC, POWER);
+        printf(" Works 4 \n"); 
       
         //Convert toFloat string to Float...
         strrev(toFloat); //this fixes the reverse issue
-              
+        printf(" Works 5 \n"); 
+            
         float converted = strtof(toFloat, NULL);
+        printf(" Works 6 \n"); 
         append(B->_L, converted);
         
         if(strlen(toFloat) < POWER){
             stop = 1;
         }else{
             strrev(sC);
+            printf(" Works 7 \n"); 
             char sC2[(strlen(sC) - POWER)];
             strncpy(sC, sC2, (strlen(sC) - POWER));
+            printf(" Works 8 \n"); 
             strrev(sC);
+            printf(" Works 9 \n"); 
         }
     }
 
