@@ -13,8 +13,8 @@ ListTest: ListTest.o List.o
 ListTest.o : ListTest.c List.h
 	gcc -c -std=c99 -Wall ListTest.c
 	
-BigIntegerTest: BigIntegerTest.o BigInteger.o
-	gcc -o BigIntegerTest BigIntegerTest.o BigInteger.o
+BigIntegerTest: BigIntegerTest.o BigInteger.o List.o
+	gcc -o BigIntegerTest BigIntegerTest.o  List.o BigInteger.o
 	
 BigIntegerTest.o : BigIntegerTest.c BigInteger.h
 	gcc -c -std=c99 -Wall BigIntegerTest.c	
