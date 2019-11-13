@@ -109,7 +109,8 @@ BigInteger stringToBigInteger(char* s){
             stop = 1;
         }else{
             strrev(sC);
-            strncpy(sC, sC, (strlen(sC) - POWER));
+            char sC2[(strlen(sC) - POWER)];
+            strncpy(sC, sC2, (strlen(sC) - POWER));
             strrev(sC);
         }
     }
