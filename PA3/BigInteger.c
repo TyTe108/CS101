@@ -86,7 +86,7 @@ BigInteger stringToBigInteger(char* s){
   
     //There's a reverse issue that's needs to be fixed
     while (stop == 0){
-        char* toFloat;
+        char* toFloat = NULL;
         strncpy(toFloat, sC, POWER);
         
         //Convert toFloat string to Float...
