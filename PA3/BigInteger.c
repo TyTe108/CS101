@@ -68,7 +68,7 @@ BigInteger stringToBigInteger(char* s){
   
   
     //Taking Care of the sign
-    if((s[0]) == '+' | (s[0]) == '-'){
+    if(((s[0]) == '+') | ((s[0]) == '-')){
         if(s[0] == '+'){
             B->_sign = 1;
         }else if (s[0] == '-'){
