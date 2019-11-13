@@ -79,10 +79,16 @@ BigInteger stringToBigInteger(char* s){
         s++;  
     }
     
+    printf(" Works 1 \n");  
+  
     char* sC = NULL;
     strcpy(sC, s);
+  
+    printf(" Works 2 \n"); 
     strrev(sC);
     int stop;
+  
+    printf(" Works 3 \n"); 
   
     //There's a reverse issue that's needs to be fixed
     while (stop == 0){
