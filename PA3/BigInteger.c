@@ -88,9 +88,9 @@ BigInteger stringToBigInteger(char* s){
   
     printf(" Works 2 \n"); 
     strrev(sC);
-    printf(" Works 3: Printing reversed sC: \n");
+    printf(" Works 3.1: Printing reversed sC: \n");
     printf(sC);
-    printf("\n");
+    printf("Works 3.2\n");
     int stop = 0;
   
   
