@@ -1,6 +1,7 @@
 #include <math.h>
 #include "BigInteger.h"
 #include<string.h>
+#include <stdlib.h>
 
 #define POWER 9
 #define BASE pow(10, POWER)
