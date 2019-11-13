@@ -64,12 +64,23 @@ BigInteger stringToBigInteger(char* s){
     }
     BigInteger B = newBigInteger();
     B->_digit = ceil(digitLen/POWER);
+  
+  
+    //Taking Care of the sign
+    if((s[0]) == '+' | (s[0] == '-'){
+        if(s[0] == '+'){
+            B->_sign = 1;
+        }else if (s[0] == '-'){
+            B->_sign = -1;
+        }
+        s++;  
+    }
     
     char* sC;
     strcpy(sC, s);
     strrev(sC);
     int stop;
-    
+  
     //There's a reverse issue that's needs to be fixed
     while (stop == 0){
         char* toFloat;
@@ -77,6 +88,7 @@ BigInteger stringToBigInteger(char* s){
         
         //Convert toFloat string to Float...
         strrev(toFloat); //this fixes the reverse issue
+              
         float converted = strof(toFloat, NULL);
         append(B->_L, converted);
         
