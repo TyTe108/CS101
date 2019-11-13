@@ -79,7 +79,9 @@ BigInteger stringToBigInteger(char* s){
         s++;  
     }
     
-    printf(" Works 1 \n");  
+    printf(" Works 1: Printing S: \n");
+    printf(s);
+    printf("\n");
   
     char* sC = NULL;
     strcpy(sC, s);
