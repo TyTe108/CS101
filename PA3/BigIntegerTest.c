@@ -15,7 +15,7 @@ int main(int argc, char* argv[]){
         printf("Sign Test Failed \n");
     }
 
-//             BigInteger C = stringToBigInteger("+13378008135");
+            BigInteger C = stringToBigInteger("+13378008135");
 //             BigInteger D = stringToBigInteger("-13378008135");
 //             if(sign(C) != 1 || sign(D) != -1) return 1;
 
