@@ -9,7 +9,7 @@
 BigInteger newBigInteger(){
   BigInteger B = (struct BigIntegerObj *) malloc(sizeof(struct BigIntegerObj)); //Dynamic Memory #1
   B->_sign = 0;
-  B->_digit = 0
+  B->_digit = 0;
   B->_L = newList();  //Dynamic Memory #2
   return B;
 }
@@ -23,8 +23,8 @@ void freeBigInteger(BigInteger* pN){
   List L = N->_L;
   freeList(&L); //Dynamic Memory #2
   
-  B->_sign = 0;
-  B->_digit = 0;
+  N->_sign = 0;
+  N->_digit = 0;
   
   free(*pN); //Dynamic Memory #1
   *pN = NULL;
@@ -68,7 +68,7 @@ BigInteger stringToBigInteger(char* s){
   
   
     //Taking Care of the sign
-    if((s[0]) == '+' | (s[0] == '-'){
+    if((s[0]) == '+' | (s[0]) == '-'){
         if(s[0] == '+'){
             B->_sign = 1;
         }else if (s[0] == '-'){
