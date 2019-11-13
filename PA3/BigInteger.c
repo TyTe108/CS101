@@ -83,8 +83,8 @@ BigInteger stringToBigInteger(char* s){
     printf(s);
     printf("\n");
   
-    char* sC = NULL;
-    sC = strcpy(sC, s);
+    char sC[strlen(s)];
+    strcpy(sC, s);
   
     printf(" Works 2 \n"); 
     strrev(sC);
@@ -94,7 +94,7 @@ BigInteger stringToBigInteger(char* s){
   
     //There's a reverse issue that's needs to be fixed
     while (stop == 0){
-        char* toFloat = NULL;
+        char toFloat[strlen(POWER)];
         strncpy(toFloat, sC, POWER);
         
         //Convert toFloat string to Float...
