@@ -103,7 +103,7 @@ BigInteger stringToBigInteger(char* s){
       
         //Convert toFloat string to Float...
         strrev(toFloat); //this fixes the reverse issue
-        printf(" Works 5: printing to float: %s \n", toFloat); 
+        printf(" Works 5: printing toFloat: %s \n", toFloat); 
             
         float converted = strtof(toFloat, NULL);
         printf(" Works 6 \n"); 
