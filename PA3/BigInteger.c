@@ -79,7 +79,7 @@ BigInteger stringToBigInteger(char* s){
         s++;  
     }
     
-    char* sC;
+    char* sC = NULL;
     strcpy(sC, s);
     strrev(sC);
     int stop;
