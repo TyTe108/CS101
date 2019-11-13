@@ -99,11 +99,11 @@ BigInteger stringToBigInteger(char* s){
         char toFloat[POWER];
         printf(" Works 4.1 \n"); 
         strncpy(toFloat, sC, POWER);
-        printf(" Works 4.2 \n"); 
+        printf(" Works 4.2\n"); 
       
         //Convert toFloat string to Float...
         strrev(toFloat); //this fixes the reverse issue
-        printf(" Works 5 \n"); 
+        printf(" Works 5: printing to float: %s \n", toFloat); 
             
         float converted = strtof(toFloat, NULL);
         printf(" Works 6 \n"); 
