@@ -34,7 +34,7 @@ int compare(BigInteger A, BigInteger B);
 // equals()
 // Return true (1) if A and B are equal, false (0) otherwise.
 int equals(BigInteger A, BigInteger B);
-4
+
 // Manipulation procedures ----------------------------------------------------
 // makeZero()
 // Re-sets N to the zero state.
