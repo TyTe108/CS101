@@ -84,7 +84,7 @@ BigInteger stringToBigInteger(char* s){
     printf("\n");
   
     char* sC = NULL;
-    strcpy(sC, s);
+    sC = strcpy(sC, s);
   
     printf(" Works 2 \n"); 
     strrev(sC);
