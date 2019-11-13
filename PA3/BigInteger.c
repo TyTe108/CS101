@@ -91,7 +91,7 @@ BigInteger stringToBigInteger(char* s){
         //Convert toFloat string to Float...
         strrev(toFloat); //this fixes the reverse issue
               
-        float converted = strof(toFloat, NULL);
+        float converted = strtof(toFloat, NULL);
         append(B->_L, converted);
         
         if(strlen(toFloat) < POWER){
