@@ -91,7 +91,7 @@ BigInteger stringToBigInteger(char* s){
     printf(" Works 3: Printing reversed sC: \n");
     printf(sC);
     printf("\n");
-    int stop;
+    int stop = 0;
   
   
     //There's a reverse issue that's needs to be fixed
