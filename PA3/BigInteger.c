@@ -90,13 +90,13 @@ BigInteger stringToBigInteger(char* s){
     strrev(sC);
     printf(" Works 3.1: Printing reversed sC: \n");
     printf(sC);
-    printf("Works 3.2\n");
+    printf("\nWorks 3.2\n");
     int stop = 0;
   
   
     //There's a reverse issue that's needs to be fixed
     while (stop == 0){
-        char toFloat[strlen(POWER)];
+        char toFloat[POWER];
         printf(" Works 4.1 \n"); 
         strncpy(toFloat, sC, POWER);
         printf(" Works 4.2 \n"); 
