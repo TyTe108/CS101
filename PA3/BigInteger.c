@@ -3,6 +3,7 @@
 #include<string.h>
 #include <stdlib.h>
 #include<stdio.h> 
+#include "List.h"
 
 #define POWER 9
 #define BASE pow(10, POWER)
