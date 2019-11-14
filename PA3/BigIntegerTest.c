@@ -22,6 +22,17 @@ int main(int argc, char* argv[]){
     freeBigInteger(&A);
     freeBigInteger(&C);
     freeBigInteger(&D);
+    
+    A = stringToBigInteger("+13378008135");
+    negate(A);
+    if(sign(A) != -1){
+        printf("Negate_test Failed 1 \n");
+    };
+    negate(A);
+    if(sign(A) != 1){
+        printf("Negate_test Failed 2 \n");
+    };
+
 
 return(0);
 }
