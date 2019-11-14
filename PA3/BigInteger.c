@@ -115,7 +115,8 @@ BigInteger stringToBigInteger(char* s){
             strrev(sC);
             printf(" Works 7 \n"); 
             char sC2[(strlen(sC) - POWER) + 1];
-            strncpy(sC, sC2, (strlen(sC) - POWER));
+            strncpy(sC2, sC, (strlen(sC) - POWER));
+            strcpy(sC, sC2);
             printf(" Works 8 \n"); 
             strrev(sC);
             printf(" Works 9 \n"); 
