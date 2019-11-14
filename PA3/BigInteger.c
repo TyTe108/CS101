@@ -45,15 +45,63 @@ int sign(BigInteger N){
   return (N->_sign);
 }
 
+// equals()
+// Return true (1) if A and B are equal, false (0) otherwise.
+int equals(BigInteger A, BigInteger B){
+    int res = compare(A, B);   
+    if (res == 0){
+        return 1;
+    }
+    return 0;
+}
+
+
 // compare()
 // Returns -1 if A<B, 1 if A>B, and 0 if A=B.
 int compare(BigInteger A, BigInteger B){
-  int res;
-  
-  //.......
-  //This function will make subtract() func a lot easier to code
-  
-  return res;
+    //compare if they are pointing to the same
+    if (A == B){
+        return 0;
+    }
+
+  //Compare sign first
+    if(A->_sign > B->_sign){
+        return 1;
+    }
+    else if(A->_sign < B_sign){
+        return -1;
+    }
+    
+    //At this point onward A_sign == B_sign
+    
+    List AL = A->_L;
+    List BL = B->_L;
+    //Check length now
+    int ALen = length(AL);
+    int BLen = length(BL);
+    
+    if (ALen > BLen){
+        return 1;
+    }else if (ALen < BLen){
+        return -1;
+    }
+    
+    //At this point onward sign and length are the same
+
+    for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){
+        long AData = get(AL);
+        long BData = get(BL);
+        
+        if (AData > BData){
+            return 1;
+        }
+        else if(AData < BData){
+            return -1;
+        }
+        //AData == BData
+        //go next to compare next one
+    }
+    return 0; //At the end, everything's equal to reach here
 }
 
 // makeZero()
