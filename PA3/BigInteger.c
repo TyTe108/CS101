@@ -171,6 +171,49 @@ BigInteger copy(BigInteger N){
     return O;
 }
 
+// add()
+// Places the sum of A and B in the existing BigInteger S, overwriting its
+// current state: S = A + B
+void add(BigInteger S, BigInteger A, BigInteger B){
+    // Neg A + B
+    //A + Neg B
+
+    if(A->_sign = -1 && B->_sign = -1){
+        S->_sign = -1;
+    }
+    if(A->_sign = 1 && B->_sign = 1){
+        S->_sign = 1;
+    }
+    
+    List AL = A->_L;
+    List BL = B->_L;
+    List SL = S->_L;
+    long carry = 0;
+    for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){
+        long AData = 0;
+        long BData = 0;
+        if(index(AL) >= 0){
+            AData = get(AL);
+        }
+        if(index(BL) >= 0){
+            BData = get(BL);
+        }
+        
+        long SData = AData + BData + carry;
+        
+        //Now check if there should be a carry
+        if (SData >= BASE){
+            SData = SData - BASE;
+            append(SL, SData);
+            (S->_digit)++;
+            carry = 1;
+        }else{
+            carry = 0;
+        }
+    }
+}
+
+
 void strrev(char* s){
     char *p1, *p2;
     if (! s || ! *s)
