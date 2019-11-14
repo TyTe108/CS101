@@ -34,7 +34,9 @@ int main(int argc, char* argv[]){
     if(sign(A) != 1){
         printf("Negate_test Failed 2 \n");
     };
-
+    freeBigInteger(&A);
+    //-----------------------------------------
+    
 
 return(0);
 }
