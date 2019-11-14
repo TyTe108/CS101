@@ -1,3 +1,10 @@
+/*==========
+ *Tyler Te
+ *CruzID: tylim
+ *Assignment: PA3
+ *========== */
+
+
 #include <math.h>
 #include "BigInteger.h"
 #include<string.h>
@@ -47,6 +54,17 @@ int compare(BigInteger A, BigInteger B){
   
   return res;
 }
+
+// makeZero()
+// Re-sets N to the zero state.
+void makeZero(BigInteger N){
+    clear(N->_L);
+    N->_L = NULL;
+    N->_sign = 0;
+    N->_digit = 0; 
+}
+
+
 
 // negate()
 // Reverses the sign of N: positive <--> negative. Does nothing if N is in the
