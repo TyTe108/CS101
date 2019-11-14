@@ -157,6 +157,20 @@ BigInteger stringToBigInteger(char* s){
     return B;
 }
 
+
+// copy()
+// Returns a reference to a new BigInteger object in the same state as N.
+BigInteger copy(BigInteger N){
+    if (N == NULL){
+        return;
+    }
+    BigInteger O = newBigInteger();
+    O->_sign = N->_sign;
+    O->_digit = N->_digit;
+    O->_list = copyList(N->_L);
+    return O;
+}
+
 void strrev(char* s){
     char *p1, *p2;
     if (! s || ! *s)
