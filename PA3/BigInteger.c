@@ -31,9 +31,6 @@ void freeBigInteger(BigInteger* pN){
   free(*pN); //Dynamic Memory #1
   *pN = NULL;
 }
-
-// Access functions -----------------------------------------------------------
-
 // sign()
 // Returns -1 if N is negative, 1 if N is positive, and 0 if N is in the zero
 // state.
@@ -50,6 +47,20 @@ int compare(BigInteger A, BigInteger B){
   
   return res;
 }
+
+// negate()
+// Reverses the sign of N: positive <--> negative. Does nothing if N is in the
+// zero state.
+void negate(BigInteger N){
+    if (N->_sign == 0){
+    }else if(N->_sign == -1){
+        N->_sign = 1;
+    }else if (N->_sign == 1){
+        N->_sign = -1;
+    }
+}
+
+
 
 // stringToBigInteger()
 // Returns a reference to a new BigInteger object representing the decimal integer
