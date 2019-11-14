@@ -282,7 +282,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
 }
 
 void subtract(BigInteger D, BigInteger A, BigInteger B){
-    if(A->_sign = 1 && B->_sign = -1){
+    if(A->_sign == 1 && B->_sign = -1){
       //Add
         negate(B);
         add(D, A, B);
@@ -290,7 +290,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         D->_sign = 1;
         return;
     }
-    if(A->_sign = -1 && B->_sign = 1){
+    if(A->_sign == -1 && B->_sign = 1){
       //Add
         negate(A);
         add(D, A, B);
@@ -298,7 +298,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         D->_sign = -1;
         return;
     }
-    if(A->_sign = -1 && B->_sign = -1){
+    if(A->_sign == -1 && B->_sign == -1){
         negate(A);
         negate(B);
         subtract(D, B, A);
@@ -306,7 +306,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         negate(B);
         return;
     }
-    if(A->_sign = 1 && B->_sign = 1){
+    if(A->_sign == 1 && B->_sign == 1){
         List AL = A->_L;
         List BL = B->_L;
         List DL = D->_L;
