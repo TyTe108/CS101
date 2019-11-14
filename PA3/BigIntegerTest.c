@@ -40,7 +40,7 @@ int main(int argc, char* argv[]){
     A = stringToBigInteger("+13378008135");
     makeZero(A);
     if(sign(A) != 0){
-        printf("Makezero_test Failed 2 \n");
+        printf("Makezero_test Failed 1 \n");
     }
     freeBigInteger(&A);
 
