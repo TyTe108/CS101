@@ -46,11 +46,17 @@ int main(int argc, char* argv[]){
     //-----------------------------------------
     A = stringToBigInteger("+13378008135");
     BigInteger B = copy(A);
-    if(sign(B) != 1) return 1;
+    if(sign(B) != 1){
+        printf("Copy_test Failed 1 \n");
+    }
     negate(A);
-    if(sign(B) != 1) return 1;
+    if(sign(B) != 1){
+        printf("Copy_test Failed 2\n");
+    }
     C = copy(A);
-    if(sign(C) != -1) return 1;
+    if(sign(C) != -1){
+        printf("Copy_test Failed 3 \n");
+    }
 
 
 return(0);
