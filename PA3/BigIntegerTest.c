@@ -57,7 +57,10 @@ int main(int argc, char* argv[]){
     if(sign(C) != -1){
         printf("Copy_test Failed 3 \n");
     }
-
+   
+    freeBigInteger(&A);
+    freeBigInteger(&B);
+    freeBigInteger(&C);
 
 return(0);
 }
