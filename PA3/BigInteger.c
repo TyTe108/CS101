@@ -51,6 +51,7 @@ int compare(BigInteger A, BigInteger B){
   int res;
   
   //.......
+  //This function will make subtract() func a lot easier to code
   
   return res;
 }
