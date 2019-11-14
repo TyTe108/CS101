@@ -44,6 +44,8 @@ int main(int argc, char* argv[]){
     }
     freeBigInteger(&A);
     //-----------------------------------------
+    
+    
     A = stringToBigInteger("+13378008135");
     BigInteger B = copy(A);
     if(sign(B) != 1){
@@ -61,6 +63,22 @@ int main(int argc, char* argv[]){
     freeBigInteger(&A);
     freeBigInteger(&B);
     freeBigInteger(&C);
+    
+    //-----------------------------------------
+    
+    A = stringToBigInteger("+13378008135");
+    B = stringToBigInteger("+13378008135");
+    C = stringToBigInteger("+14378008135");
+    D = stringToBigInteger("-13378008135");
 
+    if(compare(A,B) != 0){
+        printf("compare_test Failed 1 \n");
+    }
+    if(compare(A,C) != -1){
+        printf("compare_test Failed 2 \n");
+    }
+    if(equal(A,B) != 1){
+        printf("equal_test Failed 1 \n");
+    }
 return(0);
 }
