@@ -167,7 +167,7 @@ BigInteger copy(BigInteger N){
     BigInteger O = newBigInteger();
     O->_sign = N->_sign;
     O->_digit = N->_digit;
-    O->_list = copyList(N->_L);
+    O->_L = copyList(N->_L);
     return O;
 }
 
