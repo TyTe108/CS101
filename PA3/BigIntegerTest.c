@@ -8,6 +8,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+
 int main(int argc, char* argv[]){
 
     BigInteger A = newBigInteger();
@@ -19,6 +20,7 @@ int main(int argc, char* argv[]){
     if(sign(C) != 1 || sign(D) != -1){
         printf("Sign Test Failed 2 \n");
     }
+    printList(B->
     freeBigInteger(&A);
     freeBigInteger(&C);
     freeBigInteger(&D);
