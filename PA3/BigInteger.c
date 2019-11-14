@@ -176,12 +176,25 @@ BigInteger copy(BigInteger N){
 // current state: S = A + B
 void add(BigInteger S, BigInteger A, BigInteger B){
     // Neg A + B
+    if (A->_sign == -1 && B->_sign == 1){
+        negate(A);
+        subtract(S, B, A);
+        negate(A);
+        return;
+    }
+    
     //A + Neg B
+    if(A->_sign == 1 && B->_sign == -1){
+        negate(B);
+        subtract(S, A, B);
+        negate(B);
+        return;
+    }
 
-    if(A->_sign = -1 && B->_sign = -1){
+    if(A->_sign == -1 && B->_sign == -1){
         S->_sign = -1;
     }
-    if(A->_sign = 1 && B->_sign = 1){
+    if(A->_sign == 1 && B->_sign == 1){
         S->_sign = 1;
     }
     
@@ -208,13 +221,74 @@ void add(BigInteger S, BigInteger A, BigInteger B){
             (S->_digit)++;
             carry = 1;
         }else{
+            append(SL, SData);
+            (S->_digit)++;
             carry = 0;
         }
+    }
+    if (carry == 1){
+        append(SL, (float)1);
+        (S->_digit)++;
     }
 }
 
 void subtract(BigInteger D, BigInteger A, BigInteger B){
-
+    if(A->_sign = 1 && B->_sign = -1){
+      //Add
+        negate(B);
+        add(D, A, B);
+        negate(B);
+        D->_sign = 1;
+        return;
+    }
+    if(A->_sign = -1 && B->_sign = 1){
+      //Add
+        negate(A);
+        add(D, A, B);
+        negate(A);    
+        D->_sign = -1;
+        return;
+    }
+    if(A->_sign = -1 && B->_sign = -1){
+        negate(A);
+        negate(B);
+        subtract(D, B, A);
+        negate(A);
+        negate(B);
+        return;
+    }
+    if(A->_sign = 1 && B->_sign = 1){
+        List AL = A->_L;
+        List BL = B->_L;
+        List DL = D->_L;
+        long carry = 0;
+        for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){   
+            long AData = 0;
+            long BData = 0;
+            if(index(AL) >= 0){
+                AData = get(AL);
+            }
+            if(index(BL) >= 0){
+                BData = get(BL);
+            }
+            long DData = AData - BData + carry;
+            
+            if (DData < 0){
+                DData = DData + BASE;
+                append(DL, DData);
+                (D->_digit)++;
+                carry = -1;
+            }else{
+                append(DL, DData);
+                (D->_digit)++;
+                carry = 0;
+            }
+        }
+        if(carry = -1){
+            append(DL, (float)1);
+            (S->_digit)++;
+        }
+    }
 }
 
 
