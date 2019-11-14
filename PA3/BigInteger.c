@@ -162,7 +162,7 @@ BigInteger stringToBigInteger(char* s){
 // Returns a reference to a new BigInteger object in the same state as N.
 BigInteger copy(BigInteger N){
     if (N == NULL){
-        return;
+        return NULL;
     }
     BigInteger O = newBigInteger();
     O->_sign = N->_sign;
