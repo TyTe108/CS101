@@ -213,6 +213,10 @@ void add(BigInteger S, BigInteger A, BigInteger B){
     }
 }
 
+void subtract(BigInteger D, BigInteger A, BigInteger B){
+
+}
+
 
 void strrev(char* s){
     char *p1, *p2;
