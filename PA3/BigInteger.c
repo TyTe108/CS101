@@ -99,6 +99,7 @@ BigInteger stringToBigInteger(char* s){
         char toFloat[POWER+1];
         printf(" Works 4.1 \n"); 
         strncpy(toFloat, sC, POWER);
+        toFloat[POWER] = '\0';
         printf(" Works 4.2: Printing reversed toFloat: %s\n", toFloat); 
       
         //Convert toFloat string to Float...
@@ -116,6 +117,7 @@ BigInteger stringToBigInteger(char* s){
             printf(" Works 7 \n"); 
             char sC2[(strlen(sC) - POWER) + 1];
             strncpy(sC2, sC, (strlen(sC) - POWER));
+            sC2[(strlen(sC) - POWER)] = '\0';
             strcpy(sC, sC2);
             printf(" Works 8 \n"); 
             strrev(sC);
