@@ -79,49 +79,49 @@ BigInteger stringToBigInteger(char* s){
         s++;  
     }
     
-    printf(" Works 1: Printing S: \n");
-    printf(s);
-    printf("\n");
+   // printf(" Works 1: Printing S: \n");
+   // printf(s);
+    //printf("\n");
   
     char sC[strlen(s) + 1];
     strcpy(sC, s);
   
-    printf(" Works 2 \n"); 
+    //printf(" Works 2 \n"); 
     strrev(sC);
-    printf(" Works 3.1: Printing reversed sC: \n");
-    printf(sC);
-    printf("\nWorks 3.2\n");
+    //printf(" Works 3.1: Printing reversed sC: \n");
+   // printf(sC);
+    //printf("\nWorks 3.2\n");
     int stop = 0;
   
   
     //There's a reverse issue that's needs to be fixed
     while (stop == 0){
         char toFloat[POWER+1];
-        printf(" Works 4.1 \n"); 
+        //printf(" Works 4.1 \n"); 
         strncpy(toFloat, sC, POWER);
         toFloat[POWER] = '\0';
-        printf(" Works 4.2: Printing reversed toFloat: %s\n", toFloat); 
+        //printf(" Works 4.2: Printing reversed toFloat: %s\n", toFloat); 
       
         //Convert toFloat string to Float...
         strrev(toFloat); //this fixes the reverse issue
-        printf(" Works 5: printing toFloat: %s \n", toFloat); 
+        //printf(" Works 5: printing toFloat: %s \n", toFloat); 
             
         float converted = strtof(toFloat, NULL);
-        printf(" Works 6 \n"); 
+        //printf(" Works 6 \n"); 
         append(B->_L, converted);
         
         if(strlen(toFloat) < POWER){
             stop = 1;
         }else{
             strrev(sC);
-            printf(" Works 7 \n"); 
+            //printf(" Works 7 \n"); 
             char sC2[(strlen(sC) - POWER) + 1];
             strncpy(sC2, sC, (strlen(sC) - POWER));
             sC2[(strlen(sC) - POWER)] = '\0';
             strcpy(sC, sC2);
-            printf(" Works 8 \n"); 
+            //printf(" Works 8 \n"); 
             strrev(sC);
-            printf(" Works 9 \n"); 
+            //printf(" Works 9 \n"); 
         }
     }
 
