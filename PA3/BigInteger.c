@@ -99,7 +99,7 @@ BigInteger stringToBigInteger(char* s){
         char toFloat[POWER+1];
         printf(" Works 4.1 \n"); 
         strncpy(toFloat, sC, POWER);
-        printf(" Works 4.2\n"); 
+        printf(" Works 4.2: Printing reversed toFloat: %s\n", toFloat); 
       
         //Convert toFloat string to Float...
         strrev(toFloat); //this fixes the reverse issue
