@@ -43,6 +43,15 @@ int main(int argc, char* argv[]){
         printf("Makezero_test Failed 1 \n");
     }
     freeBigInteger(&A);
+    //-----------------------------------------
+    A = stringToBigInteger("+13378008135");
+    BigInteger B = copy(A);
+    if(sign(B) != 1) return 1;
+    negate(A);
+    if(sign(B) != 1) return 1;
+    C = copy(A);
+    if(sign(C) != -1) return 1;
+
 
 return(0);
 }
