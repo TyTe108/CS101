@@ -23,6 +23,8 @@ int main(int argc, char* argv[]){
     freeBigInteger(&A);
     freeBigInteger(&C);
     freeBigInteger(&D);
+    
+    printf("Sign Tests Passed \n");
     //-----------------------------------------
     
     A = stringToBigInteger("+13378008135");
@@ -35,6 +37,8 @@ int main(int argc, char* argv[]){
         printf("Negate_test Failed 2 \n");
     };
     freeBigInteger(&A);
+    
+    printf("Negate_tests Passed \n");
     //-----------------------------------------
     
     A = stringToBigInteger("+13378008135");
@@ -43,6 +47,8 @@ int main(int argc, char* argv[]){
         printf("Makezero_test Failed 1 \n");
     }
     freeBigInteger(&A);
+    
+    printf("Makezero_tests Passed \n");
     //-----------------------------------------
     
     
@@ -64,6 +70,8 @@ int main(int argc, char* argv[]){
     freeBigInteger(&B);
     freeBigInteger(&C);
     
+    printf("Copy_tests Passed \n");
+    
     //-----------------------------------------
     
     A = stringToBigInteger("+13378008135");
@@ -80,5 +88,12 @@ int main(int argc, char* argv[]){
     if(equals(A,B) != 1){
         printf("equal_test Failed 1 \n");
     }
+    
+    freeBigInteger(&A);
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+    freeBigInteger(&D);
+    
+    printf("compare & equal_tests Passed \n");
 return(0);
 }
