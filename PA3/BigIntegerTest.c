@@ -111,5 +111,8 @@ int main(int argc, char* argv[]){
     freeBigInteger(&B);
     freeBigInteger(&C);
     freeBigInteger(&D);
+    
+    
+    printf("sum_tests Passed \n");
 return(0);
 }
