@@ -184,7 +184,7 @@ BigInteger stringToBigInteger(char* s){
         strrev(toLong); //this fixes the reverse issue
         //printf(" Works 5: printing toFloat: %s \n", toFloat); 
             
-        long converted = strtol(toLong, NULL, BASE);
+        long converted = strtol(toLong, NULL, 10);
         //printf(" Works 6: printing converted:  %ld\n", converted); 
         append(B->_L, converted);
         
