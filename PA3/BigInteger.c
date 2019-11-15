@@ -291,9 +291,9 @@ void add(BigInteger S, BigInteger A, BigInteger B){
         (S->_digit)++;
     }
   
-  printf("Sum Result: ");
-  printList(stdout, SL);
-  printf("\n");
+//   printf("Sum Result: ");
+//   printList(stdout, SL);
+//   printf("\n");
 }
 
 void subtract(BigInteger D, BigInteger A, BigInteger B){
