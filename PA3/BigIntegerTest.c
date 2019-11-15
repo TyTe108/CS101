@@ -95,5 +95,21 @@ int main(int argc, char* argv[]){
     freeBigInteger(&D);
     
     printf("compare & equal_tests Passed \n");
+    
+    A = stringToBigInteger("+111122223333");
+    B = stringToBigInteger("+222211110000");
+
+            //pos + pos = pos
+    D = stringToBigInteger("+333333333333");
+    C = sum(A, B);
+
+    if(!equals(C, D)){
+        printf("sum_test Failed 1 \n");
+    };
+            
+    freeBigInteger(&A);
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+    freeBigInteger(&D);
 return(0);
 }
