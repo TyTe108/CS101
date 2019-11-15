@@ -10,6 +10,8 @@
 
 
 int main(int argc, char* argv[]){
+    long test = 10;
+    printf("Printing long: %li \n",test);
 
     BigInteger A = newBigInteger();
     if (sign(A) != 0){
