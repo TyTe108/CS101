@@ -380,7 +380,7 @@ void printBigInteger(FILE* out, BigInteger N){
 
   for(moveBack(NL); (index(NL))>=0; movePrev(NL)){
     long data = get(NL);
-    fprintf(out,"%ld " ,data);
+    fprintf(out,"%li " ,data);
   }
 }
 
