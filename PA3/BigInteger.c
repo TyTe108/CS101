@@ -174,21 +174,21 @@ BigInteger stringToBigInteger(char* s){
   
     //There's a reverse issue that's needs to be fixed
     while (stop == 0){
-        char toFloat[POWER+1];
+        char toLong[POWER+1];
         //printf(" Works 4.1 \n"); 
-        strncpy(toFloat, sC, POWER);
-        toFloat[POWER] = '\0';
+        strncpy(toLong, sC, POWER);
+        toLong[POWER] = '\0';
         //printf(" Works 4.2: Printing reversed toFloat: %s\n", toFloat); 
       
         //Convert toFloat string to Float...
-        strrev(toFloat); //this fixes the reverse issue
+        strrev(toLong); //this fixes the reverse issue
         //printf(" Works 5: printing toFloat: %s \n", toFloat); 
             
-        float converted = strtof(toFloat, NULL);
-        printf(" Works 6: printing converted:  %ld\n", converted); 
+        long converted = strtol(toLong, NULL, BASE);
+        //printf(" Works 6: printing converted:  %ld\n", converted); 
         append(B->_L, converted);
         
-        if(strlen(toFloat) < POWER){
+        if(strlen(toLong) < POWER){
             stop = 1;
         }else{
             strrev(sC);
