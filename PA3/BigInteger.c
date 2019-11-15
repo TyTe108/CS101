@@ -245,6 +245,8 @@ void add(BigInteger S, BigInteger A, BigInteger B){
     }
     else if(A->_sign == 1 && B->_sign == 1){
         S->_sign = 1;
+        printf("Call #1 \n");
+      
     }
     
     List AL = A->_L;
