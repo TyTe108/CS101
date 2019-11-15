@@ -17,6 +17,13 @@ int main(int argc, char* argv[]){
     }
     BigInteger C = stringToBigInteger("+13378008135");
     BigInteger D = stringToBigInteger("-13378008135");
+    
+    printf("Sign_Test C:  \n");
+    printBigInteger(stdout, C);
+    printf("\nSign Test D: \n");
+    printBigInteger(stdout, D);
+    printf("\n");
+    
     if(sign(C) != 1 || sign(D) != -1){
         printf("Sign Test Failed 2 \n");
     }
