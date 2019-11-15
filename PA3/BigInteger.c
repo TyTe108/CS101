@@ -370,6 +370,9 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
 // Prints a base 10 string representation of N to filestream out.
 void printBigInteger(FILE* out, BigInteger N){
   List NL = N->_L;
+  
+  fprintf(out, "%s", N->_sign);
+  
   for(moveBack(NL); (index(NL))>=0; movePrev(NL)){
     long data = get(NL);
     fprintf(out,"%1f " ,data);
