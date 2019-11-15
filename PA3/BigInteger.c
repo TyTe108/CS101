@@ -224,6 +224,8 @@ BigInteger copy(BigInteger N){
 // Places the sum of A and B in the existing BigInteger S, overwriting its
 // current state: S = A + B
 void add(BigInteger S, BigInteger A, BigInteger B){
+    makeZero(S);
+ 
     // Neg A + B
     if (A->_sign == -1 && B->_sign == 1){
         negate(A);
@@ -297,6 +299,8 @@ void add(BigInteger S, BigInteger A, BigInteger B){
 }
 
 void subtract(BigInteger D, BigInteger A, BigInteger B){
+    makeZero(D);
+    
     if (equals(A, B) == 1){
         makeZero(D);
         return;
