@@ -123,6 +123,11 @@ int main(int argc, char* argv[]){
     D = stringToBigInteger("+333333333333");
     add(C, A, B);
     
+    printf("Add_Test Sum C: \n");
+    printBigInteger(stdout, c);
+    printf("\n");
+
+    
     if(!equals(C, D)){
         printf("add_test Failed 1 \n");
     }
