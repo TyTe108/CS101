@@ -282,6 +282,10 @@ void add(BigInteger S, BigInteger A, BigInteger B){
 }
 
 void subtract(BigInteger D, BigInteger A, BigInteger B){
+    if (equals(A, B) == 1){
+        makeZero(D);
+        return;
+    }
     if(A->_sign == 1 && B->_sign == -1){
       //Add
         negate(B);
@@ -306,6 +310,13 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         negate(B);
         return;
     }
+    
+//     int comp = compare(A,B);
+//     if(comp == -1){
+        
+//     }
+    
+ 
     if(A->_sign == 1 && B->_sign == 1){
         List AL = A->_L;
         List BL = B->_L;
@@ -334,8 +345,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
             }
         }
         if(carry == -1){
-            append(DL, (float)1);
-            (D->_digit)++;
+            printf("Error: Carry = -1 in void subtract() \n");
         }
     }
 }
