@@ -113,6 +113,7 @@ int main(int argc, char* argv[]){
     
     freeBigInteger(&A);
     freeBigInteger(&B);
+    freeBigInteger(&C);
     freeBigInteger(&D);
     printf("add_tests Passed \n");
 return(0);
