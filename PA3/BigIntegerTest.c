@@ -77,7 +77,7 @@ int main(int argc, char* argv[]){
     if(compare(A,C) != -1){
         printf("compare_test Failed 2 \n");
     }
-    if(equal(A,B) != 1){
+    if(equals(A,B) != 1){
         printf("equal_test Failed 1 \n");
     }
 return(0);
