@@ -281,6 +281,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
         append(SL, (float)1);
         (S->_digit)++;
     }
+  printList(stdout, SL);
 }
 
 void subtract(BigInteger D, BigInteger A, BigInteger B){
