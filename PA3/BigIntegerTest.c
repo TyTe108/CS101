@@ -124,7 +124,7 @@ int main(int argc, char* argv[]){
     add(C, A, B);
     
     printf("Add_Test Sum C: \n");
-    printBigInteger(stdout, c);
+    printBigInteger(stdout, C);
     printf("\n");
 
     
