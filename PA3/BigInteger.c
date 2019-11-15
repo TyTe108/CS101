@@ -245,7 +245,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
     }
     else if(A->_sign == 1 && B->_sign == 1){
         S->_sign = 1;
-        printf("Call #1 \n");
+        //printf("Call #1 \n");
       
     }
     
@@ -253,13 +253,13 @@ void add(BigInteger S, BigInteger A, BigInteger B){
     List BL = B->_L;
     List SL = S->_L;
 
-    printf("A: ");
-    printList(stdout, AL);
-    printf("\n\n");
+//     printf("A: ");
+//     printList(stdout, AL);
+//     printf("\n\n");
     
-    printf("B: ");
-    printList(stdout, AL);
-    printf("\n\n");
+//     printf("B: ");
+//     printList(stdout, AL);
+//     printf("\n\n");
   
     long carry = 0;
     for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){
