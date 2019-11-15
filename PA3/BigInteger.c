@@ -185,7 +185,7 @@ BigInteger stringToBigInteger(char* s){
         //printf(" Works 5: printing toFloat: %s \n", toFloat); 
             
         float converted = strtof(toFloat, NULL);
-        //printf(" Works 6 \n"); 
+        printf(" Works 6: printing converted:  %ld\n"); 
         append(B->_L, converted);
         
         if(strlen(toFloat) < POWER){
