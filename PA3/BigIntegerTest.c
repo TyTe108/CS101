@@ -135,7 +135,7 @@ int main(int argc, char* argv[]){
     freeBigInteger(&D);
     
     B = stringToBigInteger("-111122223333");
-    add(C, A, pB);
+    add(C, A, B);
     if(sign(C) != 0) {
         printf("add_test Failed 2 \n");
     }  
