@@ -252,6 +252,15 @@ void add(BigInteger S, BigInteger A, BigInteger B){
     List AL = A->_L;
     List BL = B->_L;
     List SL = S->_L;
+
+    printf("A: ");
+    printList(stdout, AL);
+    printf("\n\n");
+    
+    printf("B: ");
+    printList(stdout, AL);
+    printf("\n\n");
+  
     long carry = 0;
     for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){
         long AData = 0;
@@ -281,7 +290,10 @@ void add(BigInteger S, BigInteger A, BigInteger B){
         append(SL, (float)1);
         (S->_digit)++;
     }
+  
+  printf("Sum Result: ");
   printList(stdout, SL);
+  printf("\n");
 }
 
 void subtract(BigInteger D, BigInteger A, BigInteger B){
