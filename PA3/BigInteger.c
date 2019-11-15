@@ -371,8 +371,13 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
 void printBigInteger(FILE* out, BigInteger N){
   List NL = N->_L;
   
-  fprintf(out, "%s", N->_sign);
+  if(N->_sign == 1){
+      fprintf(out, "+");
   
+  }else (N->_sign == -1){
+      fprintf(out, "-");
+  }
+
   for(moveBack(NL); (index(NL))>=0; movePrev(NL)){
     long data = get(NL);
     fprintf(out,"%1f " ,data);
