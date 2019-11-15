@@ -374,7 +374,7 @@ void printBigInteger(FILE* out, BigInteger N){
   if(N->_sign == 1){
       fprintf(out, "+");
   
-  }else (N->_sign == -1){
+  }else if (N->_sign == -1){
       fprintf(out, "-");
   }
 
