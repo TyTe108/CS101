@@ -335,7 +335,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         }
         if(carry == -1){
             append(DL, (float)1);
-            (S->_digit)++;
+            (D->_digit)++;
         }
     }
 }
