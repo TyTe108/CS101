@@ -243,7 +243,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
     if(A->_sign == -1 && B->_sign == -1){
         S->_sign = -1;
     }
-    if(A->_sign == 1 && B->_sign == 1){
+    else if(A->_sign == 1 && B->_sign == 1){
         S->_sign = 1;
     }
     
