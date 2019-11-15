@@ -108,6 +108,13 @@ int main(int argc, char* argv[]){
     A = stringToBigInteger("+111122223333");
     B = stringToBigInteger("+222211110000");
     C = newBigInteger();
+    
+    
+    printf("Add_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nAdd_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
 
     //pos + pos = pos
             
