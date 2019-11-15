@@ -366,6 +366,16 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
 }
 
 
+// printBigInteger()
+// Prints a base 10 string representation of N to filestream out.
+void printBigInteger(FILE* out, BigInteger N){
+  List NL = N->_L;
+  for(moveBack(NL); (index(NL))>=0; movePrev(NL)){
+    long data = get(NL);
+    fprintf(out,"%1f " ,data);
+  }
+}
+
 void strrev(char* s){
     char *p1, *p2;
     if (! s || ! *s)
