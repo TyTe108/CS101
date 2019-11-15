@@ -68,7 +68,7 @@ int compare(BigInteger A, BigInteger B){
     if(A->_sign > B->_sign){
         return 1;
     }
-    else if(A->_sign < B_sign){
+    else if(A->_sign < B->_sign){
         return -1;
     }
     
@@ -282,7 +282,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
 }
 
 void subtract(BigInteger D, BigInteger A, BigInteger B){
-    if(A->_sign == 1 && B->_sign = -1){
+    if(A->_sign == 1 && B->_sign == -1){
       //Add
         negate(B);
         add(D, A, B);
@@ -290,7 +290,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         D->_sign = 1;
         return;
     }
-    if(A->_sign == -1 && B->_sign = 1){
+    if(A->_sign == -1 && B->_sign == 1){
       //Add
         negate(A);
         add(D, A, B);
@@ -311,7 +311,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         List BL = B->_L;
         List DL = D->_L;
         long carry = 0;
-        for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){   
+        for(moveFront(AL), moveFront(BL); (index(AL))>=0 | (index(BL))>=0; moveNext(AL), moveNext(BL)){   
             long AData = 0;
             long BData = 0;
             if(index(AL) >= 0){
@@ -333,7 +333,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
                 carry = 0;
             }
         }
-        if(carry = -1){
+        if(carry == -1){
             append(DL, (float)1);
             (S->_digit)++;
         }
