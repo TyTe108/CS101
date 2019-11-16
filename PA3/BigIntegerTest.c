@@ -112,7 +112,7 @@ int main(int argc, char* argv[]){
     C = newBigInteger();
     
     
-    printf("Add_Test A:  \n");
+     printf("Add_Test A:  \n");
     printBigInteger(stdout, A);
     printf("\nAdd_Test B: \n");
     printBigInteger(stdout, B);
@@ -134,40 +134,326 @@ int main(int argc, char* argv[]){
     freeBigInteger(&B);
     freeBigInteger(&D);
     
-//     B = stringToBigInteger("-111122223333");
-//     add(C, A, B);
-//     if(sign(C) != 0) {
-//         printf("add_test Failed 2 \n");
-//     }  
+    B = stringToBigInteger("-111122223333");
+    add(C, A, B);
+    if(sign(C) != 0) {
+        printf("add_test Failed 2 \n");
+    }
     
-//     printf("Add_Test A:  \n");
-//     printBigInteger(stdout, A);
-//     printf("\nAdd_Test B: \n");
-//     printBigInteger(stdout, B);
-//     printf("\n");
-//     printf("Add_Test Sum C: \n");
-//     printBigInteger(stdout, C);
-//     printf("\n");
+    printf("Add_Test #2: \n");
+    printf("Add_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nAdd_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("Add_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
 
-//     freeBigInteger(&B);
+    freeBigInteger(&B);
 
-//     B = stringToBigInteger("-110122223333");
-//     add(C, A, B);
-//     if(sign(C) != 1){
-//         printf("add_test Failed 3 \n");
-//     }
+    B = stringToBigInteger("-110122223333");
+    add(C, A, B);
+    if(sign(C) != 1){
+        printf("add_test Failed 3 \n");
+    }
     
-//     printf("Add_Test A:  \n");
-//     printBigInteger(stdout, A);
-//     printf("\nAdd_Test B: \n");
-//     printBigInteger(stdout, B);
-//     printf("\n");
-//     printf("Add_Test Sum C: \n");
-//     printBigInteger(stdout, C);
-//     printf("\n");
+    printf("Add_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nAdd_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("Add_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
     
-//     freeBigInteger(&B);
+    freeBigInteger(&A);
+    freeBigInteger(&B);
+    freeBigInteger(&C);
     
     printf("add_tests Passed \n");
+
+
+    //---------------------------
+    A = stringToBigInteger("+111122223333");
+    B = stringToBigInteger("+222211110000");
+
+    //pos + pos = pos
+    D = stringToBigInteger("+333333333333");
+    C = sum(A, B);
+
+    if(!equals(C, D)){
+      printf("sum_test Failed 1 \n");
+    }
+
+    printf("Sum_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nSum_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("Sum_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+    
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+    freeBigInteger(&D);
+
+    negate(A); //A-> -111122223333
+    B = stringToBigInteger("+111122223333");
+    C = sum(A, B);
+    if(sign(C) != 0){
+      printf("sum_test Failed 2 \n");
+    }
+
+    printf("Sum_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nSum_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("Sum_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+
+
+    B = stringToBigInteger("+112122223333");
+    C = sum(A, B);
+    if(sign(C) != 1){
+      printf("sum_test Failed 3 \n");
+    }
+
+
+    printf("Sum_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nSum_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("Sum_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+    
+
+    B = stringToBigInteger("+110122223333");
+    C = sum(A, B);
+    if(sign(C) != -1){
+      printf("sum_test Failed 4 \n");
+    }
+
+    printf("Sum_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nSum_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("Sum_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+
+    B = stringToBigInteger("-222211110000");
+    D = stringToBigInteger("-333333333333");
+    C = sum(A, B);
+    if(!equals(C, D)){
+      printf("sum_test Failed 5 \n");
+    } 
+
+    printf("Sum_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nSum_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("Sum_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+    
+    freeBigInteger(&A);
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+    freeBigInteger(&D);
+    
+    printf("sum_tests Passed \n");
+
+    //Subtract Test-------------------------
+    A = stringToBigInteger("+111122223333");
+    B = stringToBigInteger("+111122223333");
+    C = newBigInteger();
+    
+    subtract(C, A, B);
+    if(sign(C) != 0){
+      printf("subtract_test Failed 1\n");
+    }
+
+    printf("subtract_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nsubtract_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("subtract_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+    freeBigInteger(&B);
+
+
+    B = stringToBigInteger("121122223333");
+    subtract(C, A, B);
+    if(sign(C) != -1){
+      printf("subtract_test Failed 2\n");
+    }
+
+    printf("subtract_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nsubtract_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("subtract_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+    // pos - pos > 0
+    freeBigInteger(&B);
+
+    B = stringToBigInteger("101122223333");
+    subtract(C, A, B);
+    if(sign(C) != 1){
+      printf("subtract_test Failed 3\n");
+    }
+
+    printf("subtract_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nsubtract_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("subtract_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+
+    negate(B);
+    subtract(C, A, B);
+    if(sign(C) != 1){
+      printf("subtract_test Failed 4\n");
+    }
+    printf("subtract_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nsubtract_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("subtract_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+
+    subtract(C, B, A);
+    if(sign(C) != -1){
+      printf("subtract_test Failed 5\n");
+    }
+
+
+    printf("subtract_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nsubtract_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("subtract_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+
+    freeBigInteger(&A);
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+
+    printf("subtract_tests Passed \n");
+
+
+    //Diff------------------------------
+    A = stringToBigInteger("-111122223333");
+    B = stringToBigInteger("-111122223333");
+
+    //neg - neg = 0
+    C = diff(A, B);
+    if(sign(C) != 0){
+      printf("diff__test Failed 1\n");
+    }
+
+    printf("diff_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\ndiff_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("diff_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+
+
+
+    B = stringToBigInteger("-112122223333");
+    C = diff(A, B);
+    if(sign(C) != 1){
+      printf("diff__test Failed 2\n");
+    }
+
+    printf("diff_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\ndiff_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("diff_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+
+
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+
+    B = stringToBigInteger("-110122223333");
+    C = diff(A, B);
+    if(sign(C) != -1){
+      printf("diff__test Failed 3\n");
+    }
+    
+
+    printf("diff_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\ndiff_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("diff_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+
+    negate(B);
+    freeBigInteger(&C);
+    C = diff(A, B);
+    if(sign(C) != -1){
+      printf("diff__test Failed 4\n");
+    }
+
+    printf("diff_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\ndiff_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+    printf("diff_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+
+    printf("subtract_tests Passed \n");
+    
 return(0);
 }

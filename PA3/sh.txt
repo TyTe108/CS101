@@ -1,0 +1,88 @@
+3
+
+
+Please be warned that the following tests discard all output to stdout/stderr
+Arithmetic tests: If nothing between '=' signs, then test is passed
+Press enter to continue
+Arithmetic Test 1:
+==========
+diff: outfile1.txt: No such file or directory
+==========
+Arithmetic Test 2:
+==========
+diff: outfile2.txt: No such file or directory
+==========
+Arithmetic Test 3:
+==========
+diff: outfile3.txt: No such file or directory
+==========
+Arithmetic Test 4:
+==========
+diff: outfile4.txt: No such file or directory
+==========
+Arithmetic Test 5:
+==========
+diff: outfile5.txt: No such file or directory
+==========
+
+
+
+
+Passed 0 Arithmetic tests for a total of 0 / 10 points
+
+
+
+
+Press Enter To Continue with ListTest Results
+
+
+
+
+Test Empty_length: PASSED
+Test Append_length: PASSED
+Test Prepend_length: PASSED
+Test InsertAfter_length: PASSED
+Test InsertBefore_length: PASSED
+Test DeleteFront_length: PASSED
+Test DeleteBack_length: PASSED
+Test Delete_length: PASSED
+Test EmptyList_index: PASSED
+Test MoveFront_index: PASSED
+Test MoveBack_index: PASSED
+Test MoveNext_index: PASSED
+Test MovePrev_index: PASSED
+Test Append_index: PASSED
+Test Prepend_index: PASSED
+Test InsertAfter_index: PASSED
+Test InsertBefore_index: PASSED
+Test DeleteFront_index: PASSED
+Test DeleteBack_index: PASSED
+Test Delete_index: PASSED
+Test Empty_clear: PASSED
+Test NonEmpty_clear: PASSED
+Test Set_get: PASSED
+Test Set_front: PASSED
+Test NonEmpty_front: PASSED
+Test Set_back: PASSED
+Test NonEmpty_back: PASSED
+
+You passed 27 out of 27 tests
+
+You will receive 10 out of 10 possible points on the ListTests
+
+
+
+Press Enter To Continue with ModelBigIntegerTest Results
+
+
+
+
+gcc -c -std=c99 -Wall ListTest.c
+gcc -c -std=c99 -Wall List.c
+gcc -o ListTest ListTest.o List.o
+
+Makefile probably doesn't correctly create Executable called "Arithmetic"!!!
+
+
+
+rm -f  ListTest ListTest.o List.o BigIntegerTest BigIntegerTest.o

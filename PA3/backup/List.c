@@ -353,7 +353,7 @@ void delete(List L){
 
 void printList(FILE* out, List L){
    for (Node n = L->head; n != NULL; n = n-> next){
-    fprintf(out,"%d " , n->data);
+    fprintf(out,"%ld " , n->data);
   }
    //fprintf(out, "%d ",  front(L));
 }
@@ -362,7 +362,7 @@ List copyList(List L){
     Node walker = L->head;
     List copiedList = newList();  
     while (walker != NULL){
-        int copyThis = walker->data;
+        long copyThis = walker->data;
         walker = walker->next;
         append(copiedList, copyThis);
     }

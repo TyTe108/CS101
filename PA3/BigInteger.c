@@ -88,7 +88,7 @@ int compare(BigInteger A, BigInteger B){
     
     //At this point onward sign and length are the same
 
-    for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){
+    for(moveFront(AL), moveFront(BL); (index(AL)>=0) |(index(BL)>=0); moveNext(AL), moveNext(BL)){
         long AData = get(AL);
         long BData = get(BL);
         
@@ -108,7 +108,7 @@ int compare(BigInteger A, BigInteger B){
 // Re-sets N to the zero state.
 void makeZero(BigInteger N){
     clear(N->_L);
-    N->_L = NULL;
+    // N->_L = NULL;
     N->_sign = 0;
     N->_digit = 0; 
 }
@@ -155,6 +155,9 @@ BigInteger stringToBigInteger(char* s){
             B->_sign = -1;
         }
         s++;  
+    }else{
+      B->_sign = 1;
+      //no s++
     }
     
    // printf(" Works 1: Printing S: \n");
@@ -224,7 +227,8 @@ BigInteger copy(BigInteger N){
 // Places the sum of A and B in the existing BigInteger S, overwriting its
 // current state: S = A + B
 void add(BigInteger S, BigInteger A, BigInteger B){
-    //makeZero(S);
+  makeZero(S);
+  
  
     // Neg A + B
     if (A->_sign == -1 && B->_sign == 1){
@@ -264,7 +268,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
 //     printf("\n\n");
   
     long carry = 0;
-    for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){
+    for(moveFront(AL), moveFront(BL); (index(AL)>=0) | (index(BL)>=0); moveNext(AL), moveNext(BL)){
         long AData = 0;
         long BData = 0;
         if(index(AL) >= 0){
@@ -292,18 +296,29 @@ void add(BigInteger S, BigInteger A, BigInteger B){
         append(SL, (float)1);
         (S->_digit)++;
     }
+    
   
 //   printf("Sum Result: ");
 //   printList(stdout, SL);
 //   printf("\n");
 }
 
+
+BigInteger sum(BigInteger A, BigInteger B){
+  BigInteger C = newBigInteger();
+  add(C, A, B);
+  return C;
+}
+
 void subtract(BigInteger D, BigInteger A, BigInteger B){
+  //printf("Subtract is called \n");
     makeZero(D);
-    
+    // printf("makeZero(D) called in subtract \n");
+      
     if (equals(A, B) == 1){
-        makeZero(D);
-        return;
+      //printf("Went in here... equal in subtract\n");
+      makeZero(D);
+      return;
     }
     if(A->_sign == 1 && B->_sign == -1){
       //Add
@@ -329,11 +344,17 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         negate(B);
         return;
     }
-    
-//     int comp = compare(A,B);
-//     if(comp == -1){
-        
-//     }
+     int comp = compare(A,B);
+     if(comp == -1){
+       subtract(D, B, A);
+       D->_sign = -1;
+       return;
+     }else if (comp == 1){
+       D->_sign = 1;
+     }else{
+       makeZero(D);
+       return;
+     }
     
  
     if(A->_sign == 1 && B->_sign == 1){
@@ -341,7 +362,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         List BL = B->_L;
         List DL = D->_L;
         long carry = 0;
-        for(moveFront(AL), moveFront(BL); (index(AL))>=0 | (index(BL))>=0; moveNext(AL), moveNext(BL)){   
+        for(moveFront(AL), moveFront(BL); (index(AL)>=0) | (index(BL)>=0); moveNext(AL), moveNext(BL)){   
             long AData = 0;
             long BData = 0;
             if(index(AL) >= 0){
@@ -350,7 +371,9 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
             if(index(BL) >= 0){
                 BData = get(BL);
             }
+	    //printf("AData: %li + BData:  %li \n", AData, BData);
             long DData = AData - BData + carry;
+	    //printf("DData Print: %li \n", DData);
             
             if (DData < 0){
                 DData = DData + BASE;
@@ -370,11 +393,27 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
 }
 
 
+BigInteger diff(BigInteger A, BigInteger B){
+  BigInteger D = newBigInteger();
+  subtract(D, A, B);
+  return D;
+}
+
+
 // printBigInteger()
 // Prints a base 10 string representation of N to filestream out.
 void printBigInteger(FILE* out, BigInteger N){
   List NL = N->_L;
+
+  //Deal with leading 0 later
   
+
+  if (length (NL) == 0){
+    fprintf(out,"%09i" ,0);
+    return;
+  }
+
+
   if(N->_sign == 1){
       fprintf(out, "+");
   
@@ -384,7 +423,7 @@ void printBigInteger(FILE* out, BigInteger N){
 
   for(moveBack(NL); (index(NL))>=0; movePrev(NL)){
     long data = get(NL);
-    fprintf(out,"%li" ,data);
+    fprintf(out,"%09li" ,data);
   }
 }
 

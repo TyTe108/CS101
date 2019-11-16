@@ -1,3 +1,10 @@
+/*==========
+ *Tyler Te
+ *CruzID: tylim
+ *Assignment: PA3
+ *========== */
+
+
 #ifndef BIGINTEGER_H
 #define BIGINTEGER_H
 
@@ -34,7 +41,7 @@ int compare(BigInteger A, BigInteger B);
 // equals()
 // Return true (1) if A and B are equal, false (0) otherwise.
 int equals(BigInteger A, BigInteger B);
-4
+
 // Manipulation procedures ----------------------------------------------------
 // makeZero()
 // Re-sets N to the zero state.
@@ -78,6 +85,8 @@ BigInteger prod(BigInteger A, BigInteger B);
 // printBigInteger()
 // Prints a base 10 string representation of N to filestream out.
 void printBigInteger(FILE* out, BigInteger N);
+
+void strrev(char* s); //Reverse the string s
 
 
 #endif //BIGINTEGER_H
