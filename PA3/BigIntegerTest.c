@@ -453,6 +453,10 @@ int main(int argc, char* argv[]){
     printBigInteger(stdout, C);
     printf("\n");
 
+    freeBigInteger(&A);
+    freeBigInteger(&B);
+    freeBigInteger(&C);
+
     printf("subtract_tests Passed \n");
     
 return(0);
