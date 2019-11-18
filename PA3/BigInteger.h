@@ -89,4 +89,7 @@ void printBigInteger(FILE* out, BigInteger N);
 void strrev(char* s); //Reverse the string s
 
 
+BigInteger multHelper(BigInteger N, long a, int i); //BigInt mult by 1 digit
+
+
 #endif //BIGINTEGER_H

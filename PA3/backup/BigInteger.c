@@ -13,7 +13,7 @@
 #include "List.h"
 
 #define POWER 9
-#define BASE pow(10, POWER)
+#define BASE (long)pow(10, POWER)
 
 BigInteger newBigInteger(){
   BigInteger B = (struct BigIntegerObj *) malloc(sizeof(struct BigIntegerObj)); //Dynamic Memory #1
@@ -155,6 +155,9 @@ BigInteger stringToBigInteger(char* s){
             B->_sign = -1;
         }
         s++;  
+    }else{
+      B->_sign = 1;
+      //no s++
     }
     
    // printf(" Works 1: Printing S: \n");
@@ -248,7 +251,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
     }
     else if(A->_sign == 1 && B->_sign == 1){
         S->_sign = 1;
-        //printf("Call #1 \n");
+        //printf("Call #2 \n");
       
     }
     
@@ -265,7 +268,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
 //     printf("\n\n");
   
     long carry = 0;
-    for(moveFront(AL), moveFront(BL); index(AL)>=0 | index(BL)>=0; moveNext(AL), moveNext(BL)){
+    for(moveFront(AL), moveFront(BL); (index(AL)>=0) | (index(BL)>=0); moveNext(AL), moveNext(BL)){
         long AData = 0;
         long BData = 0;
         if(index(AL) >= 0){
@@ -290,7 +293,7 @@ void add(BigInteger S, BigInteger A, BigInteger B){
         }
     }
     if (carry == 1){
-        append(SL, (float)1);
+        append(SL, 1);
         (S->_digit)++;
     }
     
@@ -300,13 +303,20 @@ void add(BigInteger S, BigInteger A, BigInteger B){
 //   printf("\n");
 }
 
+
+BigInteger sum(BigInteger A, BigInteger B){
+  BigInteger C = newBigInteger();
+  add(C, A, B);
+  return C;
+}
+
 void subtract(BigInteger D, BigInteger A, BigInteger B){
-  printf("Subtract is called \n");
+  //printf("Subtract is called \n");
     makeZero(D);
-    printf("makeZero(D) called in subtract \n");
+    // printf("makeZero(D) called in subtract \n");
       
     if (equals(A, B) == 1){
-      printf("Went in here... equal in subtract\n");
+      //printf("Went in here... equal in subtract\n");
       makeZero(D);
       return;
     }
@@ -334,11 +344,17 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         negate(B);
         return;
     }
-    
-//     int comp = compare(A,B);
-//     if(comp == -1){
-        
-//     }
+     int comp = compare(A,B);
+     if(comp == -1){
+       subtract(D, B, A);
+       D->_sign = -1;
+       return;
+     }else if (comp == 1){
+       D->_sign = 1;
+     }else{
+       makeZero(D);
+       return;
+     }
     
  
     if(A->_sign == 1 && B->_sign == 1){
@@ -346,7 +362,7 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
         List BL = B->_L;
         List DL = D->_L;
         long carry = 0;
-        for(moveFront(AL), moveFront(BL); (index(AL))>=0 | (index(BL))>=0; moveNext(AL), moveNext(BL)){   
+        for(moveFront(AL), moveFront(BL); (index(AL)>=0) | (index(BL)>=0); moveNext(AL), moveNext(BL)){   
             long AData = 0;
             long BData = 0;
             if(index(AL) >= 0){
@@ -355,7 +371,9 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
             if(index(BL) >= 0){
                 BData = get(BL);
             }
+	    //printf("AData: %li + BData:  %li \n", AData, BData);
             long DData = AData - BData + carry;
+	    //printf("DData Print: %li \n", DData);
             
             if (DData < 0){
                 DData = DData + BASE;
@@ -375,10 +393,67 @@ void subtract(BigInteger D, BigInteger A, BigInteger B){
 }
 
 
+BigInteger diff(BigInteger A, BigInteger B){
+  BigInteger D = newBigInteger();
+  subtract(D, A, B);
+  return D;
+}
+
+void multiply(BigInteger P, BigInteger A, BigInteger B){
+
+  if(A == B){
+    B = copy(A);
+  }
+  if(P == A){
+    A = copy(A);
+  }
+  if(P==B){
+    B = copy(B);
+  }
+
+  makeZero(P); //clear everything in there first
+  
+  List BL = B->_L;
+  int ind = 0;
+
+  for(moveFront(BL); (index(BL)>=0);moveNext(BL)){
+    long BData = get(BL);
+    BigInteger temp  = multHelper(A, BData, ind);
+    BigInteger tempP = copy(P);
+    
+    
+    add(P, tempP, temp);
+
+  
+    ind++;
+    freeBigInteger(&temp);
+    freeBigInteger(&tempP);
+  }
+
+
+  if((A->_sign == 1 && B->_sign == -1)| (A->_sign == -1 && B->_sign == 1)){
+    P->_sign = -1;
+  }else{
+    P->_sign = 1;
+  }
+}
+
+
+BigInteger prod(BigInteger A, BigInteger B){
+  BigInteger P = newBigInteger();
+  multiply(P, A, B);
+  return P;
+}
+
+
 // printBigInteger()
 // Prints a base 10 string representation of N to filestream out.
 void printBigInteger(FILE* out, BigInteger N){
   List NL = N->_L;
+
+  //Deal with leading 0 later
+  
+
   if (length (NL) == 0){
     fprintf(out,"%i" ,0);
     return;
@@ -386,15 +461,26 @@ void printBigInteger(FILE* out, BigInteger N){
 
 
   if(N->_sign == 1){
-      fprintf(out, "+");
+    // fprintf(out, "+");
   
   }else if (N->_sign == -1){
       fprintf(out, "-");
   }
 
+  int leadingZero = 1;
+
   for(moveBack(NL); (index(NL))>=0; movePrev(NL)){
     long data = get(NL);
-    fprintf(out,"%li" ,data);
+    if(data == 0 && leadingZero == 1){
+      //do nothing...
+    }else{
+      leadingZero = 0;
+      if(data == 0){
+	fprintf(out,"%09li" ,data);
+      }else{
+	fprintf(out, "%li" , data);
+      }
+    }
   }
 }
 
@@ -408,4 +494,46 @@ void strrev(char* s){
         *p2 ^= *p1;
         *p1 ^= *p2;
     }
+}
+
+
+BigInteger multHelper(BigInteger N, long a, int i){
+  //Check if a is 0
+  //....
+  BigInteger Result = newBigInteger();
+  if(a == 0){
+    return Result;
+  }
+
+  List NL = N->_L;
+  List RL = Result->_L;
+
+  //Append 0s
+  for (int j = 0; j <= i; j++){
+    if(j>0){
+    prepend(RL, 0);
+    }
+  }
+  
+  long carry = 0;
+  for(moveFront(NL); (index(NL)>=0);moveNext(NL)){
+    long NData = get(NL);
+    long prod = NData * a + carry;
+    
+    if (prod >= BASE){
+      long remainder = prod % BASE;
+      append(RL, remainder);
+      (Result->_digit)++;
+      carry = prod / BASE;
+    }else{
+      append(RL, prod);
+      carry = 0;
+    }
+  }
+
+  if (carry > 0){
+    append(RL, carry);
+    (Result->_digit)++;
+  }
+  return Result;
 }

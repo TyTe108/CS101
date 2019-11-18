@@ -1,0 +1,20 @@
+/*==========
+ *Tyler Te
+ *CruzID: tylim
+ *Assignment: PA3
+ *========== */
+
+List.h: The header file of List ADT. listObj is defined in header as well
+
+List.c: Where all the functions from List.h are defined. If you notice, I use "head" and "tail" instead of "front" and "back." 
+  I would like to apologize for the usage but I am more used to it being called that way.
+  
+ListTest.c provided on webpage: I used this to initially test on my List. And the result came out the same as the expected result.
+
+BigInteger.h Header file for BigInteger ADT
+
+BigInteger.c Source file for BigInteger ADT
+
+BigIntegerTest.c: I copied and changed the grading script so the test is thorough, anything that doesn't pass will show a fail
+
+Arithmetic.c: It's the client module. All the FileIO operations are done correctly. 

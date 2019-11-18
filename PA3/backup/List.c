@@ -106,8 +106,9 @@ void clear(List L){
 
 void moveFront(List L){
   if (L->length <= 0){
-    printf("Error: calling moveFront(List L) function on empty list. \n");
-    exit(1);
+    //printf("Error: calling moveFront(List L) function on empty list. \n");
+    //exit(1);
+    return;
   }
     L->cursor = L->head;
     L->cursorIndex = 0;
@@ -359,6 +360,14 @@ void printList(FILE* out, List L){
 }
 
 List copyList(List L){
+  /* if(L == NULL){ */
+  /*   return NULL; */
+  /* } */
+  /* if(length (L) == 0){ */
+  /*   List copiedList = newList(); */
+  /*   return copiedList */
+  /* } */
+
     Node walker = L->head;
     List copiedList = newList();  
     while (walker != NULL){

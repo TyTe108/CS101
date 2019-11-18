@@ -458,6 +458,28 @@ int main(int argc, char* argv[]){
     freeBigInteger(&C);
 
     printf("subtract_tests Passed \n");
-    
+
+
+    A = stringToBigInteger("111122223333");
+    B = stringToBigInteger("111122223333");
+    C = newBigInteger();
+
+
+    printf("mult_Test A:  \n");
+    printBigInteger(stdout, A);
+    printf("\nmult_Test B: \n");
+    printBigInteger(stdout, B);
+    printf("\n");
+
+    // pos * pos = pos
+    multiply(C, A, B);
+    if(sign(C) != 1){
+      printf("mult__test Failed 1\n");
+    }
+
+    printf("mult_Test Sum C: \n");
+    printBigInteger(stdout, C);
+    printf("\n");
+    printf("mult_tests Passed \n");
 return(0);
 }
