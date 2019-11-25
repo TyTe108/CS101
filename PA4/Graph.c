@@ -22,16 +22,16 @@ Graph newGraph(int n){
         (G->a)[i] = newList(); //same as *(a+i) //Dynamic Memory #3
     }
  
-    G->color = malloc((n+1) * sizeof(int));
-    G->parents = malloc((n+1) * sizeof(int));
+    G->color = NULL;
+    G->parents = NULL;
     G->source = 0;
-    G->distFromSource = malloc((n+1) * sizeof(int));
+    G->distFromSource = NULL;
     
     return G;
 }
 
 void freeGraph(Graph* pG){
-    Graph M = *pG;
+    Graph G = *pG;
     
     if (G == NULL){
     return;
@@ -44,14 +44,20 @@ void freeGraph(Graph* pG){
     free(G->a);
     G->a= NULL;
     
-    free(G->color);
-    G->color = NULL;
+    if(G->color != NULL){
+        free(G->color);
+        G->color = NULL;
+    }
     
-    free(G->parents);
-    G->parents = NULL;
+    if(G->parents != NULL){
+        free(G->parents);
+        G->parents = NULL;
+    }
     
-    free(G->distFromSource);
-    G->distFromSource = NULL;
+    if(G->distFromSource != NULL)
+        free(G->distFromSource);
+        G->distFromSource = NULL;
+    }
     
     free(*pG );
     *pG = NULL;    
@@ -74,10 +80,72 @@ int getParent(Graph G, int u){
         printf("Error: Calling getParent() on an invalid vertices \n");
         return NIL;
     }
-    if(G->a == NULL){
+    if(G->parents == NULL){
         return NIL;
     }
-    return (G->a[u]);
+    return (G->parents[u]);
 
 }
 
+int getDist(Graph G, int u){
+     if (u > G->vertices | u <= 0){
+        printf("Error: Calling getParent() on an invalid vertices \n");
+        return NIL;
+    }
+    if(G->distFromSource == NULL){
+        return NIL;
+    }
+    return (G->distFromSource[u]);
+}
+
+void getPath(List L, Graph G, int u){
+
+
+}
+
+
+void makeNull(Graph G){
+    if (G == NULL){
+    return;
+  }
+    int n = G->vertices;
+    for (int i = 1; i<=n; i++){ 
+        List clearThis = G->a[i];
+        clear(clearThis);
+    }
+    G->edges = 0;
+    
+    if(G->color != NULL){
+        free(G->color);
+        G->color = NULL;
+    }
+    
+    if(G->parents != NULL){
+        free(G->parents);
+        G->parents = NULL;
+    }
+    
+    if(G->distFromSource != NULL)
+        free(G->distFromSource);
+        G->distFromSource = NULL;
+    }
+}
+
+void addEdge(Graph G, int u, int v){
+    List L = NULL;
+    int exist1 = 0;
+
+    List M = NULL;
+    int exist2 = 0;
+
+    if (u >= G->vertices | v >= G->vertices | u <= 0 | v <= 0){
+        printf("Error: Calling addEdge() on an invalid vertices \n");
+        return;
+    }
+    
+    //ADD V TO U's LIST
+    
+    L = (G->a)[u];
+    //. To Be continued... Check GitLab and do a search function for List
+
+}
