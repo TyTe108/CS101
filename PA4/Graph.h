@@ -16,6 +16,7 @@ typedef struct GraphObj* Graph;
 
 struct GraphObj{
   List* a; //An array of Lists whose ith element contains the neighbors of vertex i
+  int vertices
   int* color;
   int* parents;
   int source;
