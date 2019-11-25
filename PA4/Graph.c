@@ -76,8 +76,8 @@ int getParent(Graph G, int u){
     }
     if(G->a == NULL){
         return NIL;
-    }else{
-        return (G->a[u]);
     }
+    return (G->a[u]);
+
 }
 
