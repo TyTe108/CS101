@@ -9,7 +9,7 @@
 
 
 typedef struct NodeObj{
-    long data;
+    int data;
     struct NodeObj* next;
     struct NodeObj* prev;
 } NodeObj;
@@ -61,7 +61,7 @@ int index(List L){
 
  // Returns index of cursor element if defined, -1 otherwise.
 
-long front(List L){
+int front(List L){
     if(length(L) <= 0){
         printf("List Error: calling Front(List L) on an empty List\n");
 	exit(1);
@@ -69,7 +69,7 @@ long front(List L){
     return (L->head->data);
 }
 
-long back(List L){
+int back(List L){
     if(length(L) <= 0){
         printf("List Error: calling Back(List L) on an empty List\n");
         exit(1);
@@ -78,7 +78,7 @@ long back(List L){
 }
 
 
-long get(List L){
+int get(List L){
   int i = index(L);
     if (i < 0 ){
         printf("List Error: calling get(List L) on a negative index\n");
@@ -213,7 +213,7 @@ void moveNext(List L){
 //  // back, cursor becomes undefined; if cursor is undefined
 //   // do nothing
 
-void prepend(List L, long data){
+void prepend(List L, int data){
   if(L->length == 0){
     Node prependThis = newNode(data); //Make a new node to the list
     L->head = prependThis;
@@ -234,7 +234,7 @@ void prepend(List L, long data){
   }
 } 
 
-void append(List L, long data){
+void append(List L, int data){
   if(L->length == 0){
     Node appendThis = newNode(data); //Make a new node to the list
     L->head = appendThis;
@@ -252,7 +252,7 @@ void append(List L, long data){
   }
 }
 
-void insertBefore(List L, long data){
+void insertBefore(List L, int data){
   if(length <= 0){
     printf("Calling insertBefore(List L, int data) function on an empty L.\n");
     return;
@@ -280,7 +280,7 @@ void insertBefore(List L, long data){
 
 }
 
-void insertAfter(List L, long data){
+void insertAfter(List L, int data){
   if(length <= 0){
     printf("Calling insertBefore(List L, int data) function on an empty L.\n");
     return;
@@ -426,7 +426,7 @@ List copyList(List L){
     Node walker = L->head;
     List copiedList = newList();  
     while (walker != NULL){
-        long copyThis = walker->data;
+        int copyThis = walker->data;
         walker = walker->next;
         append(copiedList, copyThis);
     }
@@ -434,13 +434,13 @@ List copyList(List L){
 }
 
 // Overwrites the cursor element with x. Pre: length()>0, index()>=0
-void set(List L, long x){
+void set(List L, int x){
 	if (length(L)<=0){
-		printf("List Error: calling set(List L, long x) on empty List\n");
+		printf("List Error: calling set(List L, int x) on empty List\n");
 		return;
 	}
 	if(index(L) < 0){
-		printf("List Error: calling set(List L, long x) on 0 or negative index\n");
+		printf("List Error: calling set(List L, int x) on 0 or negative index\n");
 		return;
 	}
 	Node C = L->cursor;
