@@ -13,9 +13,16 @@ struct GraphObj{
 };
 
 /*** Constructors-Destructors ***/
+
+//Function newGraph() returns a Graph pointing to a newly created GraphObj representing a graph having n vertices and no edges. 
 Graph newGraph(int n);
+
+//Function freeGraph() frees all dynamic memory associated with the Graph *pG, then sets the handle *pG to NULL. 
 void freeGraph(Graph* pG);
+
+
 /*** Access functions ***/
+
 int getOrder(Graph G);
 int getSize(Graph G);
 int getSource(Graph G);
