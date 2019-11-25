@@ -12,6 +12,9 @@
 #include "List.h"
 
 
+#define INF -1
+#define NIL -2
+
 typedef struct GraphObj* Graph;
 
 struct GraphObj{
