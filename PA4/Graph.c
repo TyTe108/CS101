@@ -14,6 +14,7 @@
 Graph newGraph(int n){
     Graph G = (struct GraphObj *) malloc(sizeof(struct GraphObj));
     G->vertices = n;
+    G->edges = 0;
     
     G->a = M->_a = malloc((n+1) *  sizeof(List));  //Dynamic Memory #2; //An array of Lists whose ith element contains the neighbors of vertex i
     int i = 0;
@@ -53,8 +54,22 @@ void freeGraph(Graph* pG){
     G->distFromSource = NULL;
     
     free(*pG );
-    *pG = NULL;
-
-    
-    
+    *pG = NULL;    
 }
+
+int getOrder(Graph G){
+    return G->vertices;
+}
+
+int getSize(Graph G){
+    return G->edges;
+}
+
+int getSource(Graph G){
+    return G->source;
+}
+
+int getParent(Graph G, int u){
+
+}
+
