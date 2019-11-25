@@ -70,6 +70,14 @@ int getSource(Graph G){
 }
 
 int getParent(Graph G, int u){
-
+    if (u > G->vertices | u <= 0){
+        printf("Error: Calling getParent() on an invalid vertices \n");
+        return NIL;
+    }
+    if(G->a == NULL){
+        return NIL;
+    }else{
+        return (G->a[u]);
+    }
 }
 
