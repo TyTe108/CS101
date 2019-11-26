@@ -180,8 +180,8 @@ void addArc(Graph G, int u, int v){
 
 void printGraph(FILE* out, Graph G){
     if(G->vertices == 0){
-     fprintf(out, "ZERO VERTICES \n");
-     return;
+        fprintf(out, "ZERO VERTICES \n");
+        return;
     }
     for(int i = 1; i<=vertices; i++){
         fprintf(out, "%d: ", i);
