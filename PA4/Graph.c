@@ -177,8 +177,19 @@ void addArc(Graph G, int u, int v){
         G->edges++;
     }
 }
+
+void printGraph(FILE* out, Graph G){
+    if(G->vertices == 0){
+    fprintf(out, "ZERO VERTICES \n");
+    return;
+    }
+    for(int i = 1; i<=vertices; i++){
+        fprintf(out, "%d: ", i);
+        printList(out, G->a[i]);
+    }
+}
                
                
                
-               
+              
               
