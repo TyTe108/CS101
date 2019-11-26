@@ -446,3 +446,14 @@ void set(List L, int x){
 	Node C = L->cursor;
 	C->data = x;
 }
+
+int Search (List L, int SearchThis){
+	for(moveFront(L); index(L)>=0; moveNext(L)){
+		if (get(L) == SearchThis){
+            return 1;
+		}
+	}
+	return 0;
+}
+
+
