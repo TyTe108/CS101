@@ -9,7 +9,7 @@ List.o : List.c List.h
 GraphTest: GraphTest.o Graph.o List.o
 	gcc -o GraphTest GraphTest.o  List.o Graph.o
 
-GraphTest.o : GraphTest.c GraphTest.h
+GraphTest.o : GraphTest.c Graph.h
 	gcc -c -std=c99 -Wall GraphTest.c
   
 Graph.o : Graph.c Graph.h
