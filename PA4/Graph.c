@@ -131,6 +131,8 @@ void makeNull(Graph G){
     }
 }
 
+
+
 void addEdge(Graph G, int u, int v){
     List L = NULL;
     int exist1 = 0;
@@ -150,11 +152,33 @@ void addEdge(Graph G, int u, int v){
     exist2 = Search(M, u);
     
     if (exist1 == 1 && exist2 == 1){
-        printf("Calling addEdge function when edge already exists;
+        printf("Calling addEdge() function when edge already exists \n");
         return;
     }else{
-        append(L, v);
-        append(M, u);
+        append(L, v); //need to use insertSort
+        append(M, u); //need to use insertSort
         G->edges++;
     }
 }
+
+void addArc(Graph G, int u, int v){
+    if (u >= G->vertices | v >= G->vertices | u <= 0 | v <= 0){
+        printf("Error: Calling addArc() on an invalid vertices \n");
+        return;
+    }
+    List L = (G->a)[u];
+    int exist = Search(L, v);
+    
+    if (exist == 1){
+        printf("Calling addArc() function when edge already exists \n");
+        return;
+    }else{
+        append(L, v); //need to use insertSort
+        G->edges++;
+    }
+}
+               
+               
+               
+               
+              
