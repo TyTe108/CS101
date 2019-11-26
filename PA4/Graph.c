@@ -144,8 +144,17 @@ void addEdge(Graph G, int u, int v){
     }
     
     //ADD V TO U's LIST
-    
     L = (G->a)[u];
-    //. To Be continued... Check GitLab and do a search function for List
-
+    exist1 = Search(L, v);
+    M = (G->a)[v];
+    exist2 = Search(M, u);
+    
+    if (exist1 == 1 && exist2 == 1){
+        printf("Calling addEdge function when edge already exists;
+        return;
+    }else{
+        append(L, v);
+        append(M, u);
+        G->edges++;
+    }
 }
