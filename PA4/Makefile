@@ -16,4 +16,4 @@ Graph.o : Graph.c Graph.h
 	gcc -c -std=c99 -Wall Graph.c
 
 clean :
-  rm -f List.o GraphTest.o Graph.o GraphTest
+  	rm -f List.o GraphTest.o Graph.o GraphTest
