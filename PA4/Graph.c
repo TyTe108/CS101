@@ -16,7 +16,7 @@ Graph newGraph(int n){
     G->vertices = n;
     G->edges = 0;
     
-    G->a = M->_a = malloc((n+1) *  sizeof(List));  //Dynamic Memory #2; //An array of Lists whose ith element contains the neighbors of vertex i
+    G->a = malloc((n+1) *  sizeof(List));  //Dynamic Memory #2; //An array of Lists whose ith element contains the neighbors of vertex i
     int i = 0;
     for (i = 1; i<=n; i++){
         (G->a)[i] = newList(); //same as *(a+i) //Dynamic Memory #3
@@ -54,12 +54,12 @@ void freeGraph(Graph* pG){
         G->parents = NULL;
     }
     
-    if(G->distFromSource != NULL)
+    if(G->distFromSource != NULL){
         free(G->distFromSource);
         G->distFromSource = NULL;
     }
     
-    free(*pG );
+    free(*pG);
     *pG = NULL;    
 }
 
