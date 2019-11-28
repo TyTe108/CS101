@@ -125,7 +125,7 @@ void makeNull(Graph G){
         G->parents = NULL;
     }
     
-    if(G->distFromSource != NULL)
+    if(G->distFromSource != NULL){
         free(G->distFromSource);
         G->distFromSource = NULL;
     }
