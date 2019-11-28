@@ -90,7 +90,7 @@ List copyList(List L); // Returns a new List representing the same integer
 
 // set()
 // Overwrites the cursor element with x. Pre: length()>0, index()>=0
-void set(List L, long x);
+void set(List L, int x);
 
 //return whether SearchThis is found or not
 int Search (List L, int SearchThis);
