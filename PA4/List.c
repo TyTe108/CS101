@@ -119,35 +119,6 @@ int equals(List A, List B){
     return(1);
 
 }
-
-
-int equals(List A, List B){
-    Node a = A->head;
-    Node b = B->head;
-
-
-    if( A==NULL || B==NULL ){
-        printf("List Error: calling equals() on NULL List reference\n PS: How did it pass the front tests then?..\n");
-        return(0);
-    }
-
-
-    if (A->length != B->length){ //length has to be the same
-      return 0;
-    }
-
-    while (a != NULL && b != NULL){
-        if (a->data != b->data){
-            return 0;
-        }
-        a = a->next;
-        b = b->next;
-    }
-
-    return(1);
-
-}
-
 // Manipulation procedures ----------------------------------------------------
 void clear(List L){
   if (L == NULL || L->head == NULL || L->tail == NULL){
