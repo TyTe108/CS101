@@ -14,6 +14,5 @@
 
 int main(int argc, char* argv[]){
  Graph A = newGraph(100);
- 
  return(0);
 }
