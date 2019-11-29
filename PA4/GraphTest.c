@@ -27,6 +27,20 @@ int main(int argc, char* argv[]){
         printf("getSize() #2 test failed because of faulty addArc \n");
     }
     printGraph(stdout, A);
+    
+    BFS(A, 67);
+    if (getSize(A) != 5){
+        printf("getSize() #3 test failed because of faulty addArc \n");
+    }
+    
+    addArc(A, 55, 1);
+    
+    if (getSize(A) != 6){
+        printf("getSize() #4 test failed because of faulty addArc \n");
+
+    } 
+    printGraph(stdout, A);
+    
     printf("getSize() test passed \n");
  return(0);
 }
