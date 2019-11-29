@@ -24,7 +24,7 @@ Graph newGraph(int n){
  
     G->color = NULL;
     G->parents = NULL;
-    G->source = 0;
+    G->source = -1;
     G->distFromSource = NULL;
     
     return G;
@@ -186,6 +186,7 @@ void BFS(Graph G, int s){
     }
     
     int n = G->vertices;
+    G->source = s;
     
     //Allocating memory 
     if(G->color != NULL){
