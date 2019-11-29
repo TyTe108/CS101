@@ -82,7 +82,7 @@ int get(List L){
   int i = index(L);
     if (i < 0 ){
         printf("List Error: calling get(List L) on a negative index\n");
-		exit(1)  
+	    exit(1)  
     }
     if (length(L)<=0){
       printf("List Error: calling get(List L) on an empty List\n PS: Why is index not negative then?\n");
