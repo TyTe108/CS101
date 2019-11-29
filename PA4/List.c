@@ -428,3 +428,22 @@ int Search (List L, int SearchThis){
 }
 
 
+void sortedInsert(List L, int insertThis){
+	moveFront(L);
+		
+	while(index >= 0){
+		int data = get(L);
+		
+		if(data >= insertThis){
+			insertBefre(L, insertThis);
+			return;
+		}
+		moveNext(L);
+	}
+	
+	//either the List is empty or it has reached the end where nothing is inserted in the while loop
+	if(index(L) < 0){
+		append(L, insertThis);
+		return;
+	}
+}
