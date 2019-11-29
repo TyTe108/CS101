@@ -218,8 +218,19 @@ void BFS(Graph G, int s){
     
     List Q = newList(); //A Queue
     while(length(Q) > 0){
-        int u = 
+        int u = front(Q);
+        deleteFront(Q); 
+        for (int v = 1; v<=n; v++){
+            if (G->color[v] == -1){
+                G->color[v] == 0; //Gray
+                G->distanceFromSource[v] = (G->distanceFromSource[u]) + 1;
+                G->parents[v] = u;
+                append(Q, v);
+            }
+        }
+        G->color[u] = 1; //Black
     }
+    freeList(&Q);
 }
 
 void printGraph(FILE* out, Graph G){
