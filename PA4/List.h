@@ -95,4 +95,7 @@ void set(List L, int x);
 //return whether SearchThis is found or not
 int Search (List L, int SearchThis);
 
+
+void sortedInsert(List L, int insertThis);
+
 #endif //LIST_H
