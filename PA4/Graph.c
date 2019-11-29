@@ -24,7 +24,7 @@ Graph newGraph(int n){
  
     G->color = NULL;
     G->parents = NULL;
-    G->source = -1;
+    G->source = NIL;
     G->distFromSource = NULL;
     
     return G;
