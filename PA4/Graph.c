@@ -155,8 +155,8 @@ void addEdge(Graph G, int u, int v){
         printf("Calling addEdge() function when edge already exists \n");
         return;
     }else{
-        append(L, v); //need to use insertSort
-        append(M, u); //need to use insertSort
+        sortedInsert(L, v);
+        sortedInsert(M, u);
         G->edges++;
     }
 }
@@ -173,7 +173,7 @@ void addArc(Graph G, int u, int v){
         printf("Calling addArc() function when edge already exists \n");
         return;
     }else{
-        append(L, v); //need to use insertSort
+        sortedInsert(L, v);
         G->edges++;
     }
 }
