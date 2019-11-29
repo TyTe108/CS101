@@ -178,6 +178,13 @@ void addArc(Graph G, int u, int v){
     }
 }
 
+void BFS(Graph G, int s){
+    for (int i = 1; i<=n; i++){
+        
+    
+    }
+}
+
 void printGraph(FILE* out, Graph G){
     if(G->vertices == 0){
         fprintf(out, "ZERO VERTICES \n");
@@ -185,7 +192,9 @@ void printGraph(FILE* out, Graph G){
     }
     for(int i = 1; i<=G->vertices; i++){
         fprintf(out, "%d: ", i);
-        printList(out, G->a[i]);
+        if(length(L) > 0){
+            printList(out, G->a[i]);
+        }
     }
 }
                
