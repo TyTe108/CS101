@@ -192,9 +192,10 @@ void printGraph(FILE* out, Graph G){
         return;
     }
     for(int i = 1; i<=G->vertices; i++){
-        fprintf(out, "%d: ", i);
         if(length(G->a[i]) > 0){
+            fprintf(out, "%d: ", i);
             printList(out, G->a[i]);
+            fprintf(out, "\n");
         }
     }
 }
