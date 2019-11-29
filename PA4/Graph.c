@@ -179,10 +179,46 @@ void addArc(Graph G, int u, int v){
 }
 
 void BFS(Graph G, int s){
-    int n = G->vertices;
-    for (int i = 1; i<=n; i++){
-        
+    //Check if source s is valid
+        if (s >= G->vertices | s <= 0){
+        printf("Error: Calling BFS() on an invalid vertex s as source \n");
+        return;
+    }
     
+    int n = G->vertices;
+    
+    //Allocating memory 
+    if(G->color != NULL){
+        free(G->color);
+    }
+    G->color = NULL; //Not necessary but..
+    G->color = malloc((n+1) *  sizeof(int));
+    
+    if(G->distFromSource != NULL){
+        free(G->distFromSource);
+    }
+    G->distFromSource = NULL; //Not necessary but..
+    G->distFromSource = malloc((n+1) *  sizeof(int));
+    
+    if(G->parents != NULL){
+        free(G->parents);
+    }
+    G->parents = NULL; //Not necessary but..
+    G->parents = malloc((n+1) *  sizeof(int));
+    
+    for (int i = 1; i<=n; i++){
+        G->color[i] = -1; //-1 white    0 gray  1 black
+        G->distFromSource[i] = -1; //-1 infinity
+        G->parents[i] = NIL;   
+    }
+    
+    G->color[s] = -1; //-1 white    0 gray  1 black
+    G->distFromSource[s] = -1; //-1 infinity
+    G->parents[s] = NIL;   
+    
+    List Q = newList(); //A Queue
+    while(length(Q) > 0){
+        int u = 
     }
 }
 
