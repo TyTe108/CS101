@@ -223,7 +223,7 @@ void BFS(Graph G, int s){
         deleteFront(Q); 
         for (int v = 1; v<=n; v++){
             if (G->color[v] == -1){
-                G->color[v] == 0; //Gray
+                G->color[v] = 0; //Gray
                 G->distFromSource[v] = (G->distFromSource[u]) + 1;
                 G->parents[v] = u;
                 append(Q, v);
