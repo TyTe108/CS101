@@ -26,7 +26,7 @@ int main(int argc, char* argv[]){
     if (getSize(A) != 5){
         printf("getSize() #2 test failed because of faulty addArc \n");
     }
-    
+    printGraph(stdout, A);
     printf("getSize() test passed \n");
  return(0);
 }
