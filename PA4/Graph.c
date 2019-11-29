@@ -179,6 +179,7 @@ void addArc(Graph G, int u, int v){
 }
 
 void BFS(Graph G, int s){
+    int n = G->vertices;
     for (int i = 1; i<=n; i++){
         
     
