@@ -42,5 +42,23 @@ int main(int argc, char* argv[]){
     printGraph(stdout, A);
     
     printf("getSize() test passed \n");
+    
+    //----------GetSource_Test
+    if (getSource(A) != NIL){
+        printf("GetSource_Test test #1 failed\n");
+    }
+    
+    BFS(A, 42);
+    
+    if (getSource(A) != 42){
+        printf("GetSource_Test test #2 failed\n");
+    }
+        
+    BFS(A, 88);
+    if (getSource(A) != 88){
+        printf("GetSource_Test test #2 failed\n");
+    }
+    printf("GetSource_Test tests passed \n");
+ 
  return(0);
 }
