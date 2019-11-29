@@ -435,7 +435,7 @@ void sortedInsert(List L, int insertThis){
 		int data = get(L);
 		
 		if(data >= insertThis){
-			insertBefre(L, insertThis);
+			insertBefore(L, insertThis);
 			return;
 		}
 		moveNext(L);
