@@ -431,9 +431,8 @@ int Search (List L, int SearchThis){
 void sortedInsert(List L, int insertThis){
 	moveFront(L);
 		
-	while(index >= 0){
+	while(index(L) >= 0){
 		int data = get(L);
-		
 		if(data >= insertThis){
 			insertBefore(L, insertThis);
 			return;
