@@ -108,8 +108,6 @@ int main(int argc, char* argv[]){
     //----------DG_getDist_Test
     
     A = newGraph(100);
-    
-    
     for (int i = 1; i <= 100; i++){
         if (getDist(A, i) != INF){
             printf("DG_getDist_Test #1 failed\n");
