@@ -81,6 +81,7 @@ int getParent(Graph G, int u){
         return NIL;
     }
     if(G->parents == NULL){
+        printf("PARENTS ARE NULL \n");
         return NIL;
     }
     return (G->parents[u]);
