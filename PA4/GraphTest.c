@@ -66,14 +66,29 @@ int main(int argc, char* argv[]){
  
  //----------DG_getParent_Test
  
- A = newGraph(100);
+    A = newGraph(100);
  
- for (int i = 1; i <= 100; i++){
-     if (getParent(A, i) != NIL){
-         printf("getParent_Test #1 failed\n");
-     }
+    for (int i = 1; i <= 100; i++){
+        if (getParent(A, i) != NIL){
+            printf("getParent_Test #1 failed\n");
+        }
  }
+    addArc(A, 64, 4);    
+    addArc(A, 64, 3);    
+    addArc(A, 42, 2);
+    addArc(A, 2, 64);
+    addArc(A, 4, 2);
+    addArc(A, 3, 42);
+    addArc(A, 64, 4);
+    addArc(A, 64, 3);
+    addArc(A, 42, 2);
+    addArc(A, 2, 64);
+    addArc(A, 4, 2);
+    addArc(A, 3, 42);
+ 
     printf("getParent_Test passed \n");
     freeGraph(&A);
+ 
+ 
  return(0);
 }
