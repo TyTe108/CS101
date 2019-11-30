@@ -302,8 +302,8 @@ int main(int argc, char* argv[]){
     
     //UG_getPath-------------    
     A = newGraph(100);
-    List L = newList();
-    List C = newList();
+    L = newList();
+    C = newList();
     
     addEdge(A, 64, 4);
     addEdge(A, 64, 3);
