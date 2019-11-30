@@ -72,20 +72,25 @@ int main(int argc, char* argv[]){
         if (getParent(A, i) != NIL){
             printf("getParent_Test #1 failed\n");
         }
- }
-    addArc(A, 64, 4);    
-    addArc(A, 64, 3);    
-    addArc(A, 42, 2);
-    addArc(A, 2, 64);
-    addArc(A, 4, 2);
-    addArc(A, 3, 42);
+    }
+ 
     addArc(A, 64, 4);
     addArc(A, 64, 3);
     addArc(A, 42, 2);
     addArc(A, 2, 64);
     addArc(A, 4, 2);
     addArc(A, 3, 42);
- 
+    
+    BFS(A, 42);
+    if (getParent(A, 42) != NIL){
+        printf("getParent_Test #2 failed\n");
+    }
+    if (getParent(A, 2) != 42){
+        printf("getParent_Test #3 failed\n");
+    }
+    if (getParent(A, 8) != NIL){
+        printf("getParent_Test #4 failed\n");
+    }
     printf("getParent_Test passed \n");
     freeGraph(&A);
  
