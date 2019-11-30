@@ -226,6 +226,7 @@ BFS(A, 88);
 if (getSource(A) != 88){
     printf("UG_getSource_Test #3 failed\n");
 };
+printf("G_getSource_Test passed \n");
 freeGraph(&A);
 return(0);
 }
