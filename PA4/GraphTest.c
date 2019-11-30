@@ -230,5 +230,38 @@ int main(int argc, char* argv[]){
     };
     printf("G_getSource_Test passed \n");
     freeGraph(&A);
+    
+ 
+    //UG_getParent_Test-------------
+    A = newGraph(100);
+    
+    for (int i = 1; i <= 100; i++){
+          if (getParent(A, i) != NIL) {
+          //1
+              printf("UG_getParent_Test #1 failed\n");
+          }
+    }
+    addEdge(A, 64, 4);
+    addEdge(A, 64, 3);
+    addEdge(A, 42, 2);
+    addEdge(A, 2, 64);
+    addEdge(A, 4, 2);
+    addEdge(A, 3, 42);
+    BFS(A, 42);
+    if (getParent(A, 42) != NIL){
+        printf("UG_getParent_Test #2 failed\n");
+    }
+    if (getParent(A, 64) != 2){
+        printf("UG_getParent_Test #3 failed\n");
+    }
+    if (getParent(A, 3) != 42){
+        printf("UG_getParent_Test #4 failed\n");
+    }
+    if (getParent(A, 8) != NIL){
+        printf("UG_getParent_Test #5 failed\n");
+    }
+    
+    printf("UG_getParent_Test passed \n");
+    freeGraph(&A);
     return(0);
 }
