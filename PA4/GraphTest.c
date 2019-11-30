@@ -43,7 +43,10 @@ int main(int argc, char* argv[]){
     
     printf("getSize() test passed \n");
     
+    freeGraph(&A);
     //----------GetSource_Test
+    
+    Graph A = newGraph(100);
     if (getSource(A) != NIL){
         printf("GetSource_Test test #1 failed\n");
     }
@@ -59,6 +62,6 @@ int main(int argc, char* argv[]){
         printf("GetSource_Test test #2 failed\n");
     }
     printf("GetSource_Test tests passed \n");
- 
+    freeGraph(&A);
  return(0);
 }
