@@ -162,6 +162,27 @@ int main(int argc, char* argv[]){
     }
  
     printf("DG_getPath_Test passed \n");
+    
+    moveFront(L);
+    BFS(A, 2);
+    getPath(L, A, 2);
+    append(C, 2);
+    if (!equals(L, C)){
+    
+    }
+    getPath(L, A, 99);
+    if (equals(L, C)){
+    
+    }
+    clear(L);
+    clear(C);
+    append(C, NIL);
+    BFS(A, 99);
+    getPath(L, A, 2);
+    if (!equals(C, L)){
+    
+    }
+    
     freeGraph(&A);
     freeList(&L);
     freeList(&C);
