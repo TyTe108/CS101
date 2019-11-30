@@ -85,7 +85,10 @@ int main(int argc, char* argv[]){
     
     printf("Get Parent Test Print: \n");
     printGraph(stdout, A);
-     
+    
+    int p = getParent(A,42);
+    printf("Parent of 42 is %d \n", p);
+    
     if (getParent(A, 42) != NIL){
         printf("getParent_Test #2 failed\n");
     }
