@@ -263,5 +263,41 @@ int main(int argc, char* argv[]){
     
     printf("UG_getParent_Test passed \n");
     freeGraph(&A);
+    
+    //UG_getDist_Test-------------
+    A = newGraph(100); 
+    
+    
+    for (int i = 1; i <= 100; i++){
+        if (getDist(A, i) != INF){
+            printf("UG_getDist_Test #1 failed\n");
+        }
+    }
+    addEdge(A, 64, 4);
+    addEdge(A, 64, 3);
+    addEdge(A, 42, 2);
+    addEdge(A, 2, 64);
+    addEdge(A, 4, 2);
+    addEdge(A, 3, 42);
+    BFS(A, 64);
+    if (getDist(A, 64) != 0){
+        printf("UG_getDist_Test #2 failed\n");
+    }
+    if (getDist(A, 2) != 1){
+        printf("UG_getDist_Test #3 failed\n");
+    }
+    BFS(A, 4);
+    if (getDist(A, 42) != 2){
+        printf("UG_getDist_Test #4 failed\n");
+    }
+    if (getDist(A, 43) != INF){
+        printf("UG_getDist_Test #5 failed\n");
+    }
+    BFS(A, 99);
+    if (getDist(A, 64) != INF){
+        printf("UG_getDist_Test #6 failed\n");
+    }
+    printf("UG_getDist_Test passed \n");
+    freeGraph(&A);
     return(0);
 }
