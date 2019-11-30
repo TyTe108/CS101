@@ -109,24 +109,37 @@ int main(int argc, char* argv[]){
     
     A = newGraph(100);
     
+    
     for (int i = 1; i <= 100; i++){
         if (getDist(A, i) != INF){
             printf("DG_getDist_Test #1 failed\n");
         }
-        addArc(A, 64, 4);
-        addArc(A, 64, 3);
-        addArc(A, 42, 2);
-        addArc(A, 2, 64);
-        addArc(A, 4, 2);
-        addArc(A, 3, 42);
-        BFS(A, 64);
-        if (getDist(A, 64) != 0){
-            printf("DG_getDist_Test #2 failed\n");
-        }
-        if (getDist(A, 2) != 2){
-            printf("DG_getDist_Test #3 failed\n");
-        }
+    }
+    addArc(A, 64, 4);
+    addArc(A, 64, 3);
+    addArc(A, 42, 2);
+    addArc(A, 2, 64);
+    addArc(A, 4, 2);
+    addArc(A, 3, 42);
+    BFS(A, 64);
+    if (getDist(A, 64) != 0){
+            printf("DG_getDist_Test #2 failed\n");    
+    }
+    if (getDist(A, 2) != 2){
+            printf("DG_getDist_Test #3 failed\n");    
+    }
+    BFS(A, 4);
+    if (getDist(A, 42) != 4){
+        printf("DG_getDist_Test #4 failed\n");
+    }
+    if (getDist(A, 43) != INF){
+        printf("DG_getDist_Test #5 failed\n");
+    }
+    BFS(A, 99);
+    if (getDist(A, 64) != INF){
+        printf("DG_getDist_Test #6 failed\n");
     }
     freeGraph(&A);
- return(0);
+    printf("DG_getDist_Test passed \n");
+    return(0);
 }
