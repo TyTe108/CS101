@@ -63,5 +63,15 @@ int main(int argc, char* argv[]){
     }
     printf("GetSource_Test tests passed \n");
     freeGraph(&A);
+ 
+ //----------DG_getParent_Test
+ 
+ for (int i = 1; i <= 100; i++){
+     if (getParent(A, i) != NIL){
+         printf("getParent_Test #1 failed\n");
+     }
+ }
+    printf("getParent_Test passed \n");
+    freeGraph(&A);
  return(0);
 }
