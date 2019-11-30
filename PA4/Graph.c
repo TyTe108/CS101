@@ -214,7 +214,7 @@ void BFS(Graph G, int s){
     
     for (int i = 1; i<=n; i++){
         G->color[i] = -1; //-1 white    0 gray  1 black
-        G->distFromSource[i] = -1; //-1 infinity
+        G->distFromSource[i] = 0; //-1 infinity
         G->parents[i] = NIL;   
     }
     
