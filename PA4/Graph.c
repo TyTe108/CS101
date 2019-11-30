@@ -76,7 +76,7 @@ int getSource(Graph G){
 }
 
 int getParent(Graph G, int u){
-    if (u > G->vertices | u <= 0){
+    if ((u > G->vertices) | u <= 0){
         printf("Error: Calling getParent() on an invalid vertices \n");
         return NIL;
     }
@@ -89,11 +89,11 @@ int getParent(Graph G, int u){
 }
 
 int getDist(Graph G, int u){
-    if (G->source =< 0){
+    if (G->source <= 0){
         return INF;
     }
  
-     if (u > G->vertices | u <= 0){
+     if ((u > G->vertices) | u <= 0){
         printf("Error: Calling getParent() on an invalid vertices \n");
         return INF;
     }
@@ -145,7 +145,7 @@ void addEdge(Graph G, int u, int v){
     List M = NULL;
     int exist2 = 0;
 
-    if (u >= G->vertices | v >= G->vertices | u <= 0 | v <= 0){
+    if ((u >= G->vertices) | v >= G->vertices | u <= 0 | (v <= 0)){
         printf("Error: Calling addEdge() on an invalid vertices \n");
         return;
     }
@@ -167,7 +167,7 @@ void addEdge(Graph G, int u, int v){
 }
 
 void addArc(Graph G, int u, int v){
-    if (u >= G->vertices | v >= G->vertices | u <= 0 | v <= 0){
+    if ((u >= G->vertices) | v >= G->vertices | u <= 0 | (v <= 0)){
         printf("Error: Calling addArc() on an invalid vertices \n");
         return;
     }
@@ -185,7 +185,7 @@ void addArc(Graph G, int u, int v){
 
 void BFS(Graph G, int s){
     //Check if source s is valid
-        if (s >= G->vertices | s <= 0){
+        if ((s >= G->vertices) | s <= 0){
         printf("Error: Calling BFS() on an invalid vertex s as source \n");
         return;
     }
