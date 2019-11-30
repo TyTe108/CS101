@@ -206,26 +206,29 @@ int main(int argc, char* argv[]){
         printf("UG_getSize_Test #3 failed\n");
     }
     addEdge(A, 55, 2);
-    if (getSize(A) != 5)
+    if (getSize(A) != 5){
         printf("UG_getSize_Test #4 failed\n");
     }
-printf("UG_getSize_Test passed \n");
-freeGraph(&A);
+
+    printf("UG_getSize_Test passed \n");
+    freeGraph(&A);
     
 //UG_getSource_Test-------------
-A = newGraph(100);    
-if (getSource(A) != NIL){
-    printf("UG_getSource_Test #1 failed\n");
-};        
-BFS(A, 42);        
-if (getSource(A) != 42){
-    printf("UG_getSource_Test #2 failed\n");
-};        
-BFS(A, 88);
-if (getSource(A) != 88){
-    printf("UG_getSource_Test #3 failed\n");
-};
-printf("G_getSource_Test passed \n");
-freeGraph(&A);
-return(0);
+
+    A = newGraph(100);    
+
+    if (getSource(A) != NIL){
+        printf("UG_getSource_Test #1 failed\n");
+    };        
+    BFS(A, 42);        
+    if (getSource(A) != 42){
+        printf("UG_getSource_Test #2 failed\n");
+    };        
+    BFS(A, 88);
+    if (getSource(A) != 88){
+        printf("UG_getSource_Test #3 failed\n");
+    };
+    printf("G_getSource_Test passed \n");
+    freeGraph(&A);
+    return(0);
 }
