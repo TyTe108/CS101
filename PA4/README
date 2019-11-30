@@ -1,1 +1,16 @@
-Nothing yet
+/*==========
+ *Tyler Te
+ *CruzID: tylim
+ *Assignment: PA4
+ *========== */
+
+List.h: The header file of List ADT. listObj is defined in header as well
+
+List.c: Where all the functions from List.h are defined. If you notice, I use "head" and "tail" instead of "front" and "back." 
+  I would like to apologize for the usage but I am more used to it being called that way.
+  
+Graph.h The header file for Graph ADT, it works with both directed and undirected
+
+Graph.c The source file for Graph ADT. I followed the textbook's pseudocode for BFS and getPath
+
+GraphTest.c It's almost a copy and paste of professor's grading script and I passed everything 
