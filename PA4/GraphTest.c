@@ -337,6 +337,8 @@ int main(int argc, char* argv[]){
     if (!equals(C, L)){
         printf("UG_getPath_Test #4 failed\n");
     }
+    printf("UG_getPath_Test passed \n");
+    
     freeGraph(&A);
     freeList(&L);
     freeList(&C);
