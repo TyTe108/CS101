@@ -89,6 +89,10 @@ int main(int argc, char* argv[]){
     if (getParent(A, 42) != NIL){
         printf("getParent_Test #2 failed\n");
     }
+    
+    int p = getParent(A,2);
+    printf("Parent of 2 is %d \n", p);
+    
     if (getParent(A, 2) != 42){
         printf("getParent_Test #3 failed\n");
     }
