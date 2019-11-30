@@ -139,5 +139,31 @@ int main(int argc, char* argv[]){
     }
     freeGraph(&A);
     printf("DG_getDist_Test passed \n");
+    //----------DG_getPath:
+    A = newGraph(100);
+    List L = newList();
+    List C = newList();
+    
+    addArc(A, 64, 4);
+    addArc(A, 64, 3);
+    addArc(A, 42, 2);
+    addArc(A, 2, 64);
+    addArc(A, 4, 2);
+    addArc(A, 3, 42);
+    BFS(A, 3);
+    
+    getPath(L, A, 64);
+    append(C, 3);
+    append(C, 42);
+    append(C, 2);
+    append(C, 64);
+    if (!equals(L, C)){
+        printf("DG_getPath_Test #1 failed\n");
+    }
+ 
+    printf("DG_getPath_Test passed \n");
+    freeGraph(&A);
+    freeList(&L);
+    freeList(&C);
     return(0);
 }
