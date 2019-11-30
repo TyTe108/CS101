@@ -66,6 +66,8 @@ int main(int argc, char* argv[]){
  
  //----------DG_getParent_Test
  
+ A = newGraph(100);
+ 
  for (int i = 1; i <= 100; i++){
      if (getParent(A, i) != NIL){
          printf("getParent_Test #1 failed\n");
