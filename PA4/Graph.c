@@ -224,12 +224,16 @@ void BFS(Graph G, int s){
         int u = front(Q);
         deleteFront(Q); 
         for (movefront(G->a[u]); index(G->a[u])>=0; moveNext(G->a[u])){ //
-            int v = get(G->a[u]);
-            if (G->color[v] == -1){
+            int v = -1;
+            if(length(G->a[u]) > 0){
+                v=get(G->a[u]);
+                
+                if (G->color[v] == -1){
                 G->color[v] = 0; //Gray
                 G->distFromSource[v] = (G->distFromSource[u]) + 1;
                 G->parents[v] = u;
                 append(Q, v);
+                }
             }
         }
         G->color[u] = 1; //Black
