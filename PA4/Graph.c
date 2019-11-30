@@ -89,12 +89,16 @@ int getParent(Graph G, int u){
 }
 
 int getDist(Graph G, int u){
+    if (G->source =< 0){
+        return INF;
+    }
+ 
      if (u > G->vertices | u <= 0){
         printf("Error: Calling getParent() on an invalid vertices \n");
-        return NIL;
+        return INF;
     }
     if(G->distFromSource == NULL){
-        return NIL;
+        return INF;
     }
     return (G->distFromSource[u]);
 }
