@@ -46,7 +46,7 @@ int main(int argc, char* argv[]){
     freeGraph(&A);
     //----------GetSource_Test
     
-    Graph A = newGraph(100);
+    A = newGraph(100);
     if (getSource(A) != NIL){
         printf("GetSource_Test test #1 failed\n");
     }
