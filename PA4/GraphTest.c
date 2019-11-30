@@ -188,8 +188,8 @@ int main(int argc, char* argv[]){
     freeList(&C);
  
  //UG_getSize_Test-------------------
+ 
     A = newGraph(100);
-    
     if (getSize(A) != 0){
         printf("UG_getSize_Test #1 failed\n");
     }
@@ -209,9 +209,8 @@ int main(int argc, char* argv[]){
     if (getSize(A) != 5)
         printf("UG_getSize_Test #4 failed\n");
     }
-    printf("UG_getSize_Test passed \n");
-    
-    freeGraph(&A);
+printf("UG_getSize_Test passed \n");
+freeGraph(&A);
     
 //UG_getSource_Test-------------
 A = newGraph(100);    
