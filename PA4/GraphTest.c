@@ -82,6 +82,10 @@ int main(int argc, char* argv[]){
     addArc(A, 3, 42);
     
     BFS(A, 42);
+    
+    printf("Get Parent Test Print: \n");
+    printGraph(stdout, A);
+     
     if (getParent(A, 42) != NIL){
         printf("getParent_Test #2 failed\n");
     }
