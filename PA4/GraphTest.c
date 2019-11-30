@@ -160,19 +160,17 @@ int main(int argc, char* argv[]){
     if (!equals(L, C)){
         printf("DG_getPath_Test #1 failed\n");
     }
- 
-    printf("DG_getPath_Test passed \n");
     
     moveFront(L);
     BFS(A, 2);
     getPath(L, A, 2);
     append(C, 2);
     if (!equals(L, C)){
-    
+        printf("DG_getPath_Test #2 failed\n");
     }
     getPath(L, A, 99);
     if (equals(L, C)){
-    
+        printf("DG_getPath_Test #3 failed\n");
     }
     clear(L);
     clear(C);
@@ -180,8 +178,10 @@ int main(int argc, char* argv[]){
     BFS(A, 99);
     getPath(L, A, 2);
     if (!equals(C, L)){
-    
+        printf("DG_getPath_Test #4 failed\n");
     }
+    
+    printf("DG_getPath_Test passed \n");
     
     freeGraph(&A);
     freeList(&L);
