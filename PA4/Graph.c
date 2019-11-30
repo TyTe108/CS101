@@ -223,7 +223,7 @@ void BFS(Graph G, int s){
     while(length(Q) > 0){
         int u = front(Q);
         deleteFront(Q); 
-        for (movefront(G->a[u]; index(G->a[u])>=0; moveNext(G->a[u])){ //
+        for (movefront(G->a[u]); index(G->a[u])>=0; moveNext(G->a[u])){ //
             int v = get(G->[u]);
             if (G->color[v] == -1){
                 G->color[v] = 0; //Gray
