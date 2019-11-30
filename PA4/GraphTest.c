@@ -299,5 +299,46 @@ int main(int argc, char* argv[]){
     }
     printf("UG_getDist_Test passed \n");
     freeGraph(&A);
+    
+    //UG_getPath-------------    
+    A = newGraph(100);
+    List L = newList();
+    List C = newList();
+    
+    addEdge(A, 64, 4);
+    addEdge(A, 64, 3);
+    addEdge(A, 42, 2);
+    addEdge(A, 2, 64);
+    addEdge(A, 4, 2);
+    addEdge(A, 3, 42);
+    BFS(A, 3);
+    getPath(L, A, 64);
+    append(C, 3);
+    append(C, 64);
+    if (!equals(L, C)){
+        printf("UG_getPath_Test #1 failed\n");
+    }
+    moveFront(L);
+    BFS(A, 2);
+    getPath(L, A, 2);
+    append(C, 2);
+    if (!equals(L, C)){
+        printf("UG_getPath_Test #2 failed\n");
+    }
+    getPath(L, A, 99);
+    if (equals(L, C)){
+        printf("UG_getPath_Test #3 failed\n");
+    }
+    clear(L);
+    clear(C);
+    append(C, NIL);
+    BFS(A, 99);
+    getPath(L, A, 2);
+    if (!equals(C, L)){
+        printf("UG_getPath_Test #4 failed\n");
+    }
+    freeGraph(&A);
+    freeList(&L);
+    freeList(&C);
     return(0);
 }
