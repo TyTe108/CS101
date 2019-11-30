@@ -75,7 +75,7 @@ int getSource(Graph G){
     return G->source;
 }
 
-int getParent(Graph G, int u){
+int getParent(Graph G, int u){    
     if ((u > G->vertices) | u <= 0){
         printf("Error: Calling getParent() on an invalid vertices \n");
         return NIL;
@@ -88,13 +88,13 @@ int getParent(Graph G, int u){
 
 }
 
-int getDist(Graph G, int u){
+int getDist(Graph G, int u){    
     if (G->source <= 0){
         return INF;
     }
  
-     if ((u > G->vertices) | u <= 0){
-        printf("Error: Calling getParent() on an invalid vertices \n");
+    if ((u > G->vertices) | u <= 0){
+        printf("Error: Calling getDist() on an invalid vertices \n");
         return INF;
     }
     if(G->distFromSource == NULL){
@@ -104,8 +104,21 @@ int getDist(Graph G, int u){
 }
 
 void getPath(List L, Graph G, int u){
-
-
+    if (getSource(G) == NIL){
+        return;
+    }
+     if ((u > G->vertices) | u <= 0){
+        printf("Error: Calling getPath() on an invalid vertices \n");
+        return;
+    }
+    if (u == s){
+        append(L, s);
+    }else if (G->parents[u] == NIL){
+        append(L, NIL);
+    }else{
+        getPath(L, G, G->parents[u]);
+        append(L, u);
+    }
 }
 
 
