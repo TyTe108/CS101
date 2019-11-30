@@ -111,8 +111,8 @@ void getPath(List L, Graph G, int u){
         printf("Error: Calling getPath() on an invalid vertices \n");
         return;
     }
-    if (u == s){
-        append(L, s);
+    if (u == getSource(G)){
+        append(L, getSource(G));
     }else if (G->parents[u] == NIL){
         append(L, NIL);
     }else{
