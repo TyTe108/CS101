@@ -81,7 +81,7 @@ int getParent(Graph G, int u){
         return NIL;
     }
     if(G->parents == NULL){
-        printf("PARENTS ARE NULL \n");
+        //printf("PARENTS ARE NULL \n");
         return NIL;
     }
     return (G->parents[u]);
@@ -219,6 +219,7 @@ void BFS(Graph G, int s){
     G->parents[s] = NIL;   
     
     List Q = newList(); //A Queue
+    append(Q,s);
     while(length(Q) > 0){
         int u = front(Q);
         deleteFront(Q); 
