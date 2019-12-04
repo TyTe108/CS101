@@ -258,6 +258,21 @@ void BFS(Graph G, int s){
     freeList(&Q);
 }
 
+
+Graph transpose(Graph G){
+    int v = getOrder(G);
+    Graph tranp = newGraph(v);
+    
+    for (int i = 1; i <= v; i++){
+        for (moveFront(G->a[i]; index(G->a[i]) >= 0; moveNext(G->a[i])){
+            if((length(G->a[i]) > 0){
+                int j = get(G->a[i]);
+                addEdge(tranp, j, i);
+            }
+        }
+    }
+}
+
 void printGraph(FILE* out, Graph G){
     if(G->vertices == 0){
         fprintf(out, "ZERO VERTICES \n");
