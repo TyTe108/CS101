@@ -259,19 +259,61 @@ void BFS(Graph G, int s){
 }
 
 
+
+
 Graph transpose(Graph G){
     int v = getOrder(G);
     Graph tranp = newGraph(v);
     
     for (int i = 1; i <= v; i++){
-        for (moveFront(G->a[i]; index(G->a[i]) >= 0; moveNext(G->a[i])){
-            if((length(G->a[i]) > 0){
+        for (moveFront(G->a[i]); index(G->a[i]) >= 0; moveNext(G->a[i])){
+            if((length(G->a[i])) > 0){
                 int j = get(G->a[i]);
                 addEdge(tranp, j, i);
             }
         }
-    }
+    }      
 }
+
+Graph copyGraph(Graph G){
+    int v = getOrder(G);
+    Graph copy = newGraph(v);
+    
+    for (int i = 1; i <= v; i++){
+        if((length(G->a[i])) > 0){
+            copy->a[i] = copyList(G->a[i]);
+        }
+    }
+    
+    if (G->color != NULL){
+        copy->color = malloc((v+1) *  sizeof(int));
+        for (i = 1; i <= v; i++){
+            copy->color[i] = g->color[i];
+        }
+    }
+    
+    if (G->parents != NULL){
+        copy->parents = malloc((v+1) *  sizeof(int));
+        for (i = 1; i <= v; i++){
+            copy->parents[i] = g->parents[i];
+        }
+    }
+    
+    if (G->distFromSource != NULL){
+        copy->distFromSource = malloc((v+1) *  sizeof(int));
+        for (i = 1; i <= v; i++){
+            copy->distFromSource[i] = g->distFromSource[i];
+        }
+    }
+    
+    copy->edges = g->edges;
+    copy->source = g->source;
+    
+    return copy;
+    
+}
+             
+               
 
 void printGraph(FILE* out, Graph G){
     if(G->vertices == 0){
