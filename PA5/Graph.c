@@ -452,7 +452,7 @@ void sortedFinishInsert(int* finish, List S, int v){
     moveFront(S);
     while(index(S) >= 0){
 		int data = get(S);
-		if(finish[data] >= finish[v]){
+		if(finish[data] <= finish[v]){
 			insertBefore(S, v);
 			return;
 		}
