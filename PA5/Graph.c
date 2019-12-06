@@ -208,6 +208,32 @@ void addArc(Graph G, int u, int v){
     }
 }
 
+
+int getDiscover(Graph G, int u){
+    if(G->discover == NULL){
+        return UNDEF;
+    }
+    
+    if ((u > G->vertices) | (u <= 0)){
+        printf("Error: Calling getDiscover on an invalid vertices \n");
+        return UNDEF;
+    }
+    return (G->discover[u]);
+} /* Pre: 1<=u<=n=getOrder(G) */
+
+
+int getFinish(Graph G, int u){
+    if(G->finish == NULL){
+        return UNDEF;
+    }
+    
+    if ((u > G->vertices) | (u <= 0)){
+        printf("Error: Calling getFinish on an invalid vertices \n");
+        return UNDEF;
+    }
+    return (G->finish[u]);
+} /* Pre: 1<=u<=n=getOrder(G) */
+
 void BFS(Graph G, int s){
     //Check if source s is valid
     if ((s >= G->vertices) | (s <= 0)){
