@@ -63,5 +63,6 @@ Graph transpose(Graph G);
 Graph copyGraph(Graph G);
 void printGraph(FILE* out, Graph G);
 void visit(Graph G, int u, int* time);
+void sortedFinishInsert(int* finish, List S, int v);
 
 #endif //GRAPH_H
