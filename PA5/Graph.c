@@ -412,7 +412,7 @@ Graph copyGraph(Graph G){
     if (G->parents != NULL){
         copy->parents = malloc((v+1) *  sizeof(int));
         for (int i = 1; i <= v; i++){
-            copy->parents[i] = g->parents[i];
+            copy->parents[i] = G->parents[i];
         }
     }
     
