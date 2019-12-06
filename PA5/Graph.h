@@ -60,5 +60,6 @@ void DFS(Graph G, List S); /* Pre: length(S)==getOrder(G) */
 Graph transpose(Graph G);
 Graph copyGraph(Graph G);
 void printGraph(FILE* out, Graph G);
+void visit(Graph G, int* time);
 
 #endif //GRAPH_H
