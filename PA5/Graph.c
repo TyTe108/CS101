@@ -305,7 +305,8 @@ void DFS(Graph G, List S){
         printf("Error: Calling DFS() when the number of vertices != length(S) \n");
         return;
     }
-    
+	
+	int n = getOrder(G);
  
     if(G->discover != NULL){
         free(G->discover);
