@@ -14,6 +14,7 @@
 
 #define INF -1
 #define NIL -2
+#define UNDEF -3
 
 typedef struct GraphObj* Graph;
 
