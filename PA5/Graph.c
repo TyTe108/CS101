@@ -354,7 +354,7 @@ void DFS(Graph G, List S){
     freeList(&S);
     S = newList();
     for(int i = 1; i <= getOrder(G); i++){
-        sortedFinishInsert(G->finish, S, i)
+        sortedFinishInsert(G->finish, S, i);
     }
 }
 
@@ -404,21 +404,21 @@ Graph copyGraph(Graph G){
     
     if (G->color != NULL){
         copy->color = malloc((v+1) *  sizeof(int));
-        for (i = 1; i <= v; i++){
-            copy->color[i] = g->color[i];
+        for (int i = 1; i <= v; i++){
+            copy->color[i] = G->color[i];
         }
     }
     
     if (G->parents != NULL){
         copy->parents = malloc((v+1) *  sizeof(int));
-        for (i = 1; i <= v; i++){
+        for (int i = 1; i <= v; i++){
             copy->parents[i] = g->parents[i];
         }
     }
     
     if (G->distFromSource != NULL){
         copy->distFromSource = malloc((v+1) *  sizeof(int));
-        for (i = 1; i <= v; i++){
+        for (int i = 1; i <= v; i++){
             copy->distFromSource[i] = g->distFromSource[i];
         }
     }
