@@ -445,8 +445,23 @@ void printGraph(FILE* out, Graph G){
       
 
 void sortedFinishInsert(int* finish, List S, int v){
-
-
+    if(v == UNDEF){
+        return;
+    }
+    
+    moveFront(S);
+    while(index(S) >= 0){
+		int data = get(S);
+		if(finish[data] >= finish[v]){
+			insertBefore(S, v);
+			return;
+		}
+		moveNext(S);
+	}
+    if(index(S) < 0){
+		append(S, v);
+		return;
+	}
 }
                
                
