@@ -26,6 +26,8 @@ struct GraphObj{
     int* parents;
     int source;
     int* distFromSource;
+    int* discover
+    int* finish
 };
 
 /*** Constructors-Destructors ***/
