@@ -419,12 +419,12 @@ Graph copyGraph(Graph G){
     if (G->distFromSource != NULL){
         copy->distFromSource = malloc((v+1) *  sizeof(int));
         for (int i = 1; i <= v; i++){
-            copy->distFromSource[i] = g->distFromSource[i];
+            copy->distFromSource[i] = G->distFromSource[i];
         }
     }
     
-    copy->edges = g->edges;
-    copy->source = g->source;
+    copy->edges = G->edges;
+    copy->source = G->source;
     
     return copy;
     
