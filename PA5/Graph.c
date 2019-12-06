@@ -297,11 +297,16 @@ void BFS(Graph G, int s){
 }
 
 void DFS(Graph G, List S){
-    if ((s >= G->vertices) | (s <= 0)){
-        printf("Error: Calling BFS() on an invalid vertex s as source \n");
+//     if ((s >= G->vertices) | (s <= 0)){
+//         printf("Error: Calling BFS() on an invalid vertex s as source \n");
+//         return;
+//     }
+    if(length(S) != getOrder(G)){
+        printf("Error: Calling DFS() when the number of vertices != length(S) \n");
         return;
     }
     
+ 
     if(G->discover != NULL){
         free(G->discover);
     }
@@ -329,12 +334,26 @@ void DFS(Graph G, List S){
     for (int u = 1; u <= getOrder(G); u++){
         G->color[u] = -1;
         G->parents[u] = NIL;
+        // Not sure if I'm supposed to initialize this
+        G->discover[u] = UNDEF;
+        G->finish[u] = UNDEF;
     }
     int time = 0;
-    for (int u = 1; u <= getOrder(G); u++){
-        if(G->color[u] == -1){
+    for (moveFront(S); index(S)>=0 ; moveNext(S)){
+        int u = -1;
+        if(length(S) > 0){
+            u = get(S);
+            if(G->color[u] == -1){
             visit(G, u, &time);
+            }
         }
+    }
+    
+    // store the vertices in order of decreasing finish times
+    freeList(&S);
+    S = newList();
+    for(int i = 1; i <= getOrder(G); i++){
+        sortedFinishInsert(S, i)
     }
 }
 
