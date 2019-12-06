@@ -353,10 +353,9 @@ void DFS(Graph G, List S){
     freeList(&S);
     S = newList();
     for(int i = 1; i <= getOrder(G); i++){
-        sortedFinishInsert(S, i)
+        sortedFinishInsert(G->finish, S, i)
     }
 }
-
 
 void visit(Graph G, int u, int* time){
     G->color[u] = 0;
@@ -443,7 +442,12 @@ void printGraph(FILE* out, Graph G){
         }
     }
 }
-               
+      
+
+void sortedFinishInsert(int* finish, List S, int v){
+
+
+}
                
                
               
