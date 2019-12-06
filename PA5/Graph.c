@@ -26,6 +26,8 @@ Graph newGraph(int n){
     G->parents = NULL;
     G->source = NIL;
     G->distFromSource = NULL;
+    G->discover = NULL;
+    G->finish = NULL;
     
     return G;
 }
@@ -57,6 +59,16 @@ void freeGraph(Graph* pG){
     if(G->distFromSource != NULL){
         free(G->distFromSource);
         G->distFromSource = NULL;
+    }
+    
+    if(G->discover != NULL){
+        free(G->discover);
+        G->discover = NULL;
+    }
+    
+    if(G->finish != NULL){
+        free(G->finish);
+        G->finish = NULL;
     }
     
     free(*pG);
@@ -198,7 +210,7 @@ void addArc(Graph G, int u, int v){
 
 void BFS(Graph G, int s){
     //Check if source s is valid
-        if ((s >= G->vertices) | (s <= 0)){
+    if ((s >= G->vertices) | (s <= 0)){
         printf("Error: Calling BFS() on an invalid vertex s as source \n");
         return;
     }
@@ -258,7 +270,67 @@ void BFS(Graph G, int s){
     freeList(&Q);
 }
 
+void DFS(Graph G, List S){
+    if ((s >= G->vertices) | (s <= 0)){
+        printf("Error: Calling BFS() on an invalid vertex s as source \n");
+        return;
+    }
+    
+    if(G->discover != NULL){
+        free(G->discover);
+    }
+    G->discover = NULL; //Not necessary but..
+    G->discover = malloc((n+1) *  sizeof(int));
+    
+    if(G->parents != NULL){
+        free(G->parents);
+    }
+    G->parents = NULL; //Not necessary but..
+    G->parents = malloc((n+1) *  sizeof(int));
+    
+    if(G->color != NULL){
+        free(G->color);
+    }
+    G->color = NULL; //Not necessary but..
+    G->color = malloc((n+1) *  sizeof(int));
+    
+    if(G->finish != NULL){
+        free(G->finish);
+    }
+    G->finish = NULL; //Not necessary but..
+    G->finish = malloc((n+1) *  sizeof(int));
+    
+    for (int u = 1; u <= getOrder(G); u++){
+        G->color[u] = -1;
+        G->parents[u] = NIL;
+    }
+    int time = 0;
+    for (int u = 1; u <= getOrder(G); u++){
+        if(G->color[u] == -1){
+            visit(G, u, &time);
+        }
+    }
+}
 
+
+void visit(Graph G, int u, int* time){
+    G->color[u] = 0;
+    *time = *time + 1;
+    G->discover[u] = *time;
+    
+    for (moveFront(G->a[u]); index(G->a[u])>=0; moveNext(G->a[u])){
+        int v = -1;
+        if(length(G->a[u]) > 0){
+            v=get(G->a[u]);
+            if (G->color[v] == -1){
+                G->parents[v] = u;
+                visit(G, v, time);
+            }
+        }
+    }
+    G->color[u] = 1;
+    G->finish[u] = *time;
+}
 
 
 Graph transpose(Graph G){
@@ -312,8 +384,6 @@ Graph copyGraph(Graph G){
     return copy;
     
 }
-             
-               
 
 void printGraph(FILE* out, Graph G){
     if(G->vertices == 0){
