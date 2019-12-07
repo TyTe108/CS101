@@ -340,7 +340,7 @@ void DFS(Graph G, List S){
         G->finish[u] = UNDEF;
     }
     int time = 0;
-    for (moveFront(S); index(S)>=0 ; moveNext(S)){
+    for (moveBack(S); index(S)>=0 ; movePrev(S)){
         int u = -1;
         if(length(S) > 0){
             u = get(S);
