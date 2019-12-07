@@ -136,5 +136,52 @@ int main(int argc, char* argv[]){
     freeGraph(&A);
     freeList(&L);
     
+    //DG_getFinish============================
+    
+    A = newGraph(100);
+    L = newList();
+    
+    for (int i = 1; i <= 100; i++){
+        if (getFinish(A, i) != UNDEF){
+            printf("getFinish() test #1 failed. \n");   
+        }
+    }
+    
+    addArc(A, 64, 4);
+    addArc(A, 64, 3);
+    addArc(A, 42, 2);
+    addArc(A, 2, 64);
+    addArc(A, 4, 2);
+    addArc(A, 3, 42);
+    for (int i = 1; i <= 100; i++) {
+        prepend(L, i);
+    }
+    DFS(A, L);
+    if (getFinish(A, 100) != 2){
+        printf("getFinish() test #2 failed. \n");
+    }
+    if (getFinish(A, 64) != 82){
+        printf("getFinish() test #3 failed. \n");
+    }
+    if (getFinish(A, 42) != 78){
+        printf("getFinish() test #4 failed. \n");
+    }
+    DFS(A, L);
+    if (getFinish(A, 64) != 128){
+        printf("getFinish() test #5 failed. \n");
+    }
+    if (getFinish(A, 63) != 118){
+        printf("getFinish() test #6 failed. \n");
+    }
+    DFS(A, L);
+    if (getFinish(A, 65) != 72){
+        printf("getFinish() test #7 failed. \n");
+    }
+    if (getFinish(A, 1) != 200){
+        printf("getFinish() test #8 failed. \n");
+    }
+    printf("getFinish() test passed \n");
+    freeGraph(&A);
+    freeList(&L);
 return(0);
 }
