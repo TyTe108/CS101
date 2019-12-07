@@ -76,8 +76,9 @@ int main(int argc, char* argv[]){
     if (getParent(A, 4) != 64){
         printf("getParent() test #6 failed. \n");   
     }
-    
-    
+    printf("getParent() test passed \n");
+    freeGraph(&A);
+    freeList(&L);
     
 return(0);
 }
