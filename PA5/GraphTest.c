@@ -27,7 +27,7 @@ int main(int argc, char* argv[]){
     if (getSize(A) != 5){
         printf("getSize() #2 test failed. \n");
     }
-    for (int8_t i = 1; i <= 100; i++) {
+    for (int i = 1; i <= 100; i++) {
         append(L, i);
     }
     DFS(A, L);
