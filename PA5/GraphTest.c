@@ -214,5 +214,139 @@ int main(int argc, char* argv[]){
     printf("getSize() test passed \n");
     freeGraph(&A);
     freeList(&L);
-return(0);
+    
+    //UG_getParent============================
+    A = newGraph(100);
+    L = newList();
+    
+    for (int i = 1; i <= 100; i++){
+        if (getParent(A, i) != NIL){
+            printf("getParent() test #1 failed. \n");
+        }
+    }
+    addEdge(A, 64, 4);
+    addEdge(A, 64, 3);
+    addEdge(A, 42, 2);
+    addEdge(A, 2, 64);
+    addEdge(A, 4, 2);
+    addEdge(A, 3, 42);
+    for (int i = 1; i <= 100; i++) {
+        append(L, i);
+    }
+    DFS(A, L);
+    if (getParent(A, 100) != NIL){
+        printf("getParent() test #2 failed. \n");
+    }
+    if (getParent(A, 2) != NIL){
+        printf("getParent() test #3 failed. \n");
+    }
+    if (getParent(A, 42) != 3){
+        printf("getParent() test #4 failed. \n");
+    }
+    if (getParent(A, 3) != 64){
+        printf("getParent() test #5 failed. \n");
+    }
+    if (getParent(A, 4) != 2){
+        printf("getParent() test #6 failed. \n");
+    }
+    
+    printf("getParent() test passed \n");
+    freeGraph(&A);
+    freeList(&L);
+    
+    //UG_getDiscover============================
+    A = newGraph(100);
+    L = newList();
+    
+    for (uint8_t i = 1; i <= 100; i++){
+        if (getDiscover(A, i) != UNDEF){
+            printf("getDiscover() test #1 failed. \n");
+        }
+    }
+    addEdge(A, 64, 4);
+    addEdge(A, 64, 3);
+    addEdge(A, 42, 2);
+    addEdge(A, 2, 64);
+    addEdge(A, 4, 2);
+    addEdge(A, 3, 42);
+    for (int i = 1; i <= 100; i++) {
+        prepend(L, i);
+    }
+    DFS(A, L);
+    if (getDiscover(A, 100) != 1){
+        printf("getDiscover() test #2 failed. \n");
+    }
+    if (getDiscover(A, 64) != 73){
+        printf("getDiscover() test #3 failed. \n");
+    }
+    if (getDiscover(A, 4) != 75){
+        printf("getDiscover() test #4 failed. \n");
+    }
+    DFS(A, L);
+    if (getDiscover(A, 4) != 121){
+        printf("getDiscover() test #5 failed. \n");
+    }
+    if (getDiscover(A, 63) != 117){
+        printf("getDiscover() test #6 failed. \n");
+    }
+    DFS(A, L);
+    if (getDiscover(A, 65) != 71){
+        printf("getDiscover() test #7 failed. \n");
+    }
+    if (getDiscover(A, 1) != 199){
+        printf("getDiscover() test #8 failed. \n");
+    }
+    
+    printf("getDiscover() test passed \n");
+    freeGraph(&A);
+    freeList(&L);
+    
+    //UG_getFinish============================
+    A = newGraph(100);
+    L = newList();
+    
+    for (int i = 1; i <= 100; i++){
+          if (getFinish(A, i) != UNDEF){
+              printf("getFinish() test #1 failed. \n");
+          }
+    }
+    addEdge(A, 64, 4);
+    addEdge(A, 64, 3);
+    addEdge(A, 42, 2);
+    addEdge(A, 2, 64);
+    addEdge(A, 4, 2);
+    addEdge(A, 3, 42);
+    for (uint8_t i = 1; i <= 100; i++) {
+        prepend(L, i);
+    }
+    DFS(A, L);
+    if (getFinish(A, 100) != 2){
+        printf("getFinish() test #2 failed. \n");
+    }
+    if (getFinish(A, 64) != 82){
+        printf("getFinish() test #3 failed. \n");
+    }
+    if (getFinish(A, 42) != 80){
+        printf("getFinish() test #4 failed. \n");
+    }
+    DFS(A, L);
+    if (getFinish(A, 64) != 128){
+        printf("getFinish() test #5 failed. \n");
+    }
+    if (getFinish(A, 63) != 118){
+        printf("getFinish() test #6 failed. \n");
+    }
+    DFS(A, L);
+    if (getFinish(A, 65) != 72){
+        printf("getFinish() test #7 failed. \n");
+    }
+    if (getFinish(A, 1) != 200){
+        printf("getFinish() test #8 failed. \n");
+    }
+    
+    printf("getDiscover() test passed \n");
+    freeGraph(&A);
+    freeList(&L);
+    
+    return(0);
 }
