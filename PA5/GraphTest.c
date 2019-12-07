@@ -60,6 +60,10 @@ int main(int argc, char* argv[]){
     for (int i = 1; i <= 100; i++) {
         append(L, i);
     }
+    
+    printf("Print the Graph: \n");
+    printGraph(stdout, A);
+    
     DFS(A, L);
     if (getParent(A, 100) != NIL){
         printf("getParent() test #2 failed. \n");   
