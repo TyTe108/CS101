@@ -42,5 +42,42 @@ int main(int argc, char* argv[]){
     freeGraph(&A);
     freeList(&L);
     
+    //DG_getParent============================
+    Graph A = newGraph(100);
+    List L = newList();
+    
+    for (int i = 1; i <= 100; i++){
+        if (getParent(A, i) != NIL){
+            printf("getParent() test #1 failed. \n");   
+        }
+    }
+    addArc(A, 64, 4);
+    addArc(A, 64, 3);
+    addArc(A, 42, 2);
+    addArc(A, 2, 64);
+    addArc(A, 4, 2);
+    addArc(A, 3, 42);
+    for (int i = 1; i <= 100; i++) {
+        append(L, i);
+    }
+    DFS(A, L);
+    if (getParent(A, 100) != NIL){
+        printf("getParent() test #2 failed. \n");   
+    }
+    if (getParent(A, 2) != NIL){
+        printf("getParent() test #3 failed. \n");   
+    }
+    if (getParent(A, 42) != 3){
+        printf("getParent() test #4 failed. \n");   
+    }
+    if (getParent(A, 3) != 64){
+        printf("getParent() test #5 failed. \n");   
+    }
+    if (getParent(A, 4) != 64){
+        printf("getParent() test #6 failed. \n");   
+    }
+    
+    
+    
 return(0);
 }
