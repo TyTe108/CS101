@@ -352,8 +352,7 @@ void DFS(Graph G, List S){
     }
     
     // store the vertices in order of decreasing finish times
-    freeList(&S);
-    S = newList();
+    clear(S);
     for(int i = 1; i <= getOrder(G); i++){
         sortedFinishInsert(G->finish, S, i);
     }
