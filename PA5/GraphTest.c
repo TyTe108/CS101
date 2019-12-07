@@ -108,6 +108,9 @@ int main(int argc, char* argv[]){
         printf("getDiscover() test #2 failed. \n");
     }
     
+    printf("Print the Graph: \n");
+    printGraph(stdout, A);
+    
     printf("getDiscover() of v 64 is %d\n", getDiscover(A, 64));
     if (getDiscover(A, 64) != 73){
         printf("getDiscover() test #3 failed. \n");
