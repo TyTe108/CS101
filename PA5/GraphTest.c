@@ -80,5 +80,52 @@ int main(int argc, char* argv[]){
     freeGraph(&A);
     freeList(&L);
     
+    //DG_getDiscover============================
+
+    A = newGraph(100);
+    L = newList();
+    
+    for (int i = 1; i <= 100; i++){
+          if (getDiscover(A, i) != UNDEF){
+             printf("getDiscover() test #1 failed. \n");   
+          }
+    }
+    addArc(A, 64, 4);
+    addArc(A, 64, 3);
+    addArc(A, 42, 2);
+    addArc(A, 2, 64);
+    addArc(A, 4, 2);
+    addArc(A, 3, 42);
+    for (int i = 1; i <= 100; i++) {
+        prepend(L, i);
+    }
+    DFS(A, L);
+    if (getDiscover(A, 100) != 1){
+        printf("getDiscover() test #2 failed. \n");
+    }
+    if (getDiscover(A, 64) != 73){
+        printf("getDiscover() test #3 failed. \n");
+    }
+    if (getDiscover(A, 4) != 80){
+        printf("getDiscover() test #4 failed. \n");
+    }
+    DFS(A, L);
+    if (getDiscover(A, 4) != 126){
+        printf("getDiscover() test #5 failed. \n");
+    }
+    if (getDiscover(A, 63) != 117){
+        printf("getDiscover() test #6 failed. \n");
+    }
+    DFS(A, L);
+    if (getDiscover(A, 65) != 71){
+        printf("getDiscover() test #7 failed. \n");
+    }
+    if (getDiscover(A, 1) != 199){
+        printf("getDiscover() test #8 failed. \n");
+    }
+    printf("getDiscover() test passed \n");
+    freeGraph(&A);
+    freeList(&L);
+    
 return(0);
 }
