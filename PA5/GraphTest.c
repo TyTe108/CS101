@@ -258,7 +258,7 @@ int main(int argc, char* argv[]){
     A = newGraph(100);
     L = newList();
     
-    for (uint8_t i = 1; i <= 100; i++){
+    for (int i = 1; i <= 100; i++){
         if (getDiscover(A, i) != UNDEF){
             printf("getDiscover() test #1 failed. \n");
         }
@@ -316,7 +316,7 @@ int main(int argc, char* argv[]){
     addEdge(A, 2, 64);
     addEdge(A, 4, 2);
     addEdge(A, 3, 42);
-    for (uint8_t i = 1; i <= 100; i++) {
+    for (int i = 1; i <= 100; i++) {
         prepend(L, i);
     }
     DFS(A, L);
