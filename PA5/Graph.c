@@ -301,6 +301,7 @@ void DFS(Graph G, List S){
 //         printf("Error: Calling BFS() on an invalid vertex s as source \n");
 //         return;
 //     }
+	printf("length(S) is #2: %d \n", length(S));
     if(length(S) != getOrder(G)){
         printf("Error: Calling DFS() when the number of vertices != length(S) \n");
         return;
