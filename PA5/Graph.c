@@ -356,6 +356,7 @@ void DFS(Graph G, List S){
     for(int i = 1; i <= getOrder(G); i++){
         sortedFinishInsert(G->finish, S, i);
     }
+	printf("length(S) is: %d \n", length(S));
 }
 
 void visit(Graph G, int u, int* time){
