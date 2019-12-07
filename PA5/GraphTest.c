@@ -43,8 +43,8 @@ int main(int argc, char* argv[]){
     freeList(&L);
     
     //DG_getParent============================
-    Graph A = newGraph(100);
-    List L = newList();
+    A = newGraph(100);
+    L = newList();
     
     for (int i = 1; i <= 100; i++){
         if (getParent(A, i) != NIL){
