@@ -301,7 +301,7 @@ void DFS(Graph G, List S){
 //         printf("Error: Calling BFS() on an invalid vertex s as source \n");
 //         return;
 //     }
-	printf("length(S) is #2: %d \n", length(S));
+	//printf("length(S) is #2: %d \n", length(S));
     if(length(S) != getOrder(G)){
         printf("Error: Calling DFS() when the number of vertices != length(S) \n");
         return;
@@ -356,7 +356,7 @@ void DFS(Graph G, List S){
     for(int i = 1; i <= getOrder(G); i++){
         sortedFinishInsert(G->finish, S, i);
     }
-	printf("length(S) is: %d \n", length(S));
+	//printf("length(S) is: %d \n", length(S));
 }
 
 void visit(Graph G, int u, int* time){
