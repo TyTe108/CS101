@@ -183,5 +183,36 @@ int main(int argc, char* argv[]){
     printf("getFinish() test passed \n");
     freeGraph(&A);
     freeList(&L);
+    
+    //UG_getSize============================
+    
+    A = newGraph(100);
+    L = newList();
+    
+    if (getSize(A) != 0){
+        printf("getSize() test #1 failed. \n");
+    }
+    addEdge(A, 54, 1);
+    addEdge(A, 54, 2);
+    addEdge(A, 54, 3);
+    addEdge(A, 1, 55);
+    if (getSize(A) != 4){
+        printf("getSize() test #2 failed. \n");
+    }
+    for (int i = 1; i <= 100; i++) {
+        append(L, i);
+    }
+    DFS(A, L);
+    if (getSize(A) != 4){
+        printf("getSize() test #3 failed. \n");
+    }
+    addEdge(A, 1, 56);
+    if (getSize(A) != 5){
+        printf("getSize() test #4 failed. \n");
+    }
+    
+    printf("getSize() test passed \n");
+    freeGraph(&A);
+    freeList(&L);
 return(0);
 }
