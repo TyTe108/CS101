@@ -345,7 +345,7 @@ void DFS(Graph G, List S){
         if(length(S) > 0){
             u = get(S);
             if(G->color[u] == -1){
-            visit(G, u, &time);
+				visit(G, u, &time);
             }
         }
     }
