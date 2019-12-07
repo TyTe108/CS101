@@ -374,6 +374,7 @@ void visit(Graph G, int u, int* time){
         }
     }
     G->color[u] = 1;
+	*time = *time + 1;
     G->finish[u] = *time;
 }
 
