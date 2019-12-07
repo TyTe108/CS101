@@ -119,6 +119,8 @@ int main(int argc, char* argv[]){
         printf("DG getDiscover() test #4 failed. \n");
     }
     DFS(A, L);
+    
+    printf("DG getDiscover() of v 4 is %d\n", getDiscover(A, 4));
     if (getDiscover(A, 4) != 126){
         printf("DG getDiscover() test #5 failed. \n");
     }
