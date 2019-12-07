@@ -344,7 +344,7 @@ int main(int argc, char* argv[]){
         printf("getFinish() test #8 failed. \n");
     }
     
-    printf("getDiscover() test passed \n");
+    printf("getFinish() test passed \n");
     freeGraph(&A);
     freeList(&L);
     
