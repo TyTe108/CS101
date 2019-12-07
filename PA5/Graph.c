@@ -336,8 +336,8 @@ void DFS(Graph G, List S){
         G->color[u] = -1;
         G->parents[u] = NIL;
         // Not sure if I'm supposed to initialize this
-        G->discover[u] = UNDEF;
-        G->finish[u] = UNDEF;
+        //G->discover[u] = UNDEF;
+        //G->finish[u] = UNDEF;
     }
     int time = 0;
     for (moveFront(S); index(S)>=0 ; moveNext(S)){
