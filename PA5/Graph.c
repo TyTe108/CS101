@@ -389,7 +389,8 @@ Graph transpose(Graph G){
                 addEdge(tranp, j, i);
             }
         }
-    }      
+    }
+	return tranp;
 }
 
 Graph copyGraph(Graph G){
