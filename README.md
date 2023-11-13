@@ -28,7 +28,7 @@ To use the repository:
 
 ## Contributing
 
-This repository is primarily for educational purposes. However, contributions in the form of bug fixes or improvements to the code are welcome. Please read the contribution guidelines in the respective assignment folders before making any changes.
+This repository is primarily for educational purposes. However, contributions in the form of bug fixes or improvements to the code are welcome. 
 
 ## License
 
